@@ -17,7 +17,6 @@
           <img src="./assets/saras-logo.svg" width="51" height="37" alt="">
           <span class="wordmark">saras<span class="wordmark-dot">.</span></span>
         </a>
-        <span class="header-caption">Senang berkenalan denganmu.</span>
         <nav aria-label="Menu spinwheel">
           <button class="text-button" id="guide-button" type="button">Cara bermain</button>
           <button class="staff-button" id="staff-button" type="button" aria-label="Panel panitia">
@@ -29,10 +28,8 @@
 
       <main id="main" class="main-layout">
         <section class="intro" aria-labelledby="page-title">
-          <p class="intro-note">Ada yang bisa kamu bawa pulang.</p>
-          <h1 id="page-title">Putar roda.<br> Bawa pulang<br> <em>hadiahnya.</em></h1>
-          <p class="intro-description">Terima kasih sudah mampir dan kenalan dengan SARAS. Sekarang, coba keberuntunganmu!</p>
-          <div class="visit-note"><span class="note-rule" aria-hidden="true"></span><p>Putar, lihat hasilnya, lalu ambil<br>merchandise-mu di booth kami.</p></div>
+          <h1 id="page-title">Putar roda<br> dan dapatkan<br> <em>hadiahmu.</em></h1>
+          <p class="intro-description">Tunjukkan hasil putaran ke panitia untuk mengambil hadiah di booth SARAS.</p>
         </section>
 
         <section class="wheel-section" aria-label="Roda hadiah">
@@ -46,46 +43,41 @@
           <div class="spin-controls">
             <p id="spin-status" class="spin-status" role="status" aria-live="polite">Menyiapkan roda…</p>
             <button id="spin-button" class="primary-button spin-button" type="button" disabled>Memuat hadiah…</button>
-            <p class="control-note" id="control-note">Hasil hadiah akan muncul setelah roda berhenti.</p>
+            <p class="control-note" id="control-note"></p>
           </div>
           <div id="error-message" class="error-message" role="alert" hidden></div>
         </section>
 
         <section class="prize-section" aria-labelledby="prizes-heading">
-          <div class="prize-heading"><h2 id="prizes-heading">Kejutan di dalam roda</h2><span class="example-label">Hadiah contoh</span></div>
+          <div class="prize-heading"><h2 id="prizes-heading">Pilihan hadiah</h2><span class="example-label">Hadiah contoh</span></div>
           <ul class="prize-list" id="prize-list"><li>Memuat daftar hadiah…</li></ul>
         </section>
       </main>
 
-      <footer class="site-footer"><p>SARAS <span aria-hidden="true">/</span> Showcase spinwheel</p><p>Prototype <span aria-hidden="true">·</span> Daftar hadiah bisa diubah oleh panitia.</p></footer>
+      <footer class="site-footer"><p>SARAS</p><p>Prototype</p></footer>
     </div>
     <noscript><p class="noscript-message">Aktifkan JavaScript di browser untuk menggunakan spinwheel.</p></noscript>
 
     <dialog id="result-dialog" class="result-dialog" aria-labelledby="result-heading" aria-describedby="result-instructions">
       <button class="close-button" type="button" data-close="result-dialog" aria-label="Tutup hasil hadiah">×</button>
-      <div class="result-art" aria-hidden="true"><img src="./assets/saras-logo.svg" width="74" height="49" alt=""></div>
-      <p class="dialog-kicker" id="result-number">Giliran kamu</p>
-      <h2 id="result-heading">Yeay, kamu dapat<br><em id="result-prize"></em></h2>
+      <h2 id="result-heading">Hadiahmu<br><em id="result-prize"></em></h2>
       <p id="result-instructions">Tunjukkan hasil ini ke panitia di booth SARAS untuk mengambil hadiahnya.</p>
-      <div class="ticket-detail"><span>Hadiah untukmu</span><strong id="ticket-number"></strong></div>
+      <p class="ticket-number" id="ticket-number"></p>
       <button class="primary-button" id="next-button" type="button">Hadiah sudah diterima</button>
       <p class="dialog-footnote">Panitia: klik setelah hadiah diserahkan untuk giliran berikutnya.</p>
     </dialog>
 
     <dialog id="guide-dialog" class="guide-dialog" aria-labelledby="guide-heading">
       <button class="close-button" type="button" data-close="guide-dialog" aria-label="Tutup cara bermain">×</button>
-      <p class="dialog-kicker">Selamat datang di booth SARAS</p>
-      <h2 id="guide-heading">Putar sebentar.<br><em>Bawa pulang kejutan.</em></h2>
+      <h2 id="guide-heading">Cara bermain</h2>
       <ol class="guide-steps"><li><strong>Tekan “Putar roda”</strong><p>Tunggu sampai roda berhenti dan hadiahmu muncul.</p></li><li><strong>Tunjukkan hasil ke panitia</strong><p>Ambil hadiahmu langsung di booth SARAS.</p></li></ol>
       <p class="guide-fairness">Setiap jenis hadiah yang masih tersedia punya peluang sama. Hadiah yang stoknya habis tidak ikut diundi.</p>
-      <button class="primary-button" data-close="guide-dialog" type="button">Siap, ayo putar</button>
+      <button class="primary-button" data-close="guide-dialog" type="button">Tutup panduan</button>
     </dialog>
 
     <dialog id="staff-dialog" class="staff-dialog" aria-labelledby="staff-heading">
       <button class="close-button" type="button" data-close="staff-dialog" aria-label="Tutup panel panitia">×</button>
-      <p class="dialog-kicker">Untuk tim booth</p>
       <h2 id="staff-heading">Panel panitia</h2>
-      <p class="staff-description">Nama hadiah, sisa stok, dan riwayat untuk perangkat ini.</p>
       <p class="storage-note">Data tersimpan di browser ini. Gunakan satu tab pada satu perangkat booth; stok tidak tersinkron ke perangkat lain.</p>
       <form id="prize-form">
         <div class="form-heading"><span>Nama hadiah</span><span>Sisa stok</span></div>

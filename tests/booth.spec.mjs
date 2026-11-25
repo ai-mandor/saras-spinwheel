@@ -32,7 +32,7 @@ test('spin, refresh, penyerahan hadiah, dan stok habis', async ({ page }) => {
   await seed(page, session(examples));
   await page.goto('/');
   await page.getByRole('button', { name: 'Putar roda', exact: true }).click();
-  await expect(page.getByRole('dialog', { name: /Yeay/ })).toBeVisible();
+  await expect(page.getByRole('dialog', { name: /^Hadiahmu/ })).toBeVisible();
   await expect(page.locator('#result-prize')).toHaveText('Hadiah A');
   await page.reload();
   await expect(page.locator('#result-prize')).toHaveText('Hadiah A');
@@ -54,7 +54,7 @@ test('klik ganda saat animasi menghasilkan satu undian dan jarum sesuai hasil', 
   await page.goto('/');
   await page.getByRole('button', { name: 'Putar roda', exact: true }).dblclick();
   await expect(page.getByRole('button', { name: 'Sedang berputar…' })).toBeDisabled();
-  await expect(page.getByRole('dialog', { name: /Yeay/ })).toBeVisible({ timeout: 10_000 });
+  await expect(page.getByRole('dialog', { name: /^Hadiahmu/ })).toBeVisible({ timeout: 10_000 });
   const outcome = await page.evaluate(key => {
     const state = JSON.parse(localStorage.getItem(key));
     const transform = new DOMMatrix(getComputedStyle(document.querySelector('#wheel')).transform);
@@ -157,7 +157,7 @@ test('panduan dapat dibuka dengan keyboard, fokus tertahan, Escape menutup', asy
   await expect(page.locator('#guide-dialog')).toBeHidden();
   await expect(page.getByRole('button', { name: 'Cara bermain' })).toBeFocused();
   await page.getByRole('button', { name: 'Cara bermain' }).click();
-  await page.getByRole('button', { name: 'Siap, ayo putar' }).click();
+  await page.getByRole('button', { name: 'Tutup panduan' }).click();
   await expect(page.locator('#guide-dialog')).toBeHidden();
   await page.getByRole('button', { name: 'Cara bermain' }).click();
   await page.getByRole('button', { name: 'Tutup cara bermain' }).click();

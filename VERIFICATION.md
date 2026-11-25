@@ -2,7 +2,7 @@
 
 Date: 2026-11-25. Browser: installed Google Chrome on macOS through Playwright.
 
-Status: PASS. `npm test`: 5/5 passed. `npm run test:browser`: 11/11 passed. `npm run build`: completed. Browser checks recorded no JavaScript exceptions or console errors.
+Status: PASS. Core logic baseline: 5/5 passed. After the copy and surface cleanup, `npm run test:browser`: 11/11 passed and `npm run build`: completed. Browser checks recorded no JavaScript exceptions or console errors. The detailed cleanup report is in UNSLOP-REPORT.md.
 
 ## Antislop delivery gate
 
@@ -71,7 +71,7 @@ Status: PASS. `npm test`: 5/5 passed. `npm run test:browser`: 11/11 passed. `npm
 ## Recorded control walkthrough
 
 - Brand link: returns to index.html in both HTTP and standalone file modes.
-- Cara bermain: opens instructions; close button, Escape, and Siap, ayo putar close them.
+- Cara bermain: opens instructions; close button, Escape, and Tutup panduan close them.
 - Putar roda: creates one draw, disables repeat interaction during animation, and lands on the stored winning segment.
 - Result close: preserves the pending result; Lihat hadiahmu reopens it.
 - Hadiah sudah diterima: clears the pending handover while retaining history and deducted stock.

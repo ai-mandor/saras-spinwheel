@@ -96,7 +96,7 @@ function renderControls() {
   $('#staff-button').disabled = spinning;
   $('#spin-status').textContent = !storageHealthy ? 'Penyimpanan perlu diperiksa panitia.' : spinning ? 'Rodanya berputar… tunggu kejutanmu.' : session.pending ? 'Hadiahmu sudah terpilih dan siap diambil.' : available ? 'Siap untuk giliranmu?' : 'Terima kasih! Semua hadiah sudah dibagikan.';
   spinButton.textContent = spinning ? 'Sedang berputar…' : session?.pending ? 'Lihat hadiahmu' : !available ? 'Hadiah sudah habis' : 'Putar roda';
-  $('#control-note').textContent = session?.pending && !spinning ? 'Selesaikan pengambilan hadiah untuk giliran berikutnya.' : 'Hasil hadiah akan muncul setelah roda berhenti.';
+  $('#control-note').textContent = session?.pending && !spinning ? 'Selesaikan pengambilan hadiah untuk giliran berikutnya.' : '';
 }
 
 function showError(message) {
@@ -137,7 +137,6 @@ function openDialog(id) {
 function presentResult(celebrate = false) {
   if (!session.pending) return;
   $('#result-prize').textContent = session.pending.label;
-  $('#result-number').textContent = 'Terima kasih sudah bermain!';
   $('#ticket-number').textContent = `Giliran ${String(session.pending.number).padStart(3, '0')}`;
   openDialog('result-dialog');
   if (celebrate && !reducedMotion.matches) {

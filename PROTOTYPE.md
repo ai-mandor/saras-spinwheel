@@ -12,7 +12,7 @@ Three variants share the existing index route and the same in-memory game state:
 | B, Laci samping | Wheel centered on the full page; settings open in a drawer on the right | Below the wheel |
 | C, Editor kiri | Settings editor on the left; larger wheel in the main area | Inside the wheel hub |
 
-Run `npm run prototype`, then open `http://127.0.0.1:4175/?prototype=1&variant=A`. B and C use the same URL with `variant=B` or `variant=C`. The floating bottom switcher and keyboard Left/Right change this parameter without resetting state. Arrow keys inside inputs are left alone.
+Run `npm run prototype`, then open `http://127.0.0.1:4175/?prototype=1&variant=B`. B is selected and is the default even without a variant parameter. A/C remain comparison references. The floating bottom switcher and keyboard Left/Right change this parameter without resetting state. Arrow keys inside inputs are left alone.
 
 For an offline preview, run `npm run build` and open `dist/saras-duotone.prototype.html`. That filename explicitly enables the comparison bar on local files. The normal index and non-local hosts hide the bar unless appropriate local prototype conditions are met. CSS, JavaScript, and the recolored original logo are embedded. No fonts or images are fetched externally.
 
@@ -24,6 +24,6 @@ The spin core is unchanged: equal odds among prize types with stock, stock reser
 
 Primary-source branch: `prototype/saras-duotone`. The previous layout prototype remains on `prototype/centered-wheel`; main is unaffected. No implementation issue was provided. This file and the branch commit retain the question, decisions, and review context.
 
-Verdict: the two-color physical-wheel direction is implemented and browser-reviewed. A/B/C selection remains pending owner review. Once selected, port the chosen composition into the real app and keep comparison controls on the prototype branch.
+Verdict: the owner selected B on 2026-11-25 and requested the actual SARAS palette. B now opens by default; pink/cream, accessible rose, and neutral label ink come from the app's Color+Saras.swift. The revised palette was browser-reviewed. Comparison alternatives stay captured on this prototype branch.
 
 No automated test suite was added for this throwaway UI. An ignored browser inspection script drove Chrome to record click-throughs and screenshots. The inherited tests target the earlier implementation and were not presented as validation of this prototype. Evidence and limitations are recorded in VERIFICATION.md.

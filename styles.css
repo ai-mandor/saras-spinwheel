@@ -1,10 +1,12 @@
 :root {
   color-scheme: light;
-  --rose: #7D304C;
-  --cream: #FFF6E9;
-  --muted: color-mix(in srgb, var(--rose) 85%, var(--cream));
+  --pink: #E983A7;
+  --rose: #9D3E61;
+  --cream: #FFF8F1;
+  --ink: #2B2125;
+  --muted: color-mix(in srgb, var(--rose) 92%, var(--cream));
   --line: color-mix(in srgb, var(--rose) 24%, var(--cream));
-  --control-line: color-mix(in srgb, var(--rose) 64%, var(--cream));
+  --control-line: color-mix(in srgb, var(--rose) 74%, var(--cream));
   --wash: color-mix(in srgb, var(--rose) 5%, var(--cream));
   --shadow: color-mix(in srgb, var(--rose) 16%, transparent);
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -42,7 +44,7 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid 
 .layout { min-height: calc(100dvh - 72px); padding-bottom: 80px; }
 .game { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 24px; min-width: 0; padding: 24px; position: relative; }
 .wheel-stage { position: relative; flex-shrink: 0; width: min(100%, calc(100dvh - 304px), 47rem); padding-top: 20px; }
-.wheel-frame { position: relative; padding: 12px; border: 2px solid var(--rose); border-radius: 50%; background: var(--rose); outline: 1px solid var(--line); outline-offset: 6px; box-shadow: 0 10px 20px -16px color-mix(in srgb, var(--rose) 65%, transparent); }
+.wheel-frame { position: relative; padding: 12px; border: 2px solid var(--rose); border-radius: 50%; background: var(--pink); outline: 1px solid var(--line); outline-offset: 6px; box-shadow: 0 10px 20px -16px color-mix(in srgb, var(--rose) 65%, transparent); }
 .wheel-frame::before { content: ""; position: absolute; inset: 5px; border: 1px solid color-mix(in srgb, var(--cream) 60%, var(--rose)); border-radius: 50%; pointer-events: none; }
 #wheel { display: block; width: 100%; height: auto; border-radius: 50%; will-change: transform; }
 .pointer { position: absolute; width: 48px; height: 75px; top: -8px; left: 50%; transform: translateX(-50%); z-index: 3; pointer-events: none; }

@@ -9,7 +9,7 @@ const prizes = [
   { id: 'pouch', label: 'Pouch', quantity: 8 },
   { id: 'totebag', label: 'Tote bag', quantity: 5 },
 ];
-const colors = ['var(--rose)', 'var(--cream)'];
+const colors = ['var(--pink)', 'var(--cream)'];
 const names = { A: 'Panel kanan', B: 'Laci samping', C: 'Editor kiri' };
 const $ = selector => document.querySelector(selector);
 const layout = $('#layout'), game = $('#game'), panel = $('#settings-panel');
@@ -18,8 +18,8 @@ const hubBrand = $('#hub-brand'), actions = $('#game-actions');
 const mobile = matchMedia('(max-width:900px)');
 let session = createSession(prizes);
 let rotation = 0, spinning = false, settingsOpen = false;
-let variant = new URL(location.href).searchParams.get('variant')?.toUpperCase() || 'A';
-if (!names[variant]) variant = 'A';
+let variant = new URL(location.href).searchParams.get('variant')?.toUpperCase() || 'B';
+if (!names[variant]) variant = 'B';
 const prototypeMode = ['localhost','127.0.0.1',''].includes(location.hostname) && (new URL(location.href).searchParams.has('prototype') || location.pathname.endsWith('.prototype.html'));
 $('#prototype-switcher').hidden = !prototypeMode;
 
@@ -87,9 +87,9 @@ function drawWheel() {
     const start = (i * angle - 90) * Math.PI / 180, end = ((i + 1) * angle - 90) * Math.PI / 180;
     const x1 = 280 + 266 * Math.cos(start), y1 = 280 + 266 * Math.sin(start);
     const x2 = 280 + 266 * Math.cos(end), y2 = 280 + 266 * Math.sin(end);
-    const ink = colors[(i + 1) % colors.length];
+    const ink = 'var(--ink)';
     const surface = prize.quantity || session.pending?.prizeId === prize.id ? colors[i % colors.length] : 'color-mix(in srgb, var(--rose) 16%, var(--cream))';
-    wheel.append(svgNode('path', { d: 'M280 280L' + x1 + ' ' + y1 + 'A266 266 0 0 1 ' + x2 + ' ' + y2 + 'Z', fill: surface, stroke:'var(--cream)','stroke-width':1 }));
+    wheel.append(svgNode('path', { d: 'M280 280L' + x1 + ' ' + y1 + 'A266 266 0 0 1 ' + x2 + ' ' + y2 + 'Z', fill: surface, stroke:'var(--ink)','stroke-width':.75 }));
     const degrees = (i + .5) * angle - 90, radians = degrees * Math.PI / 180;
     const orientation = degrees > 90 && degrees < 270 ? degrees + 180 : degrees;
     const text = svgNode('text', { transform:'translate(' + (280 + 169 * Math.cos(radians)) + ' ' + (280 + 169 * Math.sin(radians)) + ') rotate(' + orientation + ')', 'text-anchor':'middle','dominant-baseline':'middle',fill:!prize.quantity && session.pending?.prizeId !== prize.id ? 'var(--rose)' : ink,'font-family':'Georgia,Times New Roman,serif','font-weight':400,'font-size':size });
@@ -119,7 +119,7 @@ function drawWheel() {
       }
     }
     const tickAngle = i * angle * Math.PI / 180;
-    wheel.append(svgNode('path', { d:'M' + (280 + 248 * Math.sin(tickAngle)) + ' ' + (280 - 248 * Math.cos(tickAngle)) + 'L' + (280 + 258 * Math.sin(tickAngle)) + ' ' + (280 - 258 * Math.cos(tickAngle)), stroke:'var(--cream)','stroke-width':2 }));
+    wheel.append(svgNode('path', { d:'M' + (280 + 248 * Math.sin(tickAngle)) + ' ' + (280 - 248 * Math.cos(tickAngle)) + 'L' + (280 + 258 * Math.sin(tickAngle)) + ' ' + (280 - 258 * Math.cos(tickAngle)), stroke:'var(--ink)','stroke-width':1 }));
   });
   wheel.append(svgNode('circle', { cx:280,cy:280,r:268,fill:'none',stroke:'var(--cream)','stroke-width':4 }));
   wheel.setAttribute('aria-label', 'Roda hadiah: ' + session.prizes.map(p => p.label + (p.quantity ? '' : ' habis')).join(', '));

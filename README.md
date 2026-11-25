@@ -16,6 +16,8 @@ Visit http://127.0.0.1:4175/?prototype=1&variant=B. B is also the default withou
 
 On mobile, settings use a drawer. Data shows the full in-memory session. Reloading restores example merchandise and inventory; there is no persistence or external service.
 
+A custom SARAS-colored confetti burst celebrates each new landing. It runs once, cleans up automatically, respects reduced motion, and keeps result controls usable. Reopening the same prize does not trigger another burst.
+
 `npm run build` creates self-contained HTML previews, including the existing recolored SARAS vector. The prototype comparison bar appears only on a local host with `?prototype=1`, or in the local `.prototype.html` file. Runtime dependencies and internet access are unnecessary.
 
 The exploration is captured on `prototype/saras-duotone`. Selection: B, with the SARAS palette. See [PROTOTYPE.md](PROTOTYPE.md) for context, [DESIGN.md](DESIGN.md) for decisions, and [VERIFICATION.md](VERIFICATION.md) for the delivery gate and browser observations.

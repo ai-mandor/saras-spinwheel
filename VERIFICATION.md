@@ -17,6 +17,21 @@ Date: 2026-11-25. Method: local Chrome click-through, screenshots, computed dime
 - Evidence is local in ignored `artifacts/`: desktop/mobile A/B/C, result, settings drawer, active spin, keyboard focus, enlarged text, long labels, exhausted stock, and `preview-observations.json`.
 - Lighthouse, field Web Vitals, screen-reader behavior, and Safari/device behavior were not measured.
 
+## Custom confetti follow-up
+
+The owner requested confetti on landing, then explicitly chose an original implementation. The effect uses a local canvas and no external library. Chrome observations are in `artifacts/confetti-observations.json`; desktop/mobile screenshots were inspected.
+
+- Timing PASS: canvas hidden during the spin; visible painted particles after the wheel settles and the result opens.
+- Once per prize PASS: reopening the same pending result does not replay confetti or deduct stock again.
+- Cleanup PASS: after 3.2 seconds, the canvas is hidden and resized to 1×1; no painted pixels remain.
+- Handover PASS: the handover button works during the burst, clears pending state, and immediately releases the canvas.
+- Escape PASS: closing the result during a burst hides and releases the canvas.
+- Reduced motion PASS: changing the preference during a burst cancels it; a reduced-motion landing produces no confetti.
+- Mobile PASS: painted canvas at 390×844, readable result controls, no pointer interception, and no horizontal page overflow after landing.
+- Wheel clipping PASS: inspected the rotated SVG's square bounds extending past the viewport; circular frame clipping now keeps page scroll width at 390 px.
+- Offline PASS: the standalone HTML paints confetti with zero external script sources.
+- Console PASS: no browser exceptions or console errors in the focused follow-up.
+
 ## Control-by-control click-through
 
 - Brand link PASS: navigates to the existing index route and restores a fresh example session.
@@ -60,11 +75,11 @@ Each line records the rule and the evidence for this prototype.
 - R-16 PASS: no generic AI marketing phrases.
 - R-17 PASS: inventory is visibly labelled example data; counts derive from actual session draws.
 - R-18 PASS: no testimonials or invented people.
-- R-19 PASS: only user-triggered wheel/control motion; normal spin under five seconds, reduced-motion path observed.
+- R-19 PASS: action-triggered wheel motion and the explicitly requested landing celebration; each lasts under five seconds. The 3.2-second confetti burst is skipped/cancelled under reduced motion and never replays for a reopened result.
 - R-20 PASS: SARAS pink/cream printed face, concentric cap, and petal pointer create a coherent wheel object beyond the product name.
 - R-21 PASS: one intentional light scheme follows the supplied SARAS character; no theme toggle requested or shipped.
 - R-22 PASS: no generic illustration; the owner's original vector geometry is retained.
-- R-23 PASS: existing brand asset and expressly requested wheel/pointer refinement; example stock is disclosed.
+- R-23 PASS: existing brand asset, expressly requested wheel/pointer refinement, and explicitly authorized original confetti; example stock is disclosed.
 - R-24 PASS: the only navigation link resolves to an existing index page.
 - R-25 PASS: calculated sRGB contrast: ink/pink 6.14:1; rose/cream 6.05:1; muted text/cream 5.15:1; rose/sold-out surface 4.78:1; input rule/cream 3.57:1. Pink is a surface rather than small text on cream.
 - R-26 PASS: every visible control was exercised as recorded above; no placeholder action.
@@ -76,12 +91,12 @@ Each line records the rule and the evidence for this prototype.
 - R-32 PASS: native controls and dialogs, visible focus, Enter activation, Escape dismissal, dialog Tab handling, and input-safe arrows.
 - R-33 PASS: source edited with native patches; build only packages the already-written source into standalone HTML.
 - R-34 PASS: the sole shipped light scheme was previewed through normal, disabled, settings, and result states.
-- R-35 PASS: build, browser screenshots, and the element-by-element click-through above were completed with no console errors.
+- R-35 PASS: build, screenshots, the element-by-element click-through, and the focused confetti checks above completed with no console errors.
 - R-36 PASS: no fabricated business, security, customer, or performance claims; unmeasured areas are named above.
 - R-37 PASS: the owner's explicit refinement brief was interpreted before implementation; DESIGN.md records the critical assessment and dials.
 - R-38 PASS: actual SARAS branding, honest example merchandise, and real in-memory counts; no fictional endorsements.
-- R-39 PASS: native named controls, visible field labels, decorative alt text, pointer/not-allowed cursors, hover/press/disabled treatments, reduced motion, lang/title/landmarks, and unrestricted viewport zoom.
-- R-40 PASS: logo images have explicit dimensions; the inline wheel has a fixed viewBox and dimensions; no third-party scripts, lazy hero, external font, or late remote content.
+- R-39 PASS: native named controls, visible labels, focus/interaction states, reduced motion, and unrestricted zoom; confetti is aria-hidden and pointer-transparent, with result text/buttons above its paint layer.
+- R-40 PASS: images/SVG have dimensions; the fixed canvas reserves its own overlay bounds, caps pixel density at 2, and releases its buffer after use. No third-party script, external font, or late remote content.
 
 ## Liveliness gate
 

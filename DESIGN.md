@@ -2,7 +2,7 @@
 
 Question: can the existing wheel feel like a SARAS object through proportion, typography, geometry, and two colors, while retaining the centered wheel, side settings, and spin interaction?
 
-The owner's direction is a restrained, tactile refinement. The owner selected composition B and requested the actual SARAS palette. Existing wheel structure and functionality stay. No promotional hero, new game type, confetti, or extra feature is required.
+The owner's direction is a restrained, tactile refinement. The owner selected composition B, requested the actual SARAS palette, and then explicitly requested custom confetti on landing. Existing wheel structure and functionality stay.
 
 Dial: ENERGY 2 / RHYTHM 1 / MOTION 2.
 
@@ -23,6 +23,7 @@ Decisions:
 - The side editor uses aligned underline fields and a quieter type hierarchy. It remains subordinate to the wheel and keeps visible labels.
 - Composition B is selected and is the default: a full-width centered wheel and right settings drawer. A/C remain available only as comparison references in this prototype. This changes rendering, not probability, stock deduction, or handover behavior.
 - A single push, sustained rotation, and eased deceleration communicate the spin. Pointer feedback stops with the wheel. Reduced motion skips the extended rotation and deflection.
-- A calm result surface emphasizes the actual prize and handover action, without confetti or fabricated celebration.
+- A custom 3.2-second confetti burst marks a newly landed prize. Rectangular pink, rose, and cream pieces launch from both sides, tumble under gravity, and clear themselves. The canvas sits in the result dialog's top layer with no pointer interception; prize text and controls paint above it. Reopening an existing result does not replay the effect. Closing or handing over stops it; reduced motion skips it entirely.
+- Clipping the rotating SVG inside its circular frame prevents the invisible corners of its square bounds from expanding the mobile page after an angled landing.
 - The original SARAS vector geometry is retained and recolored into the two approved base colors. The wordmark stays small; no marketing copy is introduced.
 - The state inspector and bottom switcher belong to the local prototype reviewer, not the visitor's page. All inventory remains example data in memory.

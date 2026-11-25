@@ -22,6 +22,8 @@ Data lives only in memory. Refresh restores example inventory. There are no loca
 
 The spin core is unchanged: equal odds among prize types with stock, stock reserved at selection, one pending result until handover. Rendering, motion, and presentation are refined. The normal spin lasts 4.6 seconds; reduced motion uses 120 ms without pointer deflection.
 
+The owner subsequently requested custom confetti. A self-contained canvas burst runs once after a new spin lands, using the SARAS palette, and clears after 3.2 seconds. It never replays when reopening the same prize. Reduced motion, dialog dismissal, and handover cancel it. No external library or CodePen dependency is used.
+
 Primary-source branch: `prototype/saras-duotone`. The previous layout prototype remains on `prototype/centered-wheel`; main is unaffected. No implementation issue was provided. This file and the branch commit retain the question, decisions, and review context.
 
 Verdict: the owner selected B on 2026-11-25 and requested the actual SARAS palette. B now opens by default; pink/cream, accessible rose, and neutral label ink come from the app's Color+Saras.swift. The revised palette was browser-reviewed. Comparison alternatives stay captured on this prototype branch.

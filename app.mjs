@@ -16,6 +16,9 @@ const layout = $('#layout'), game = $('#game'), panel = $('#settings-panel');
 const wheel = $('#wheel'), spinButton = $('#spin-button'), hub = $('#wheel-hub');
 const hubBrand = $('#hub-brand'), actions = $('#game-actions');
 const mobile = matchMedia('(max-width:900px)');
+const motionPreference = matchMedia('(prefers-reduced-motion:reduce)');
+const confetti = $('#confetti');
+let confettiFrame;
 let session = createSession(prizes);
 let rotation = 0, spinning = false, settingsOpen = false;
 let variant = new URL(location.href).searchParams.get('variant')?.toUpperCase() || 'B';
@@ -49,7 +52,7 @@ function updatePanel() {
 }
 
 function showState() {
-  const state = { variant, layout: names[variant], spinning, rotation, settingsOpen, session };
+  const state = { variant, layout: names[variant], spinning, rotation, settingsOpen, confettiPlaying:!confetti.hidden, session };
   $('#state-json').textContent = JSON.stringify(state, null, 2);
   if (prototypeMode) console.info('SARAS layout prototype', state);
 }
@@ -167,11 +170,71 @@ function renderSettings() {
   renderControls(); showState();
 }
 
-function presentResult() {
+function stopConfetti() {
+  cancelAnimationFrame(confettiFrame);
+  confetti.hidden = true;
+  confetti.width = confetti.height = 1;
+}
+
+function celebratePrize() {
+  stopConfetti();
+  if (motionPreference.matches) return;
+  const context = confetti.getContext('2d');
+  if (!context) return;
+  const width = innerWidth, height = innerHeight;
+  const density = Math.min(devicePixelRatio || 1, 2);
+  confetti.width = Math.round(width * density);
+  confetti.height = Math.round(height * density);
+  context.scale(density, density);
+  const style = getComputedStyle(document.documentElement);
+  const palette = ['--pink','--rose','--cream'].map(color => style.getPropertyValue(color).trim());
+  const particles = Array.from({ length:width < 600 ? 80 : 140 }, (_, index) => {
+    const side = index % 2;
+    return {
+      x:width * (side ? .88 : .12), y:height * .72,
+      vx:(side ? -1 : 1) * (180 + Math.random() * 380) * Math.min(width / 1000, 1),
+      vy:-(480 + Math.random() * 360) * Math.min(height / 800, 1),
+      delay:Math.random() * .16, angle:Math.random() * Math.PI,
+      turn:(Math.random() - .5) * 16, size:5 + Math.random() * 4,
+      color:palette[index % palette.length],
+    };
+  });
+  confetti.hidden = false;
+  const start = performance.now();
+  function draw(now) {
+    const elapsed = (now - start) / 1000;
+    context.clearRect(0, 0, width, height);
+    if (elapsed >= 3.2) { stopConfetti(); return; }
+    for (const particle of particles) {
+      const time = elapsed - particle.delay;
+      if (time < 0) continue;
+      const x = particle.x + particle.vx * time;
+      const y = particle.y + particle.vy * time + 500 * time * time;
+      if (y > height + 24) continue;
+      context.save();
+      context.globalAlpha = Math.min(1, (3.2 - elapsed) / .5);
+      context.translate(x, y);
+      context.rotate(particle.angle + particle.turn * time);
+      context.scale(1, Math.cos(particle.angle + time * 10));
+      context.fillStyle = particle.color;
+      context.fillRect(-particle.size / 2, -particle.size, particle.size, particle.size * 2);
+      context.restore();
+    }
+    confettiFrame = requestAnimationFrame(draw);
+  }
+  confettiFrame = requestAnimationFrame(draw);
+}
+
+function presentResult(celebrate = false) {
   $('#result-prize').textContent = session.pending.label;
   $('#result-turn').textContent = 'Giliran ' + String(session.pending.number).padStart(3, '0');
   if (!$('#result-dialog').open) $('#result-dialog').showModal();
+  if (celebrate) celebratePrize();
 }
+
+$('#result-dialog').addEventListener('close', stopConfetti);
+$('#result-dialog').addEventListener('cancel', stopConfetti);
+motionPreference.addEventListener('change', event => { if (event.matches) stopConfetti(); });
 
 spinButton.addEventListener('click', async () => {
   if (spinning) return;
@@ -180,7 +243,7 @@ spinButton.addEventListener('click', async () => {
   spinning = true; renderControls(); renderSettings();
   const index = session.prizes.findIndex(p => p.id === session.pending.prizeId);
   const target = targetRotation(index, session.prizes.length, rotation);
-  const reducedMotion = matchMedia('(prefers-reduced-motion:reduce)').matches;
+  const reducedMotion = motionPreference.matches;
   const animation = wheel.animate([{ transform:'rotate(' + rotation + 'deg)' }, { transform:'rotate(' + target + 'deg)' }], { duration:reducedMotion ? 120 : 4600,easing:'cubic-bezier(.12,.74,.13,1)',fill:'forwards' });
   let frame, lastSegment = Math.floor(rotation / (360 / session.prizes.length));
   const pointer = $('#pointer-body');
@@ -199,10 +262,11 @@ spinButton.addEventListener('click', async () => {
   cancelAnimationFrame(frame);
   pointer.getAnimations().forEach(tick => tick.cancel());
   rotation = target; wheel.style.transform = 'rotate(' + rotation + 'deg)'; animation.cancel();
-  spinning = false; drawWheel(); renderControls(); renderSettings(); presentResult();
+  spinning = false; drawWheel(); renderControls(); renderSettings(); presentResult(true);
 });
 
 $('#next-button').addEventListener('click', () => {
+  stopConfetti();
   session = nextVisitor(session); $('#result-dialog').close();
   drawWheel(); renderSettings(); spinButton.focus();
 });
@@ -225,7 +289,10 @@ $('#close-settings').addEventListener('click', () => { settingsOpen = false; upd
 $('#previous-variant').addEventListener('click', () => cycleVariant(-1));
 $('#next-variant').addEventListener('click', () => cycleVariant(1));
 $('#show-state').addEventListener('click', () => { showState(); $('#state-dialog').showModal(); });
-document.querySelectorAll('[data-close]').forEach(button => button.addEventListener('click', () => document.getElementById(button.dataset.close).close()));
+document.querySelectorAll('[data-close]').forEach(button => button.addEventListener('click', () => {
+  if (button.dataset.close === 'result-dialog') stopConfetti();
+  document.getElementById(button.dataset.close).close();
+}));
 document.addEventListener('keydown', event => {
   if (event.key === 'Escape' && settingsOpen && !document.querySelector('dialog[open]')) {
     settingsOpen = false; updatePanel(); showState(); $('#settings-toggle').focus(); return;

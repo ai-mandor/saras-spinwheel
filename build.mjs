@@ -9,13 +9,22 @@ const [html, css, core, app, logo] = await Promise.all([
   readFile(new URL('assets/saras-logo.svg', root)),
 ]);
 const logoUrl = `data:image/svg+xml;base64,${logo.toString('base64')}`;
-const script = core.replaceAll('export function ', 'function ') + '\n' + app.replace(/^import[^\n]*\n/, '');
-const output = html
+let bundledApp = app;
+let bundledHtml = html;
+for (const name of ['saras','claude','bug-fitur','codex']) {
+  const path = 'assets/stickers/' + name + '.png';
+  const image = await readFile(new URL(path, root));
+  const url = 'data:image/png;base64,' + image.toString('base64');
+  bundledApp = bundledApp.replaceAll('./' + path, url);
+  bundledHtml = bundledHtml.replaceAll('./' + path, url);
+}
+const script = core.replaceAll('export function ', 'function ') + '\n' + bundledApp.replace(/^import[^\n]*\n/, '');
+const output = bundledHtml
   .replace('<link rel="stylesheet" href="./styles.css">', `<style>\n${css}\n</style>`)
-  .replace('    <script type="module" src="./app.mjs"></script>\n', '')
+  .replace(/\s*<script type="module" src="\.\/app\.mjs"><\/script>\n/, '\n')
   .replaceAll('./assets/saras-logo.svg', logoUrl)
   .replace('</body>', `<script type="module">\n${script.replaceAll('</script', '<\\/script')}\n</script>\n  </body>`);
 await mkdir(new URL('dist/', root), { recursive: true });
 await writeFile(new URL('dist/index.html', root), output);
 await writeFile(new URL('dist/.nojekyll', root), '');
-console.log('dist/index.html siap: satu file, tanpa permintaan aset eksternal.');
+console.log('dist/index.html siap: roda B dengan aset stiker tertanam, tanpa koneksi eksternal.');

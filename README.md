@@ -1,47 +1,41 @@
-# SARAS showcase spinwheel
+# SARAS sticker wheel
 
-Static booth prototype using HTML, CSS, native JavaScript modules, and the existing SARAS logo. No runtime packages, API keys, or backend.
+The selected B layout: a large centered wheel, right settings drawer, four transparent sticker designs, and a short custom confetti burst after a new landing. The winning dialog shows only Stikermu, the image, and the handover action.
 
-GitHub Pages URL: https://ai-mandor.github.io/saras-spinwheel/
+Site: https://ai-mandor.github.io/saras-spinwheel/
 
-## Preview
-
-For a preview that opens directly from Finder, run `npm run build` and open `dist/index.html`. This standalone file embeds the CSS, JavaScript, and logo, so it also works without a server or an internet connection.
+## Run locally
 
 ```sh
+npm ci
 npm start
 ```
 
-Open http://127.0.0.1:4173. Use an HTTP server rather than opening `index.html` as a file, because the app uses JavaScript modules.
+Open http://127.0.0.1:4173. Run `npm run build` to create `dist/index.html`, a self-contained offline copy with embedded CSS, JavaScript, logo, and sticker PNGs.
 
-## Booth operation
+## Booth use
 
-1. Open **Panel panitia** and replace the example merchandise names and remaining quantities.
-2. Visitors press **Putar roda**. Each available prize type has equal probability, regardless of remaining quantity.
-3. Give the visitor the selected prize, then press **Hadiah sudah diterima** for the next visitor.
-4. Download the history as CSV from the staff panel when needed.
+- Open Pengaturan and set the actual names and quantities. Initial stock is clearly labelled example data: 20 of each sticker.
+- Press Putar roda. Each sticker type with stock has equal odds.
+- Give the winner their sticker, then press Hadiah sudah diterima.
+- Unduh CSV exports history. Reset contoh requires confirmation before restoring examples and clearing history.
 
-Inventory and draw history are saved in localStorage on this browser and origin. Use one tab on one supervised booth device. This prototype does not synchronize inventory across visitor phones, authenticate staff, or enforce one participation per person. Staff confirmation is a handover action, not a secure redemption system.
+Stock and history persist in localStorage on this browser and origin. The selected prize is saved before animation; reload restores the same pending result without another deduction or celebration. Storage errors stop drawing, and corrupt data is retained until an explicit reset. Web Locks serialize updates between tabs where available.
 
-Stock is deducted and the outcome saved before animation. Refreshing the page restores the same outcome. Storage failures stop drawing rather than silently discarding history. A corrupted session can be reset through the staff panel after explicit confirmation.
+Use one supervised booth browser. Stock is not shared across devices, settings are not authenticated, and the page does not enforce one spin per person.
 
-## GitHub Pages
+## Publish
 
-1. Put this project's source in a dedicated GitHub repository.
-2. In **Settings → Pages**, choose **Deploy from a branch**.
-3. Select `main` and `/(root)`, then save.
+GitHub Pages serves `main` from `/(root)`. Relative asset paths support the repository subpath. The root `.nojekyll` disables Jekyll processing. Source files can be served directly; there are no runtime services, external libraries, fonts, or API credentials.
 
-`index.html`, `styles.css`, `app.mjs`, `spin-core.mjs`, `assets/`, and `.nojekyll` must be present. All asset URLs are relative, supporting both a user site and a project URL such as `/saras-spinwheel/`. No build step is required. The development-only `node_modules` folder must not be committed.
+The accepted exploration is retained on [prototype/saras-duotone](https://github.com/ai-mandor/saras-spinwheel/tree/prototype/saras-duotone) at `7c70f3f`. Main contains B only, without comparison variants, raw state inspection, or prototype controls.
 
-Alternatively, run `npm run build` and upload only the contents of `dist/` to the repository root. This is the same app packaged as a single HTML file.
-
-Official instructions: https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site
-
-## Verification
+## Verify
 
 ```sh
 npm test
+npm run build
 npm run test:browser
 ```
 
-Browser checks use the installed Google Chrome through Playwright. They cover the visitor flow, stock changes, reload recovery, editing, CSV download, reset confirmation, storage failure, keyboard dialogs, and responsive layouts.
+Keep `npm start` running in a separate terminal for browser checks. Tests use installed Google Chrome via Playwright. See [VERIFICATION.md](VERIFICATION.md), [DESIGN.md](DESIGN.md), and [sticker provenance](assets/stickers/README.md).

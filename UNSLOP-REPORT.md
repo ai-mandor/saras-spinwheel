@@ -1,3 +1,5 @@
+Historical review of the interface at 68ae8f4, before layout B was selected. Current design and validation are recorded in DESIGN.md and VERIFICATION.md. The private-repository deployment blocker described below has since been resolved by the repository owner.
+
 Heavy.
 
 Applied the owner-requested [unslop-ui skill](https://github.com/felipebasurto/unslop-ui/blob/main/skills/unslop-ui/SKILL.md), including its surface pass, to index.html and styles.css. Repeated captions occurred across the main view and all three primary dialogs. No taste file was present.

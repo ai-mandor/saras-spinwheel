@@ -7,6 +7,10 @@
   <title>SARAS · Prototype spinwheel</title>
   <link rel="icon" href="./assets/saras-logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./styles.css">
+  <link rel="preload" as="image" href="./assets/stickers/saras.png">
+  <link rel="preload" as="image" href="./assets/stickers/claude.png">
+  <link rel="preload" as="image" href="./assets/stickers/bug-fitur.png">
+  <link rel="preload" as="image" href="./assets/stickers/codex.png">
   <script type="module" src="./app.mjs"></script>
 </head>
 <body>
@@ -32,8 +36,8 @@
       <p id="spin-status" class="sr-only" role="status" aria-live="polite"></p>
     </section>
     <aside id="settings-panel" class="settings-panel" aria-labelledby="settings-heading">
-      <div class="panel-heading"><h2 id="settings-heading">Hadiah di roda</h2><button id="close-settings" class="icon-button" type="button" aria-label="Tutup pengaturan"><span aria-hidden="true">×</span></button></div>
-      <p class="sample-note">Hadiah contoh untuk prototype.</p>
+      <div class="panel-heading"><h2 id="settings-heading">Stiker di roda</h2><button id="close-settings" class="icon-button" type="button" aria-label="Tutup pengaturan"><span aria-hidden="true">×</span></button></div>
+      <p class="sample-note">Stok contoh untuk prototype.</p>
       <form id="prize-form"><div id="prize-fields" class="prize-fields"></div><button id="apply-button" class="secondary-button apply-button" type="submit">Terapkan hadiah</button></form>
       <div class="session-summary"><span>Putaran selesai</span><strong id="draw-count">0</strong></div>
       <ol id="history" class="history"></ol>
@@ -44,7 +48,9 @@
   <dialog id="result-dialog" aria-labelledby="result-prize">
     <canvas id="confetti" width="1" height="1" aria-hidden="true" hidden></canvas>
     <button class="dialog-close icon-button" data-close="result-dialog" type="button" aria-label="Tutup hasil"><span aria-hidden="true">×</span></button>
-    <p class="result-caption">Hadiahmu</p><h2 id="result-prize"></h2>
+    <p class="result-caption">Stikermu</p>
+    <img id="result-image" width="320" height="200" alt="" hidden>
+    <h2 id="result-prize"></h2>
     <p class="result-instruction">Ambil di booth SARAS.</p><p id="result-turn" class="result-turn"></p>
     <button id="next-button" class="primary-button" type="button">Hadiah sudah diterima</button>
   </dialog>

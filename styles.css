@@ -64,7 +64,8 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid 
 .panel-heading h2 { font: 400 1.625rem/1.25 var(--serif); letter-spacing: -.035em; margin: 0; }
 .sample-note { color: var(--muted); font-size: .8125rem; line-height: 1.65; margin: 0 0 24px; max-width: 240px; }
 .prize-fields { display: flex; flex-direction: column; gap: 14px; }
-.prize-row { display: grid; grid-template-columns: minmax(0,1fr) 60px; gap: 16px; }
+.prize-row { display: grid; grid-template-columns: 44px minmax(0,1fr) 56px; gap: 12px; align-items: end; }
+.sticker-thumbnail { width: 44px; height: 44px; object-fit: contain; margin-bottom: 2px; }
 .prize-row label { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .prize-row label span { color: var(--muted); font-size: .875rem; }
 .prize-row input { width: 100%; min-width: 0; min-height: 44px; border: 0; border-bottom: 1px solid var(--control-line); border-radius: 0; background: transparent; color: var(--rose); padding: 8px 0; font-size: 1rem; }
@@ -87,7 +88,7 @@ body[data-variant=A] #settings-toggle, body[data-variant=C] #settings-toggle { v
 .variant-b { position: relative; display: flex; justify-content: center; }
 .variant-b .game { width: 100%; min-height: calc(100dvh - 152px); }
 .variant-b .wheel-stage { width: min(100%, calc(100dvh - 304px), 54rem); }
-.variant-b .settings-panel { position: fixed; top: 84px; right: 24px; bottom: 96px; width: 312px; border: 1px solid var(--control-line); z-index: 5; overflow: auto; box-shadow: 0 8px 24px -16px var(--shadow); }
+.variant-b .settings-panel { position: fixed; top: 84px; right: 24px; bottom: 96px; width: 352px; border: 1px solid var(--control-line); z-index: 5; overflow: auto; box-shadow: 0 8px 24px -16px var(--shadow); }
 .variant-c { display: grid; grid-template-columns: 280px minmax(0,1fr); }
 .variant-c .settings-panel { border-right: 1px solid var(--line); padding-inline: 24px; }
 .variant-c .game { min-height: calc(100dvh - 152px); }
@@ -105,6 +106,8 @@ dialog h2 { margin: 12px 0 20px; font: italic 400 clamp(2rem,6vw,2.75rem)/1.15 v
 dialog .primary-button { margin-top: 28px; width: 100%; }
 .dialog-close { position: absolute; top: 8px; right: 8px; }
 .result-turn { margin-top: 24px; border-top: 1px solid var(--line); padding-top: 16px; font-variant-numeric: tabular-nums; }
+#result-image { display: block; width: 100%; height: clamp(132px,24dvh,220px); object-fit: contain; margin: 20px auto 12px; }
+#result-dialog h2 { font-size: 1.5rem; font-style: normal; margin: 12px 0 16px; }
 #confetti { position: fixed; inset: 0; width: 100vw; height: 100dvh; pointer-events: none; z-index: 1; }
 #result-dialog > :not(canvas):not(.dialog-close) { position: relative; z-index: 2; }
 #result-dialog > .dialog-close { z-index: 2; }
@@ -129,7 +132,8 @@ dialog .primary-button { margin-top: 28px; width: 100%; }
   .variant-a { grid-template-columns: minmax(0,1fr) 280px; }
   .variant-c { grid-template-columns: 260px minmax(0,1fr); }
   .settings-panel { padding-inline: 20px; }
-  .prize-row { grid-template-columns: minmax(0,1fr) 54px; gap: 12px; }
+  .prize-row { grid-template-columns: 36px minmax(0,1fr) 48px; gap: 10px; }
+  .sticker-thumbnail { width: 36px; }
 }
 @media(max-width:900px) {
   .header { min-height: 64px; padding: 8px 20px; }
@@ -143,7 +147,7 @@ dialog .primary-button { margin-top: 28px; width: 100%; }
   .pointer { width: 40px; height: 62.5px; top: -2px; }
   .wheel-hub { box-shadow: 0 0 0 1px var(--rose),0 0 0 5px var(--cream),0 0 0 6px var(--control-line),0 3px 0 6px var(--shadow); }
   .wheel-hub::after { inset: 5px; }
-  .layout .settings-panel { position: fixed; top: 76px; right: 12px; bottom: 88px; width: min(312px,calc(100% - 24px)); border: 1px solid var(--control-line); padding: 24px; z-index: 5; overflow: auto; }
+  .layout .settings-panel { position: fixed; top: 76px; right: 12px; bottom: 88px; width: min(352px,calc(100% - 24px)); border: 1px solid var(--control-line); padding: 24px; z-index: 5; overflow: auto; }
   .layout #close-settings { display: block; }
   body[data-variant] #settings-toggle { visibility: visible; }
   .prototype-label { display: none; }

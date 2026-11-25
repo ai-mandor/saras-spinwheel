@@ -2,13 +2,17 @@ import { createSession, reserveSpin, nextVisitor, targetRotation } from './spin-
 
 // Throwaway prototype: three centered-wheel layouts on this route via ?variant=A|B|C.
 const prizes = [
-  { id: 'sticker', label: 'Sticker pack', quantity: 20 },
-  { id: 'keychain', label: 'Gantungan kunci', quantity: 10 },
-  { id: 'pin', label: 'Pin SARAS', quantity: 15 },
-  { id: 'notebook', label: 'Notebook', quantity: 10 },
-  { id: 'pouch', label: 'Pouch', quantity: 8 },
-  { id: 'totebag', label: 'Tote bag', quantity: 5 },
+  { id: 'saras', label: 'SARAS', quantity: 20 },
+  { id: 'claude', label: 'In Claude We Trust', quantity: 20 },
+  { id: 'bug-fitur', label: 'BUG! Fitur!', quantity: 20 },
+  { id: 'codex', label: 'Codex Make no mistake', quantity: 20 },
 ];
+const stickerImages = {
+  saras:'./assets/stickers/saras.png',
+  claude:'./assets/stickers/claude.png',
+  'bug-fitur':'./assets/stickers/bug-fitur.png',
+  codex:'./assets/stickers/codex.png',
+};
 const colors = ['var(--pink)', 'var(--cream)'];
 const names = { A: 'Panel kanan', B: 'Laci samping', C: 'Editor kiri' };
 const $ = selector => document.querySelector(selector);
@@ -82,50 +86,31 @@ function svgNode(tag, attrs, text) {
 
 function drawWheel() {
   wheel.replaceChildren();
-  const size = Math.max(22, 14 * 560 / Math.max(wheel.clientWidth, 200));
-  const measure = document.createElement('canvas').getContext('2d');
-  measure.font = size + 'px Georgia';
+  const definitions = svgNode('defs', {});
+  wheel.append(definitions);
   const angle = 360 / session.prizes.length;
   session.prizes.forEach((prize, i) => {
     const start = (i * angle - 90) * Math.PI / 180, end = ((i + 1) * angle - 90) * Math.PI / 180;
     const x1 = 280 + 266 * Math.cos(start), y1 = 280 + 266 * Math.sin(start);
     const x2 = 280 + 266 * Math.cos(end), y2 = 280 + 266 * Math.sin(end);
-    const ink = 'var(--ink)';
-    const surface = prize.quantity || session.pending?.prizeId === prize.id ? colors[i % colors.length] : 'color-mix(in srgb, var(--rose) 16%, var(--cream))';
-    wheel.append(svgNode('path', { d: 'M280 280L' + x1 + ' ' + y1 + 'A266 266 0 0 1 ' + x2 + ' ' + y2 + 'Z', fill: surface, stroke:'var(--ink)','stroke-width':.75 }));
+    const path = 'M280 280L' + x1 + ' ' + y1 + 'A266 266 0 0 1 ' + x2 + ' ' + y2 + 'Z';
+    const soldOut = !prize.quantity && session.pending?.prizeId !== prize.id;
+    wheel.append(svgNode('path', { d:path,fill:soldOut ? 'color-mix(in srgb, var(--rose) 16%, var(--cream))' : colors[i % colors.length],stroke:'var(--ink)','stroke-width':.75 }));
+    const clip = svgNode('clipPath', { id:'segment-' + prize.id });
+    clip.append(svgNode('path', { d:path })); definitions.append(clip);
     const degrees = (i + .5) * angle - 90, radians = degrees * Math.PI / 180;
-    const orientation = degrees > 90 && degrees < 270 ? degrees + 180 : degrees;
-    const text = svgNode('text', { transform:'translate(' + (280 + 169 * Math.cos(radians)) + ' ' + (280 + 169 * Math.sin(radians)) + ') rotate(' + orientation + ')', 'text-anchor':'middle','dominant-baseline':'middle',fill:!prize.quantity && session.pending?.prizeId !== prize.id ? 'var(--rose)' : ink,'font-family':'Georgia,Times New Roman,serif','font-weight':400,'font-size':size });
-    const words = [];
-    for (const word of prize.label.split(/\s+/)) {
-      let part = '';
-      for (const letter of word) {
-        if (measure.measureText(part + letter).width > 164) { words.push(part); part = ''; }
-        part += letter;
-      }
-      if (part) words.push(part);
+    const segment = svgNode('g', { 'clip-path':'url(#segment-' + prize.id + ')' });
+    const artwork = svgNode('g', { transform:'translate(' + (280 + 164 * Math.cos(radians)) + ' ' + (280 + 164 * Math.sin(radians)) + ')' });
+    artwork.append(svgNode('image', { href:stickerImages[prize.id],x:-98,y:-66,width:196,height:132,preserveAspectRatio:'xMidYMid meet',opacity:soldOut ? .3 : 1,'aria-hidden':'true' }));
+    if (soldOut) {
+      const size = Math.max(22,14 * 560 / Math.max(wheel.clientWidth,200));
+      artwork.append(svgNode('rect', { x:-44,y:-size * .8,width:88,height:size * 1.6,rx:3,fill:'var(--cream)',stroke:'var(--rose)','stroke-width':1 }));
+      artwork.append(svgNode('text', { x:0,y:0,'text-anchor':'middle','dominant-baseline':'middle','font-family':'system-ui,sans-serif','font-size':size,fill:'var(--rose)' }, 'Habis'));
     }
-    const lines = [];
-    let line = '';
-    for (const word of words) {
-      if (line && measure.measureText(line + ' ' + word).width > 164) { lines.push(line); line = ''; }
-      line += (line ? ' ' : '') + word;
-    }
-    if (line) lines.push(line);
-    if (!prize.quantity && session.pending?.prizeId !== prize.id) lines.push('Habis');
-    lines.forEach((line, row) => text.append(svgNode('tspan', { x:0,y:(row - (lines.length - 1) / 2) * size * 1.2 }, line)));
-    wheel.append(text);
-    for (const line of text.children) {
-      if (line.getComputedTextLength() > 172) {
-        line.setAttribute('textLength', 172);
-        line.setAttribute('lengthAdjust', 'spacingAndGlyphs');
-      }
-    }
-    const tickAngle = i * angle * Math.PI / 180;
-    wheel.append(svgNode('path', { d:'M' + (280 + 248 * Math.sin(tickAngle)) + ' ' + (280 - 248 * Math.cos(tickAngle)) + 'L' + (280 + 258 * Math.sin(tickAngle)) + ' ' + (280 - 258 * Math.cos(tickAngle)), stroke:'var(--ink)','stroke-width':1 }));
+    segment.append(artwork); wheel.append(segment);
   });
   wheel.append(svgNode('circle', { cx:280,cy:280,r:268,fill:'none',stroke:'var(--cream)','stroke-width':4 }));
-  wheel.setAttribute('aria-label', 'Roda hadiah: ' + session.prizes.map(p => p.label + (p.quantity ? '' : ' habis')).join(', '));
+  wheel.setAttribute('aria-label', 'Roda stiker: ' + session.prizes.map(p => p.label + (p.quantity ? '' : ' habis')).join(', '));
 }
 
 function renderControls() {
@@ -144,9 +129,12 @@ function renderSettings() {
   fields.replaceChildren();
   session.prizes.forEach((prize, i) => {
     const row = document.createElement('div'); row.className = 'prize-row';
+    const preview = document.createElement('img');
+    preview.src = stickerImages[prize.id]; preview.alt = ''; preview.width = 44; preview.height = 44;
+    preview.className = 'sticker-thumbnail'; row.append(preview);
     for (const kind of ['name','stock']) {
       const label = document.createElement('label'), caption = document.createElement('span'), input = document.createElement('input');
-      caption.textContent = kind === 'name' ? 'Hadiah ' + (i + 1) : 'Sisa stok';
+      caption.textContent = kind === 'name' ? 'Stiker ' + (i + 1) : 'Stok';
       input.name = kind + '-' + i;
       input.type = kind === 'name' ? 'text' : 'number';
       input.value = kind === 'name' ? prize.label : prize.quantity;
@@ -226,6 +214,10 @@ function celebratePrize() {
 }
 
 function presentResult(celebrate = false) {
+  const image = $('#result-image');
+  image.src = stickerImages[session.pending.prizeId];
+  image.alt = 'Stiker ' + session.pending.label;
+  image.hidden = false;
   $('#result-prize').textContent = session.pending.label;
   $('#result-turn').textContent = 'Giliran ' + String(session.pending.number).padStart(3, '0');
   if (!$('#result-dialog').open) $('#result-dialog').showModal();

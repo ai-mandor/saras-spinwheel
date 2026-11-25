@@ -9,8 +9,17 @@ const [html, css, core, app, logo] = await Promise.all([
   readFile(new URL('assets/saras-logo.svg', root)),
 ]);
 const logoUrl = `data:image/svg+xml;base64,${logo.toString('base64')}`;
-const script = core.replaceAll('export function ', 'function ') + '\n' + app.replace(/^import[^\n]*\n/, '');
-const output = html
+let bundledApp = app;
+let bundledHtml = html;
+for (const name of ['saras','claude','bug-fitur','codex']) {
+  const path = 'assets/stickers/' + name + '.png';
+  const image = await readFile(new URL(path, root));
+  const url = 'data:image/png;base64,' + image.toString('base64');
+  bundledApp = bundledApp.replaceAll('./' + path, url);
+  bundledHtml = bundledHtml.replaceAll('./' + path, url);
+}
+const script = core.replaceAll('export function ', 'function ') + '\n' + bundledApp.replace(/^import[^\n]*\n/, '');
+const output = bundledHtml
   .replace('<link rel="stylesheet" href="./styles.css">', `<style>\n${css}\n</style>`)
   .replace(/\s*<script type="module" src="\.\/app\.mjs"><\/script>\n/, '\n')
   .replaceAll('./assets/saras-logo.svg', logoUrl)

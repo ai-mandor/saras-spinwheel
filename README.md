@@ -2,6 +2,8 @@
 
 The owner selected option B: a centered wheel with a right settings drawer. The wheel now uses the app's actual pink #E983A7 and cream #FFF8F1, with SARAS's accessible rose for controls and neutral ink for readable labels. The printed serif face, narrow rim, petal pointer, and game rules stay intact.
 
+The four prizes are now the owner's SARAS, In Claude We Trust, BUG! Fitur!, and Codex stickers. Original artwork has been cut out to transparent PNGs, shown in the wheel and settings, and enlarged in the winning result. See [asset provenance](assets/stickers/README.md). Initial stock is example data, 20 of each.
+
 Open `dist/saras-duotone.prototype.html` directly, or run:
 
 ```sh

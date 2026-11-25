@@ -12,11 +12,11 @@ const logoUrl = `data:image/svg+xml;base64,${logo.toString('base64')}`;
 const script = core.replaceAll('export function ', 'function ') + '\n' + app.replace(/^import[^\n]*\n/, '');
 const output = html
   .replace('<link rel="stylesheet" href="./styles.css">', `<style>\n${css}\n</style>`)
-  .replace('    <script type="module" src="./app.mjs"></script>\n', '')
+  .replace(/\s*<script type="module" src="\.\/app\.mjs"><\/script>\n/, '\n')
   .replaceAll('./assets/saras-logo.svg', logoUrl)
   .replace('</body>', `<script type="module">\n${script.replaceAll('</script', '<\\/script')}\n</script>\n  </body>`);
 await mkdir(new URL('dist/', root), { recursive: true });
 await writeFile(new URL('dist/index.html', root), output);
-await writeFile(new URL('dist/centered-wheel.prototype.html', root), output);
+await writeFile(new URL('dist/saras-duotone.prototype.html', root), output);
 await writeFile(new URL('dist/.nojekyll', root), '');
-console.log('dist/centered-wheel.prototype.html siap untuk membandingkan varian A, B, dan C.');
+console.log('dist/saras-duotone.prototype.html siap untuk membandingkan varian A, B, dan C.');

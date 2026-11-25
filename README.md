@@ -1,25 +1,21 @@
-# SARAS centered-wheel layout prototype
+# SARAS two-color wheel prototype
 
-Throwaway UI exploration on branch `prototype/centered-wheel`. The question and branch context are recorded in [PROTOTYPE.md](PROTOTYPE.md).
+An art-direction exploration of the existing merchandise wheel. Deep rose and warm ivory, a printed serif face, a narrow rim, and a petal-shaped pointer give the wheel a more deliberate physical identity. The central wheel and its game rules stay intact.
 
-## Open the preview
-
-Double-click `dist/centered-wheel.prototype.html`. The preview includes its JavaScript, CSS, and existing SARAS logo, and works without an internet connection.
-
-For the source route:
+Open `dist/saras-duotone.prototype.html` directly, or run:
 
 ```sh
 npm run prototype
 ```
 
-Open http://127.0.0.1:4174/?prototype=1&variant=A and use the bottom bar to compare A, B, and C. Refresh preserves the selected variant in the URL but resets the example inventory. Left/Right also switches variants when a text field or dialog is not active.
+Visit http://127.0.0.1:4175/?prototype=1&variant=A. The bottom comparison bar and Left/Right keys switch between three compositions:
 
-- A: right settings column, spin action below the wheel.
-- B: full-width centered wheel with a settings drawer on the right.
-- C: left editor and the spin action inside the wheel hub.
+- A: permanent settings column on the right, spin below the wheel.
+- B: wheel centered across the page, settings in a right drawer.
+- C: left editor, with the spin action in the center hub.
 
-Settings and spin results are in memory only. Use Data in the prototype bar to inspect the full session. Merchandise and quantities are examples.
+On mobile, settings use a drawer. Data shows the full in-memory session. Reloading restores example merchandise and inventory; there is no persistence or external service.
 
-`npm run build` refreshes both standalone HTML files in dist. No runtime packages or external services are needed. The existing test files belong to the earlier implementation; this throwaway layout does not add a test suite.
+`npm run build` creates self-contained HTML previews, including the existing recolored SARAS vector. The prototype comparison bar appears only on a local host with `?prototype=1`, or in the local `.prototype.html` file. Runtime dependencies and internet access are unnecessary.
 
-After choosing a variant, port that decision into main and leave the alternatives on this branch.
+The exploration is captured on `prototype/saras-duotone`. The owner has not selected a composition for main. See [PROTOTYPE.md](PROTOTYPE.md) for context, [DESIGN.md](DESIGN.md) for decisions, and [VERIFICATION.md](VERIFICATION.md) for the delivery gate and browser observations.

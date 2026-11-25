@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="id" data-prototype="centered-wheel">
+<html lang="id" data-prototype="saras-duotone">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#fff8f1">
-  <title>SARAS · Prototype layout spinwheel</title>
+  <meta name="theme-color" content="#FFF6E9">
+  <title>SARAS · Prototype roda dua warna</title>
   <link rel="icon" href="./assets/saras-logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./styles.css">
   <script type="module" src="./app.mjs"></script>
@@ -12,7 +12,7 @@
 <body>
   <header class="header">
     <a class="brand" href="./index.html?prototype=1" aria-label="SARAS spinwheel">
-      <img src="./assets/saras-logo.svg" alt="" width="48" height="32"><span>saras.</span>
+      <img src="./assets/saras-logo.svg" alt="" width="48" height="32" fetchpriority="high"><span>saras.</span>
     </a>
     <button id="settings-toggle" class="secondary-button" type="button" aria-controls="settings-panel" aria-expanded="false">Pengaturan</button>
   </header>
@@ -20,40 +20,45 @@
   <main id="layout" class="layout">
     <section id="game" class="game" aria-label="Spinwheel hadiah">
       <div class="wheel-stage">
-        <div class="pointer" aria-hidden="true"></div>
+        <div class="pointer" aria-hidden="true">
+          <svg id="pointer-body" viewBox="0 0 64 100" width="48" height="75"><path class="pointer-leaf" d="M32 94C27 77 8 55 8 32C8 17 18 6 32 6S56 17 56 32C56 55 37 77 32 94Z"/><circle class="pointer-pin" cx="32" cy="29" r="8"/><path class="pointer-slot" d="M27 29H37"/></svg>
+        </div>
         <div class="wheel-frame">
-          <svg id="wheel" viewBox="0 0 560 560" role="img" aria-label="Roda hadiah"></svg>
-          <div id="wheel-hub" class="wheel-hub"><div id="hub-brand" class="hub-brand"><img src="./assets/saras-logo.svg" width="70" height="47" alt=""><span>saras.</span></div></div>
+          <svg id="wheel" viewBox="0 0 560 560" width="560" height="560" role="img" aria-label="Roda hadiah"></svg>
+          <div id="wheel-hub" class="wheel-hub"><div id="hub-brand" class="hub-brand"><img src="./assets/saras-logo.svg" width="62" height="42" alt=""><span>saras.</span></div></div>
         </div>
       </div>
       <div id="game-actions" class="game-actions"><button id="spin-button" class="primary-button" type="button">Putar roda</button></div>
       <p id="spin-status" class="sr-only" role="status" aria-live="polite"></p>
     </section>
     <aside id="settings-panel" class="settings-panel" aria-labelledby="settings-heading">
-      <div class="panel-heading"><h2 id="settings-heading">Pengaturan</h2><button id="close-settings" class="icon-button" type="button" aria-label="Tutup pengaturan">×</button></div>
-      <p class="sample-note">Hadiah contoh. Perubahan hanya untuk sesi ini.</p>
+      <div class="panel-heading"><h2 id="settings-heading">Hadiah di roda</h2><button id="close-settings" class="icon-button" type="button" aria-label="Tutup pengaturan"><span aria-hidden="true">×</span></button></div>
+      <p class="sample-note">Hadiah contoh untuk prototype.</p>
       <form id="prize-form"><div id="prize-fields" class="prize-fields"></div><button id="apply-button" class="secondary-button apply-button" type="submit">Terapkan hadiah</button></form>
-      <div class="session-summary"><span>Putaran</span><strong id="draw-count">0</strong></div>
+      <div class="session-summary"><span>Putaran selesai</span><strong id="draw-count">0</strong></div>
       <ol id="history" class="history"></ol>
       <button id="reset-button" class="text-button" type="button">Reset contoh</button>
       <p id="settings-message" class="settings-message" role="status"></p>
     </aside>
   </main>
   <dialog id="result-dialog" aria-labelledby="result-prize">
-    <button class="dialog-close icon-button" data-close="result-dialog" type="button" aria-label="Tutup hasil">×</button>
-    <p>Hadiahmu</p><h2 id="result-prize"></h2><p id="result-turn"></p>
+    <button class="dialog-close icon-button" data-close="result-dialog" type="button" aria-label="Tutup hasil"><span aria-hidden="true">×</span></button>
+    <p class="result-caption">Hadiahmu</p><h2 id="result-prize"></h2>
+    <p class="result-instruction">Ambil di booth SARAS.</p><p id="result-turn" class="result-turn"></p>
     <button id="next-button" class="primary-button" type="button">Hadiah sudah diterima</button>
   </dialog>
   <dialog id="state-dialog" class="state-dialog" aria-labelledby="state-heading">
-    <button class="dialog-close icon-button" data-close="state-dialog" type="button" aria-label="Tutup data prototype">×</button>
+    <button class="dialog-close icon-button" data-close="state-dialog" type="button" aria-label="Tutup data prototype"><span aria-hidden="true">×</span></button>
     <h2 id="state-heading">State prototype</h2><pre id="state-json"></pre>
   </dialog>
-  <nav id="prototype-switcher" class="prototype-switcher" aria-label="Pilihan layout prototype" hidden>
-    <span class="prototype-label">Prototype</span>
-    <button id="previous-variant" type="button" aria-label="Varian sebelumnya">←</button>
-    <span id="variant-label" class="variant-label" role="status"></span>
-    <button id="next-variant" type="button" aria-label="Varian berikutnya">→</button>
-    <button id="show-state" class="state-button" type="button">Data</button>
-  </nav>
+  <footer class="prototype-footer">
+    <nav id="prototype-switcher" class="prototype-switcher" aria-label="Pilihan layout prototype" hidden>
+      <span class="prototype-label">Prototype</span>
+      <button id="previous-variant" type="button" aria-label="Varian sebelumnya"><span aria-hidden="true">←</span></button>
+      <span id="variant-label" class="variant-label" role="status"></span>
+      <button id="next-variant" type="button" aria-label="Varian berikutnya"><span aria-hidden="true">→</span></button>
+      <button id="show-state" class="state-button" type="button">Data</button>
+    </nav>
+  </footer>
 </body>
 </html>

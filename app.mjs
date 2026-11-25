@@ -9,7 +9,7 @@ const prizes = [
   { id: 'pouch', label: 'Pouch', quantity: 8 },
   { id: 'totebag', label: 'Tote bag', quantity: 5 },
 ];
-const colors = ['#f2d6e0','#fff0dd','#d987a8','#fbe9ef','#f0c8ae','#e6b4c7'];
+const colors = ['var(--rose)', 'var(--cream)'];
 const names = { A: 'Panel kanan', B: 'Laci samping', C: 'Editor kiri' };
 const $ = selector => document.querySelector(selector);
 const layout = $('#layout'), game = $('#game'), panel = $('#settings-panel');
@@ -79,23 +79,49 @@ function svgNode(tag, attrs, text) {
 
 function drawWheel() {
   wheel.replaceChildren();
-  const size = Math.max(20, 14 * 560 / Math.max(wheel.clientWidth, 200));
+  const size = Math.max(22, 14 * 560 / Math.max(wheel.clientWidth, 200));
+  const measure = document.createElement('canvas').getContext('2d');
+  measure.font = size + 'px Georgia';
   const angle = 360 / session.prizes.length;
   session.prizes.forEach((prize, i) => {
     const start = (i * angle - 90) * Math.PI / 180, end = ((i + 1) * angle - 90) * Math.PI / 180;
     const x1 = 280 + 266 * Math.cos(start), y1 = 280 + 266 * Math.sin(start);
     const x2 = 280 + 266 * Math.cos(end), y2 = 280 + 266 * Math.sin(end);
-    wheel.append(svgNode('path', { d: 'M280 280L' + x1 + ' ' + y1 + 'A266 266 0 0 1 ' + x2 + ' ' + y2 + 'Z', fill: prize.quantity ? colors[i % colors.length] : '#e8dfdd', stroke:'#fff8f1','stroke-width':2 }));
+    const ink = colors[(i + 1) % colors.length];
+    const surface = prize.quantity || session.pending?.prizeId === prize.id ? colors[i % colors.length] : 'color-mix(in srgb, var(--rose) 16%, var(--cream))';
+    wheel.append(svgNode('path', { d: 'M280 280L' + x1 + ' ' + y1 + 'A266 266 0 0 1 ' + x2 + ' ' + y2 + 'Z', fill: surface, stroke:'var(--cream)','stroke-width':1 }));
     const degrees = (i + .5) * angle - 90, radians = degrees * Math.PI / 180;
     const orientation = degrees > 90 && degrees < 270 ? degrees + 180 : degrees;
-    const text = svgNode('text', { transform:'translate(' + (280 + 169 * Math.cos(radians)) + ' ' + (280 + 169 * Math.sin(radians)) + ') rotate(' + orientation + ')', 'text-anchor':'middle','dominant-baseline':'middle',fill:'#2b2125','font-family':'-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif','font-weight':550,'font-size':size });
-    const words = prize.label.split(' ');
-    const lines = prize.label.length > 12 && words.length > 1 ? [words.slice(0, -1).join(' '), words.at(-1)] : [prize.label];
-    if (!prize.quantity) lines.push('Habis');
+    const text = svgNode('text', { transform:'translate(' + (280 + 169 * Math.cos(radians)) + ' ' + (280 + 169 * Math.sin(radians)) + ') rotate(' + orientation + ')', 'text-anchor':'middle','dominant-baseline':'middle',fill:!prize.quantity && session.pending?.prizeId !== prize.id ? 'var(--rose)' : ink,'font-family':'Georgia,Times New Roman,serif','font-weight':400,'font-size':size });
+    const words = [];
+    for (const word of prize.label.split(/\s+/)) {
+      let part = '';
+      for (const letter of word) {
+        if (measure.measureText(part + letter).width > 164) { words.push(part); part = ''; }
+        part += letter;
+      }
+      if (part) words.push(part);
+    }
+    const lines = [];
+    let line = '';
+    for (const word of words) {
+      if (line && measure.measureText(line + ' ' + word).width > 164) { lines.push(line); line = ''; }
+      line += (line ? ' ' : '') + word;
+    }
+    if (line) lines.push(line);
+    if (!prize.quantity && session.pending?.prizeId !== prize.id) lines.push('Habis');
     lines.forEach((line, row) => text.append(svgNode('tspan', { x:0,y:(row - (lines.length - 1) / 2) * size * 1.2 }, line)));
     wheel.append(text);
+    for (const line of text.children) {
+      if (line.getComputedTextLength() > 172) {
+        line.setAttribute('textLength', 172);
+        line.setAttribute('lengthAdjust', 'spacingAndGlyphs');
+      }
+    }
+    const tickAngle = i * angle * Math.PI / 180;
+    wheel.append(svgNode('path', { d:'M' + (280 + 248 * Math.sin(tickAngle)) + ' ' + (280 - 248 * Math.cos(tickAngle)) + 'L' + (280 + 258 * Math.sin(tickAngle)) + ' ' + (280 - 258 * Math.cos(tickAngle)), stroke:'var(--cream)','stroke-width':2 }));
   });
-  wheel.append(svgNode('circle', { cx:280,cy:280,r:270,fill:'none',stroke:'#fff8f1','stroke-width':10 }));
+  wheel.append(svgNode('circle', { cx:280,cy:280,r:268,fill:'none',stroke:'var(--cream)','stroke-width':4 }));
   wheel.setAttribute('aria-label', 'Roda hadiah: ' + session.prizes.map(p => p.label + (p.quantity ? '' : ' habis')).join(', '));
 }
 
@@ -106,6 +132,8 @@ function renderControls() {
   $('#spin-status').textContent = spinning ? 'Roda sedang berputar.' : session.pending ? 'Hadiah terpilih: ' + session.pending.label : available ? 'Roda siap diputar.' : 'Semua hadiah habis.';
   $('#apply-button').disabled = $('#reset-button').disabled = spinning || Boolean(session.pending);
   $('#draw-count').textContent = session.history.length;
+  game.dataset.spinning = String(spinning);
+  wheel.setAttribute('aria-busy', String(spinning));
 }
 
 function renderSettings() {
@@ -152,10 +180,26 @@ spinButton.addEventListener('click', async () => {
   spinning = true; renderControls(); renderSettings();
   const index = session.prizes.findIndex(p => p.id === session.pending.prizeId);
   const target = targetRotation(index, session.prizes.length, rotation);
-  const animation = wheel.animate([{ transform:'rotate(' + rotation + 'deg)' }, { transform:'rotate(' + target + 'deg)' }], { duration:matchMedia('(prefers-reduced-motion:reduce)').matches ? 120 : 4200,easing:'cubic-bezier(.12,.69,.13,1)',fill:'forwards' });
+  const reducedMotion = matchMedia('(prefers-reduced-motion:reduce)').matches;
+  const animation = wheel.animate([{ transform:'rotate(' + rotation + 'deg)' }, { transform:'rotate(' + target + 'deg)' }], { duration:reducedMotion ? 120 : 4600,easing:'cubic-bezier(.12,.74,.13,1)',fill:'forwards' });
+  let frame, lastSegment = Math.floor(rotation / (360 / session.prizes.length));
+  const pointer = $('#pointer-body');
+  function tickPointer() {
+    const progress = animation.effect.getComputedTiming().progress || 0;
+    const segment = Math.floor((rotation + (target - rotation) * progress) / (360 / session.prizes.length));
+    if (segment !== lastSegment) {
+      pointer.getAnimations().forEach(tick => tick.cancel());
+      pointer.animate([{ transform:'rotate(0deg)' }, { transform:'rotate(-7deg)',offset:.3 }, { transform:'rotate(0deg)' }], { duration:110,easing:'ease-out' });
+      lastSegment = segment;
+    }
+    frame = requestAnimationFrame(tickPointer);
+  }
+  if (!reducedMotion) frame = requestAnimationFrame(tickPointer);
   await animation.finished;
+  cancelAnimationFrame(frame);
+  pointer.getAnimations().forEach(tick => tick.cancel());
   rotation = target; wheel.style.transform = 'rotate(' + rotation + 'deg)'; animation.cancel();
-  spinning = false; renderControls(); renderSettings(); presentResult();
+  spinning = false; drawWheel(); renderControls(); renderSettings(); presentResult();
 });
 
 $('#next-button').addEventListener('click', () => {
@@ -170,6 +214,7 @@ $('#prize-form').addEventListener('submit', event => {
   $('#settings-message').textContent = 'Hadiah diperbarui untuk sesi ini.';
   drawWheel(); renderSettings();
 });
+$('#prize-form').addEventListener('invalid', () => { $('#settings-message').textContent = 'Isi nama hadiah dan stok berupa angka 0–9999.'; }, true);
 $('#reset-button').addEventListener('click', () => {
   session = createSession(prizes); rotation = 0; wheel.style.transform = 'rotate(0deg)';
   $('#settings-message').textContent = 'Contoh direset.';
@@ -182,6 +227,9 @@ $('#next-variant').addEventListener('click', () => cycleVariant(1));
 $('#show-state').addEventListener('click', () => { showState(); $('#state-dialog').showModal(); });
 document.querySelectorAll('[data-close]').forEach(button => button.addEventListener('click', () => document.getElementById(button.dataset.close).close()));
 document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && settingsOpen && !document.querySelector('dialog[open]')) {
+    settingsOpen = false; updatePanel(); showState(); $('#settings-toggle').focus(); return;
+  }
   if (!prototypeMode || event.target.closest('input,textarea,select,[contenteditable]') || document.querySelector('dialog[open]')) return;
   if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') { event.preventDefault(); cycleVariant(event.key === 'ArrowLeft' ? -1 : 1); }
 });

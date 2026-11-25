@@ -114,9 +114,8 @@ dialog p { margin: 0; color: var(--muted); font-size: .875rem; }
 dialog h2 { margin: 12px 0 20px; font: italic 400 clamp(2rem,6vw,2.75rem)/1.15 var(--serif); letter-spacing: -.04em; overflow-wrap: anywhere; }
 dialog .primary-button { margin-top: 28px; width: 100%; }
 .dialog-close { position: absolute; top: 8px; right: 8px; }
-.result-turn { margin-top: 24px; border-top: 1px solid var(--line); padding-top: 16px; font-variant-numeric: tabular-nums; }
 #result-image { display: block; width: 100%; height: clamp(132px,24dvh,220px); object-fit: contain; margin: 20px auto 12px; }
-#result-dialog h2 { font-size: 1.5rem; font-style: normal; margin: 12px 0 16px; }
+#result-dialog .result-caption { margin: 0; font: .875rem/1.5 var(--sans); letter-spacing: 0; color: var(--muted); }
 #confetti { position: fixed; inset: 0; width: 100vw; height: 100dvh; pointer-events: none; z-index: 1; }
 #result-dialog > :not(canvas):not(.dialog-close) { position: relative; z-index: 2; }
 #result-dialog > .dialog-close { z-index: 2; }
@@ -212,13 +211,11 @@ dialog .primary-button { margin-top: 28px; width: 100%; }
       <p id="settings-message" class="settings-message" role="status"></p>
     </aside>
   </main>
-  <dialog id="result-dialog" aria-labelledby="result-prize">
+  <dialog id="result-dialog" aria-labelledby="result-heading">
     <canvas id="confetti" width="1" height="1" aria-hidden="true" hidden></canvas>
     <button class="dialog-close icon-button" data-close="result-dialog" type="button" aria-label="Tutup hasil"><span aria-hidden="true">×</span></button>
-    <p class="result-caption">Stikermu</p>
+    <h2 id="result-heading" class="result-caption">Stikermu</h2>
     <img id="result-image" width="320" height="200" alt="" hidden>
-    <h2 id="result-prize"></h2>
-    <p class="result-instruction">Ambil di booth SARAS.</p><p id="result-turn" class="result-turn"></p>
     <button id="next-button" class="primary-button" type="button">Hadiah sudah diterima</button>
   </dialog>
   <dialog id="state-dialog" class="state-dialog" aria-labelledby="state-heading">
@@ -539,8 +536,6 @@ function presentResult(celebrate = false) {
   image.src = stickerImages[session.pending.prizeId];
   image.alt = 'Stiker ' + session.pending.label;
   image.hidden = false;
-  $('#result-prize').textContent = session.pending.label;
-  $('#result-turn').textContent = 'Giliran ' + String(session.pending.number).padStart(3, '0');
   if (!$('#result-dialog').open) $('#result-dialog').showModal();
   if (celebrate) celebratePrize();
 }

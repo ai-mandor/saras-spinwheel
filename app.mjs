@@ -218,8 +218,6 @@ function presentResult(celebrate = false) {
   image.src = stickerImages[session.pending.prizeId];
   image.alt = 'Stiker ' + session.pending.label;
   image.hidden = false;
-  $('#result-prize').textContent = session.pending.label;
-  $('#result-turn').textContent = 'Giliran ' + String(session.pending.number).padStart(3, '0');
   if (!$('#result-dialog').open) $('#result-dialog').showModal();
   if (celebrate) celebratePrize();
 }

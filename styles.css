@@ -105,9 +105,8 @@ dialog p { margin: 0; color: var(--muted); font-size: .875rem; }
 dialog h2 { margin: 12px 0 20px; font: italic 400 clamp(2rem,6vw,2.75rem)/1.15 var(--serif); letter-spacing: -.04em; overflow-wrap: anywhere; }
 dialog .primary-button { margin-top: 28px; width: 100%; }
 .dialog-close { position: absolute; top: 8px; right: 8px; }
-.result-turn { margin-top: 24px; border-top: 1px solid var(--line); padding-top: 16px; font-variant-numeric: tabular-nums; }
 #result-image { display: block; width: 100%; height: clamp(132px,24dvh,220px); object-fit: contain; margin: 20px auto 12px; }
-#result-dialog h2 { font-size: 1.5rem; font-style: normal; margin: 12px 0 16px; }
+#result-dialog .result-caption { margin: 0; font: .875rem/1.5 var(--sans); letter-spacing: 0; color: var(--muted); }
 #confetti { position: fixed; inset: 0; width: 100vw; height: 100dvh; pointer-events: none; z-index: 1; }
 #result-dialog > :not(canvas):not(.dialog-close) { position: relative; z-index: 2; }
 #result-dialog > .dialog-close { z-index: 2; }

@@ -9,7 +9,7 @@ Date: 2026-11-25. Method: local Chrome click-through, screenshots, computed dime
 - At 1440×1000, A/B wheel SVGs measure 668 px; C measures 752 px. The framed objects are 696 px and 780 px. All three page heights are 1000 px.
 - A/B/C opened at 320, 390, 768, 1024, and 1440 px. No horizontal page overflow; narrow drawers have no horizontal overflow.
 - At 390 px, 200% root text size causes no horizontal page or hub overflow in A/B/C. The center action grows to fit in C. Decorative hub branding scales with the cap.
-- The current wheel shows sticker artwork rather than merchandise text. Each source keeps its own aspect ratio; editable names remain in the accessible wheel description, labelled settings, and result caption.
+- The current wheel shows sticker artwork rather than merchandise text. Each source keeps its own aspect ratio; editable names remain in the accessible wheel description, labelled settings, and result image alt text.
 - Normal motion was observed during a 4.6-second spin: disabled spin/configuration, “Berputar…”, a rotating face, fixed cap, and small pointer deflections. Reduced motion uses 120 ms and no deflection.
 - The self-contained HTML opened offline, rendered the wheel, and switched variants. It has zero external script sources.
 - No JavaScript exceptions or console errors were recorded.
@@ -50,6 +50,8 @@ The user supplied four PNGs and approved direct pixel-based white removal after 
 
 ## Control-by-control click-through
 
+Result-copy follow-up PASS: the visible result now contains only Stikermu, the actual sticker image, close, and Hadiah sudah diterima. No visible prize-name caption, booth instruction, or turn number. Chrome mobile and offline desktop views were inspected; spin/confetti, close/reopen without replay, handover, Enter activation, and Escape still work with no console errors. Evidence: `artifacts/result-copy-observations.json` and `result-copy-*.png`.
+
 - Brand link PASS: navigates to the existing index route and restores a fresh example session.
 - Spin PASS, A/B/C: opens a real result; one history entry and one stock deduction per draw.
 - Result close PASS: closes the dialog and leaves “Lihat hadiah” available for the reserved result.
@@ -78,7 +80,7 @@ Each line records the rule and the evidence for this prototype.
 - R-03 PASS: no horizontal overflow at the five inspected widths; buttons/inputs have targets at least 44 px.
 - R-04 PASS: the existing logo identifies SARAS; pointer indicates a segment; close/arrow symbols perform their named actions.
 - R-05 PASS: the compositions serve the wheel/editor relationship, with no marketing-template sections.
-- R-06 PASS: serif branding/result captions retain the SARAS voice; system sans keeps controls legible; the sticker typography is preserved from the supplied images.
+- R-06 PASS: serif branding retains the SARAS voice; system sans keeps controls and the quiet result heading legible; sticker typography is preserved from the supplied images.
 - R-07 PASS: plain ivory background gives the wheel clear silhouette and negative space.
 - R-08 PASS: arrows only cycle reviewer variants.
 - R-09 PASS: no promotional badges; Prototype identifies the actual comparison tool.

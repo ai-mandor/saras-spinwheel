@@ -1,88 +1,71 @@
-# Verification: SARAS spinwheel prototype
+# Centered-wheel prototype review
 
-Date: 2026-11-25. Browser: installed Google Chrome on macOS through Playwright.
+Date: 2026-11-25. Review method: Chrome click-through and screenshot inspection, without adding an automated test suite to this throwaway prototype.
 
-Status: PASS. Core logic baseline: 5/5 passed. After the copy and surface cleanup, `npm run test:browser`: 11/11 passed and `npm run build`: completed. Browser checks recorded no JavaScript exceptions or console errors. The detailed cleanup report is in UNSLOP-REPORT.md.
+Question and context: [PROTOTYPE.md](PROTOTYPE.md). Decision between A/B/C remains pending owner review.
+
+## Browser observations
+
+- A and B: SVG wheel measured 726 px at a 1440×1000 viewport. C: 794 px. Each view fit within a 1000 px page height.
+- All variants were opened at 320, 390, 768, 1024, and 1440 px. No horizontal page overflow was observed. Narrow-screen drawers had no internal horizontal overflow.
+- Spin, result handover, prize-name and quantity editing, apply, reset, settings open/close, Data, arrow controls, and URL persistence of the variant were exercised. Each handover produced one history entry.
+- Left/Right switched variants; Right inside a text input left the variant unchanged.
+- Text at 200% produced no horizontal page overflow.
+- No browser JavaScript exceptions or console errors were recorded in the click-through.
+- The comparison bar was hidden without prototype mode. Data and console snapshots expose the full relevant state.
+- No localStorage or external-service persistence is used. Example inventory resets on refresh.
+- Desktop A/B/C and mobile screenshots were inspected.
 
 ## Antislop delivery gate
 
-### Hard gate
+- R-02 PASS: application copy contains no em dashes.
+- R-03 PASS: desktop and narrow-width observations show no horizontal overflow; button and input targets are at least 44 px in the source.
+- R-17 PASS: counts represent in-memory draws and the initial inventory is explicitly labelled as example data.
+- R-18 PASS: no testimonials or invented people.
+- R-23 PASS: the logo is the owner's existing asset; the owner supplied the centered-wheel and side-settings direction.
+- R-24 PASS: the brand link, settings toggle, and prototype arrows have actual destinations or handlers.
+- R-25 PASS: retained ink/pink pairs have at least 5.93:1 text contrast; white/rose is 6.37:1. Labels use the retained muted color with more than 5:1 on cream.
+- R-26 PASS: the spin, configuration, handover, reset, settings, Data, and variant controls were exercised.
+- R-27 PASS: empty history, disabled exhausted inventory, and active spin state are represented. Remote loading and storage errors are inapplicable because this is a synchronous, in-memory prototype, following the explicitly invoked prototype skill.
+- R-28 PASS: no generic FAQ.
+- R-32 PASS: native buttons, visible wrapped form labels, focus outlines, native dialogs, and Tab cycling are present; arrow switching excludes inputs and open dialogs.
+- R-33 PASS: the page, CSS, and rendering are edited directly in source; the build only packages the standalone output.
+- R-34 PASS: one complete light theme follows the existing SARAS identity.
+- R-35 PASS: browser views and interactions were run and screenshots inspected.
+- R-36 PASS: no security, compliance, customer, or performance claims; this is labelled throwaway and in-memory.
+- R-37 PASS: the owner supplied the layout direction; DESIGN.md records the interpretation.
+- R-38 PASS: actual branding, labelled example inventory, actual in-memory counts.
+- R-01 PASS: no gradients or glow; the original brand palette is retained.
+- R-04 PASS: the logo identifies SARAS and the pointer selects an outcome; reviewer arrows have directional meaning.
+- R-06 PASS: system sans for controls and the existing serif brand treatment; no decorative monospace outside the state inspector.
+- R-07 PASS: no decorative grid or patterned backdrop.
+- R-08 PASS: arrows only navigate prototype variants.
+- R-09 PASS: the prototype indicator identifies the actual reviewer context; no promotional badge.
+- R-10 PASS: no glassmorphism.
+- R-12 PASS: the small drawer/reviewer-bar shadows distinguish overlays.
+- R-13 PASS: no glow.
+- R-14 PASS: settings are actual form rows, not feature cards.
+- R-19 PASS: wheel animation follows the spin action; reduced motion is supported.
+- R-22 PASS: no stock or generic illustrations.
+- Dials PASS: ENERGY 2 / RHYTHM 1 / MOTION 2; one large game target, compact uniform settings, action-triggered motion.
+- Focal point PASS: the wheel occupies the majority of the game area, with no promotional headline.
+- Whitespace PASS: spacing separates the game, side settings, and reviewer controls; mobile reserves room for the bottom bar.
+- Accent PASS: rose emphasizes the spin action and pointer; supporting surfaces use the SARAS palette.
+- Identity PASS: the existing SARAS mark, cream, and pink segments remain.
+- Design read PASS: the interpretation was stated before presenting the new views.
+- C-1 PASS: visual choices are documented in DESIGN.md.
+- C-2 PASS: visible controls have actual handlers and were exercised.
+- C-3 PASS: the screen contains the game, its settings, and clearly separated reviewer controls.
+- C-4 PASS: responsive, empty, active, and reduced-motion states were previewed.
+- C-5 PASS: no invented customer or business evidence.
+- R-05 PASS: variants explore the game/editor relationship; no marketing-template sections.
+- R-11 PASS: circles express the physical wheel, standard rectangles identify inputs and sidebar controls.
+- R-15 PASS: actions name their effect, including Putar roda, Terapkan hadiah, and Hadiah sudah diterima.
+- R-16 PASS: no AI marketing language.
+- R-20 PASS: the actual SARAS identity is retained while following the owner's new layout.
+- R-21 PASS: the fixed light theme follows the supplied brand reference.
+- R-29 PASS: the brand's rose/pink and peach sit on cream with neutral text.
+- R-30 PASS: no other product was cloned.
+- R-31 PASS: major decisions have recorded reasons.
 
-- R-02 PASS: application HTML, CSS, and JavaScript contain no em dash characters.
-- R-03 PASS: browser checks found zero page overflow at 320, 390, 768, 1024, and 1440 px, and with root text at 200%; visible buttons measured at least 44 px high.
-- R-17 PASS: initial prize quantities are labelled prototype/example inventory; history counts are calculated from actual local draws.
-- R-18 PASS: no testimonials or fabricated people are present.
-- R-23 PASS: the logo is the user's existing SARAS vector; no new logo, person image, or invented identity was generated. Merchandise is labelled as example content.
-- R-24 PASS: header controls open the guide and staff dialogs; clicking the brand returns to the actual index file.
-- R-25 PASS: measured text contrast includes rose/cream 6.05:1, muted/cream 5.33:1, muted/staff background 5.04:1, white/rose 6.37:1, ink/darkest wheel segment 5.93:1. Input and button borders are 3.59:1 against cream, exceeding the non-text requirement.
-- R-26 PASS: browser interaction checks exercised every button and the brand link; no placeholder controls remain.
-- R-27 PASS: initial loading copy, empty history, exhausted inventory, storage failure, corrupted data, saving success, and validation errors are implemented; browser tests covered each persistent/error state.
-- R-28 PASS: no FAQ is present; instructions directly describe the spinwheel interaction.
-- R-32 PASS: keyboard tests opened the guide with Enter, cycled focus inside it, closed it with Escape, and verified focus returned to its trigger. All controls have a visible focus style and form fields have associated labels.
-- R-33 PASS: UI features are implemented in index.html, styles.css, and app.mjs. build.mjs packages those files into a separate standalone output; it does not patch source UI files.
-- R-34 PASS: the fixed light theme is derived from SARAS's existing design; no partial theme toggle is present.
-- R-35 PASS: unit and Chrome browser checks passed, final screenshots were visually inspected, and the standalone file completed a spin offline.
-- R-36 PASS: no fabricated performance, security, compliance, or customer claims are present. The staff panel explicitly states browser-local storage.
-- R-37 PASS: design direction comes from the existing SARAS iOS palette and logo; DESIGN.md records the interpretation and dials before handoff.
-- R-38 PASS: branding uses actual local assets; initial merchandise is clearly marked as example content. No fictional feeds, statistics, or team identities are present.
-
-### Purpose gate
-
-- R-01 PASS: no gradients or glows are used; the cream/pink palette follows the actual app.
-- R-04 PASS: the sliders glyph opens settings, the pointer indicates the selected segment, and the existing logo represents SARAS. No decorative generic icon set is imported.
-- R-06 PASS: DESIGN.md explains Georgia as a complement to SARAS's rounded maternal identity and system sans for readable controls; no decorative monospace or tracked uppercase labels.
-- R-07 PASS: no grid, dot-pattern backdrop, or blueprint texture is used. Dots on the wheel form its physical rim.
-- R-08 PASS: buttons and links contain no decorative arrows.
-- R-09 PASS: the example-content label conveys actual prototype status; no decorative capsule badge precedes the heading.
-- R-10 PASS: backdrop blur is confined to the active native modal layer.
-- R-12 PASS: shadows are limited to the wheel, hub, and pointer to show their relative physical position.
-- R-13 PASS: there are no glow effects.
-- R-14 PASS: prizes use a compact list with actual outcome names rather than equal feature cards.
-- R-19 PASS: wheel movement communicates selection and confetti marks a completed spin; no looping ambient motion. Reduced-motion mode was exercised in the browser flow.
-- R-22 PASS: no generic stock illustrations are used; the only visual asset is the existing SARAS logo.
-
-### Liveliness
-
-- Dials PASS: ENERGY 2 / RHYTHM 2 / MOTION 2, documented in DESIGN.md.
-- Dial consistency PASS: a large expressive serif title and wheel balance supporting information; animation only accompanies the game interaction.
-- Focal point PASS: the wheel and primary spin action occupy the largest interactive area.
-- Whitespace PASS: spacing separates introduction, game controls, and prize reference; mobile reflows those sections.
-- Accent PASS: deep rose emphasizes the action and selected language, supported by quieter cream and blush surfaces.
-- Identity PASS: the actual SARAS mark and palette recur in the header, wheel hub, and outcome dialog.
-- Design read PASS: the owner selected during-work antislop; the design interpretation and dials were stated before UI handoff.
-
-### Craftsmanship and quality locks
-
-- C-1 PASS: DESIGN.md records palette, type, layout, theme, motion, and shadow purposes.
-- C-2 PASS: all visible controls were exercised in browser tests, including export and reset cancellation/confirmation.
-- C-3 PASS: sections support a booth spin, prize handover, instructions, and staff inventory; there are no filler marketing sections.
-- C-4 PASS: responsive, keyboard, reduced-motion, empty, exhausted, and error cases passed browser checks.
-- C-5 PASS: no fabricated customer, testimonial, or business metric is present.
-- R-05 PASS: the page is organized around the game; no hero/cards/FAQ/pricing template or dashboard sidebar.
-- R-11 PASS: circles represent the physical wheel/hub, dialogs use larger corners, and inputs/buttons use smaller corners; not every control is a pill.
-- R-15 PASS: actions describe their effect: Putar roda, Simpan perubahan, Unduh CSV, and Hadiah sudah diterima.
-- R-16 PASS: no AI marketing buzzwords are used.
-- R-20 PASS: the actual SARAS mark, pink/cream theme, and serif treatment connect the prototype to the app's visual identity.
-- R-21 PASS: DESIGN.md records a fixed light theme for the existing brand reference and bright booth use.
-- R-29 PASS: rose/pink and peach sit on cream with dark neutral text; there is no unrelated multicolor palette.
-- R-30 PASS: no external product layout was copied; the visual reference is the user's own SARAS app.
-- R-31 PASS: major visual choices and their purposes are recorded in DESIGN.md.
-
-## Recorded control walkthrough
-
-- Brand link: returns to index.html in both HTTP and standalone file modes.
-- Cara bermain: opens instructions; close button, Escape, and Tutup panduan close them.
-- Putar roda: creates one draw, disables repeat interaction during animation, and lands on the stored winning segment.
-- Result close: preserves the pending result; Lihat hadiahmu reopens it.
-- Hadiah sudah diterima: clears the pending handover while retaining history and deducted stock.
-- Panel panitia: opens editable prize names and stock; fields are locked while a prize awaits handover.
-- Simpan perubahan: persists valid values through reload; negative stock and empty names are rejected.
-- Unduh CSV: produces a history download; disabled for empty history.
-- Mulai ulang demo: opens confirmation; Batal preserves history; Ya, mulai ulang restores example stock and clears history.
-- Corrupted storage: remains untouched until the explicit reset confirmation.
-- Blocked storage: shows an error and disables drawing.
-- Standalone output: spins and retains history with the browser set offline and zero HTTP requests.
-
-## Scope
-
-This prototype is for one supervised booth device and one active tab. Inventory is not shared across devices; staff controls are not authenticated; one visit per person is not enforced. Deployment activity after this local QA pass is tracked in repository history. Final event merchandise and quantities still need to be supplied.
+This review establishes that the options are runnable and reviewable; it does not promote one into production. The selected layout will be implemented in the real app after owner review.

@@ -17,5 +17,6 @@ const output = html
   .replace('</body>', `<script type="module">\n${script.replaceAll('</script', '<\\/script')}\n</script>\n  </body>`);
 await mkdir(new URL('dist/', root), { recursive: true });
 await writeFile(new URL('dist/index.html', root), output);
+await writeFile(new URL('dist/centered-wheel.prototype.html', root), output);
 await writeFile(new URL('dist/.nojekyll', root), '');
-console.log('dist/index.html siap: satu file, tanpa permintaan aset eksternal.');
+console.log('dist/centered-wheel.prototype.html siap untuk membandingkan varian A, B, dan C.');

@@ -1,17 +1,13 @@
-# SARAS showcase spinwheel
+# SARAS centered-wheel prototype direction
 
-Brand source: the existing SARAS iOS app, `Core/DesignSystem/Color+Saras.swift`, and the existing SARAS vector logo in `Desktop/DESAIN/Saras Logo.svg`.
+The owner requested a large centered wheel, settings at the side, and no highlighted promotional copy. This is a throwaway comparison, not a production release.
 
-Audience: showcase visitors sharing a supervised booth device, with a separate staff dialog for remaining inventory.
+Brand references remain the existing SARAS logo and iOS pink/cream palette. Dial: ENERGY 2 / RHYTHM 1 / MOTION 2.
 
-Dial: ENERGY 2 / RHYTHM 2 / MOTION 2.
-
-- Pink and cream preserve SARAS's existing identity. Deep rose is used for text and the primary action to meet contrast requirements.
-- A fixed light theme matches the existing SARAS reference and keeps a supervised event screen legible in a bright venue.
-- Georgia's rounded serif forms complement the existing maternal brand; system sans keeps instructions and controls readable without network font requests.
-- The wheel occupies the main visual area because spinning is the visitor's task. On phones, the introduction, wheel, and prize list stack in that order.
-- Cream and blush segments make each outcome readable. Dark ink is used on every segment. Exhausted outcomes are grey and explicitly labelled.
-- Shadow is limited to the physical wheel and its hub to separate the rotating face from the fixed pointer.
-- Wheel rotation communicates selection. Confetti only accompanies a completed draw. Reduced motion replaces rotation with a short transition and suppresses confetti.
-- The native dialogs provide keyboard focus containment and Escape handling. Closing the result preserves the draw until staff confirms handover.
-- All initial merchandise and quantities are example data, labelled as such. They do not represent confirmed event inventory.
+- The wheel is the focal point because spinning is the visitor's task; all promotional headings are removed.
+- The right column, right drawer, and left editor are distinct arrangements of the same settings, so the layout can be judged independently of the data.
+- Settings use system sans and visible labels; the existing serif wordmark identifies SARAS without adding a hero title.
+- A/C settings are inline on desktop. Narrow screens use an accessible settings toggle and a scrollable drawer to preserve room for the wheel.
+- Motion is limited to an initiated spin. Reduced motion uses a short transition.
+- The bottom bar is a clearly separate reviewer tool. It is local-only, uses a query parameter for variants, and is excluded from the normal production view.
+- Prototype state is available through Data and the console, while the game screen stays focused on the wheel.

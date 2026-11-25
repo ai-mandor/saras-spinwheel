@@ -1,215 +1,146 @@
 <!doctype html>
-<html lang="id">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#fff8f1">
-    <meta name="description" content="Spinwheel merchandise untuk pengunjung showcase SARAS.">
-    <title>SARAS · Putar & bawa pulang</title>
-    <link rel="icon" href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+Cjxzdmcgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDE0MTIgOTMyIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zOmFmZmluaXR5PSJodHRwczovL3d3dy5hZmZpbml0eS5zdHVkaW8vIiBzdHlsZT0iZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjI7Ij4KICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsLTQ2MSwtMjIxMS43MzM4MzkpIj4KICAgICAgICA8ZyBpZD0iU2FyYXMtTG9nbyIgYWZmaW5pdHk6aWQ9IlNhcmFzIExvZ28iIHRyYW5zZm9ybT0ibWF0cml4KDMuNjI5ODIsMCwwLDMuNjI5ODIsLTYxMjcuMTIzMzkzLDQ4NC45MDU2MTEpIj4KICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoLTEsMCwwLDEsMjc0NCwtNDM0KSI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNzA3LDExNThDNzA1LjU0MiwxMTY0LjkwNiA2NjguMzE3LDExNzEuMTg3IDYyOC42NzksMTE2MC43NjlDNTkyLjkxOSwxMTUxLjM3MSA1NTUuMTk1LDExMjguMzgyIDU0MCwxMDgwQzU0MCwxMDgwIDU3Mi4zMDcsMTA1Ny42NzMgNTkwLDEwNjJDNTkwLDEwNjIgNjExLjkxNywxMTQyLjg1IDcwNywxMTU4WiIgc3R5bGU9ImZpbGw6cmdiKDI0NCwxMTQsMTgyKTsiLz4KICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwxLDEyNzUsLTQzNCkiPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTcwNywxMTU4QzcwNS41NDIsMTE2NC45MDYgNjY4LjMxNywxMTcxLjE4NyA2MjguNjc5LDExNjAuNzY5QzU5Mi45MTksMTE1MS4zNzEgNTU1LjE5NSwxMTI4LjM4MiA1NDAsMTA4MEM1NDAsMTA4MCA1NzIuMzA3LDEwNTcuNjczIDU5MCwxMDYyQzU5MCwxMDYyIDYxMS45MTcsMTE0Mi44NSA3MDcsMTE1OFoiIHN0eWxlPSJmaWxsOnJnYigyNDQsMTE0LDE4Mik7Ii8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoMSwwLDAsMSwyNzgsLTkyKSI+CiAgICAgICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgwLjQ0MDk2OCwwLDAsMC40NDA5NjgsMTE3Ni4xNTg3MjcsMTM2Ljk2ODY0MykiPgogICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0xMjY4LDExMzlDMTI2OCwxMTM5IDEyNTMuNjIsMTE0OS4wNzYgMTI1NywxMTU4QzEyNTcsMTE1OCAxMjQ2Ljk2OCwxMTg1LjcwMyAxMjc5LDEyMDhDMTI3OSwxMjA4IDEzNTYuOTksMTIyNC44NjYgMTMxNiwxMjcyQzEzMTYsMTI3MiAxNDQwLjA1OSwxMzQ1LjI1NiAxMzMwLDE0MjJDMTMzMCwxNDIyIDEyMzAuMjI2LDE0ODUuNjk1IDExNjYsMTM3M0MxMTY2LDEzNzMgMTEzNy4yNDMsMTMxNS42NjYgMTE2OSwxMjQ3QzExNjksMTI0NyAxMTI4LjU0NywxMTc1LjMzNSAxMTg0LDExMTJDMTE4NCwxMTEyIDExNjIuODI1LDEwMjEuNDU4IDEyNDgsOTg4QzEyNDgsOTg4IDEyNzkuMzIyLDk2NS4wMTggMTMxNSw5OThDMTMxNSw5OTggMTM3OS4yNDIsMTAxMC4xNTggMTM0NSwxMDU5QzEzNDUsMTA1OSAxMzYzLjMxNSwxMDU3LjA2OCAxMzQ4LDEwOTBDMTM0OCwxMDkwIDEzNDQuMTYxLDEwOTUuNjUxIDEzNTcsMTEwM0MxMzU3LDExMDMgMTM0OS4yNzksMTEwMS4yNDYgMTM0Ny42NTUsMTA5My42MjlDMTM0Ni4wMzEsMTA4Ni4wMTMgMTM1MC4zMTQsMTA3MS45MTMgMTM0MywxMDY0TDEzMzksMTA2OEMxMzM5LDEwNjggMTM0MC41MjQsMTA4NC43MzQgMTMyNSwxMTA1QzEzMjUsMTEwNSAxMzI4Ljk0NCwxMTMzLjgzNyAxMjg4LDExNDdDMTI4OCwxMTQ3IDEyNjkuMzQ5LDExNDQuNTIyIDEyNjgsMTEzOVoiIHN0eWxlPSJmaWxsOnJnYigyNDQsMTE0LDE4Mik7Ii8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgwLjQ3NDQ1NywwLDAsMC40NjAwMTQsMTUyOC44NDI4OCwtMTY5LjA4Njc1MikiPgogICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0zNjAsMTc3OEMzNjAsMTc3OCAzNTEuODMxLDE3MTQuNDA5IDM3NSwxNjc2QzM3NSwxNjc2IDQxMy4wNzQsMTYwOC44MTEgNDY2LDE2MjhDNDY2LDE2MjggNDI5Ljc1OCwxNjQyLjM0NiA0MjAsMTY2MkM0MjAsMTY2MiA0NTUuMTQsMTYyOS45NTEgNDc5LDE2MzRDNDc5LDE2MzQgNTIyLjg4MSwxNjUzLjk2OSA0OTQsMTY4MUM0OTQsMTY4MSA0NTguNjA4LDE2OTYuNiA0NDgsMTY5OEM0NDgsMTY5OCAzNjkuMDQ3LDE3MTUuNzcyIDM2OSwxNzUyQzM2OSwxNzUyIDM4Ni41NjgsMTczMS40ODIgNDA4LDE3MjdDNDA4LDE3MjcgNDAyLjgyLDE3NTAuMTQ1IDM4OCwxNzYzQzM4OCwxNzYzIDM2My4xMSwxNzkwLjMyNCAzNDcsMTc5NkMzNDcsMTc5NiAzMjUuOTA1LDE3OTYuNTIyIDMzMCwxODYxQzMzMCwxODYxIDMxNC4zOTYsMTgzMy40NzEgMzIxLDE3OTBDMzIxLDE3OTAgMzM1LjM2LDE3MzQuNTg4IDM0OCwxNzMzQzM0OCwxNzMzIDMzMS40OCwxNjgyLjk5IDM3OSwxNjI5QzM3OSwxNjI5IDQzMS43MjYsMTU3NC45OSA0NzgsMTYxOUM0NzgsMTYxOSA1MzMuOCwxNjI1LjUzMSA1MTIsMTY3NkM1MTIsMTY3NiA1MjUuNDE0LDE2ODkuNzIgNTE4LDE2OThDNTE4LDE2OTggNTA1LjQyNywxNzE3LjE1NiA1MjAsMTcyNUM1MjAsMTcyNSA1MDcuMDg4LDE3MTkuNTU2IDUwOSwxNzA1QzUwOSwxNzA1IDUxMS4xNTcsMTY5MS45MzQgNTA4LDE2ODdMNTAzLDE2ODJDNTAzLDE2ODIgNDc3LjU1NSwxNzEwLjQ1MyA0MjIsMTcyMkw0MDgsMTcyNyIgc3R5bGU9ImZpbGw6cmdiKDI1MywyMzEsMjM4KTsiLz4KICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8cGF0aCBkPSJNMjAxNyw3MTNDMjAxNyw3MTMgMjA2Ni4zNzksNzE0LjQwNCAyMTA1LjAwNiw2NzkuODAxQzIxMzAuMDk0LDY1Ny4zMjcgMjE1MC4wNjksNjE3LjkyOSAyMTUxLDU1OSIgc3R5bGU9ImZpbGw6bm9uZTsiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTIwMTgsNjg4QzIwMTgsNjg4IDIwNjYuODYsNjgxLjM5OCAyMDcyLDY0N0MyMDcyLDY0NyAyMDc0Ljk3OSw2MjkuOTg2IDIwNTEsNjA1QzIwNTEsNjA1IDIwODEuMTA2LDU2MS45ODUgMjE1MSw1NTlDMjE1MSw1NTkgMjE1NC43NTMsNzA5Ljk4NiAyMDE2LDcxM0MyMDE2LDcxMyAyMDE1LjYsNjkxLjIzOCAyMDE4LDY4OFoiIHN0eWxlPSJmaWxsOnJnYigyNDQsMTE0LDE4Mik7Ii8+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0xOTYwLDU5NUMxOTU2LjM2Niw1OTAuOTA0IDE5MjkuODA0LDY2OS43NjUgMjAwMyw2ODdDMjAwMyw2ODcgMjAwNC4xNTksNzExLjk5NCAyMDA0LDcxNEMyMDA0LDcxNCAxODczLjM1OCw3MjEuNjI3IDE4NzAsNTYwQzE4NzAsNTYwIDE5MjEuNDY1LDU2Mi40OTkgMTk2MCw1OTVaIiBzdHlsZT0iZmlsbDpyZ2IoMjQ0LDExNCwxODIpOyIvPgogICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgwLjU1NDMyMiwtMC4wMTA1OTYsMC4wMTA1OTYsMC41NTQzMjIsMTc0MC4yMDQxMDgsLTQ0OS4yMTk1MTEpIj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik00ODUsMTk3MkM0ODUsMTk3MiA1MDIuMTY0LDE5NDEuODc1IDUxNCwxOTcwQzUxNCwxOTcwIDUxOC40MDQsMTk4OC45NjkgNDk2LDIwMTFDNDk2LDIwMTEgNDYyLjUxLDIwMDMuODM2IDQ1NiwxOTgwQzQ1NiwxOTgwIDQ1NS40NTQsMTk1MC44MTIgNDg1LDE5NzJaIiBzdHlsZT0iZmlsbDp3aGl0ZTsiLz4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+Cg==" type="image/svg+xml">
-    <style>
-:root{color-scheme:light;--page:#fff8f1;--ink:#2b2125;--muted:#74636b;--rose:#9d3e61;--pink:#f2d6e0;--line:#dec6ce;--surface:#fffdfb;--focus:#702947;--space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;--space-5:1.25rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;--space-12:3rem;--space-16:4rem;--serif:Georgia,'Times New Roman',serif;--sans:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+<html lang="id" data-prototype="centered-wheel">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#fff8f1">
+  <title>SARAS · Prototype layout spinwheel</title>
+  <link rel="icon" href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+Cjxzdmcgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDE0MTIgOTMyIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zOmFmZmluaXR5PSJodHRwczovL3d3dy5hZmZpbml0eS5zdHVkaW8vIiBzdHlsZT0iZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjI7Ij4KICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsLTQ2MSwtMjIxMS43MzM4MzkpIj4KICAgICAgICA8ZyBpZD0iU2FyYXMtTG9nbyIgYWZmaW5pdHk6aWQ9IlNhcmFzIExvZ28iIHRyYW5zZm9ybT0ibWF0cml4KDMuNjI5ODIsMCwwLDMuNjI5ODIsLTYxMjcuMTIzMzkzLDQ4NC45MDU2MTEpIj4KICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoLTEsMCwwLDEsMjc0NCwtNDM0KSI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNzA3LDExNThDNzA1LjU0MiwxMTY0LjkwNiA2NjguMzE3LDExNzEuMTg3IDYyOC42NzksMTE2MC43NjlDNTkyLjkxOSwxMTUxLjM3MSA1NTUuMTk1LDExMjguMzgyIDU0MCwxMDgwQzU0MCwxMDgwIDU3Mi4zMDcsMTA1Ny42NzMgNTkwLDEwNjJDNTkwLDEwNjIgNjExLjkxNywxMTQyLjg1IDcwNywxMTU4WiIgc3R5bGU9ImZpbGw6cmdiKDI0NCwxMTQsMTgyKTsiLz4KICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwxLDEyNzUsLTQzNCkiPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTcwNywxMTU4QzcwNS41NDIsMTE2NC45MDYgNjY4LjMxNywxMTcxLjE4NyA2MjguNjc5LDExNjAuNzY5QzU5Mi45MTksMTE1MS4zNzEgNTU1LjE5NSwxMTI4LjM4MiA1NDAsMTA4MEM1NDAsMTA4MCA1NzIuMzA3LDEwNTcuNjczIDU5MCwxMDYyQzU5MCwxMDYyIDYxMS45MTcsMTE0Mi44NSA3MDcsMTE1OFoiIHN0eWxlPSJmaWxsOnJnYigyNDQsMTE0LDE4Mik7Ii8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoMSwwLDAsMSwyNzgsLTkyKSI+CiAgICAgICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgwLjQ0MDk2OCwwLDAsMC40NDA5NjgsMTE3Ni4xNTg3MjcsMTM2Ljk2ODY0MykiPgogICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0xMjY4LDExMzlDMTI2OCwxMTM5IDEyNTMuNjIsMTE0OS4wNzYgMTI1NywxMTU4QzEyNTcsMTE1OCAxMjQ2Ljk2OCwxMTg1LjcwMyAxMjc5LDEyMDhDMTI3OSwxMjA4IDEzNTYuOTksMTIyNC44NjYgMTMxNiwxMjcyQzEzMTYsMTI3MiAxNDQwLjA1OSwxMzQ1LjI1NiAxMzMwLDE0MjJDMTMzMCwxNDIyIDEyMzAuMjI2LDE0ODUuNjk1IDExNjYsMTM3M0MxMTY2LDEzNzMgMTEzNy4yNDMsMTMxNS42NjYgMTE2OSwxMjQ3QzExNjksMTI0NyAxMTI4LjU0NywxMTc1LjMzNSAxMTg0LDExMTJDMTE4NCwxMTEyIDExNjIuODI1LDEwMjEuNDU4IDEyNDgsOTg4QzEyNDgsOTg4IDEyNzkuMzIyLDk2NS4wMTggMTMxNSw5OThDMTMxNSw5OTggMTM3OS4yNDIsMTAxMC4xNTggMTM0NSwxMDU5QzEzNDUsMTA1OSAxMzYzLjMxNSwxMDU3LjA2OCAxMzQ4LDEwOTBDMTM0OCwxMDkwIDEzNDQuMTYxLDEwOTUuNjUxIDEzNTcsMTEwM0MxMzU3LDExMDMgMTM0OS4yNzksMTEwMS4yNDYgMTM0Ny42NTUsMTA5My42MjlDMTM0Ni4wMzEsMTA4Ni4wMTMgMTM1MC4zMTQsMTA3MS45MTMgMTM0MywxMDY0TDEzMzksMTA2OEMxMzM5LDEwNjggMTM0MC41MjQsMTA4NC43MzQgMTMyNSwxMTA1QzEzMjUsMTEwNSAxMzI4Ljk0NCwxMTMzLjgzNyAxMjg4LDExNDdDMTI4OCwxMTQ3IDEyNjkuMzQ5LDExNDQuNTIyIDEyNjgsMTEzOVoiIHN0eWxlPSJmaWxsOnJnYigyNDQsMTE0LDE4Mik7Ii8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgwLjQ3NDQ1NywwLDAsMC40NjAwMTQsMTUyOC44NDI4OCwtMTY5LjA4Njc1MikiPgogICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0zNjAsMTc3OEMzNjAsMTc3OCAzNTEuODMxLDE3MTQuNDA5IDM3NSwxNjc2QzM3NSwxNjc2IDQxMy4wNzQsMTYwOC44MTEgNDY2LDE2MjhDNDY2LDE2MjggNDI5Ljc1OCwxNjQyLjM0NiA0MjAsMTY2MkM0MjAsMTY2MiA0NTUuMTQsMTYyOS45NTEgNDc5LDE2MzRDNDc5LDE2MzQgNTIyLjg4MSwxNjUzLjk2OSA0OTQsMTY4MUM0OTQsMTY4MSA0NTguNjA4LDE2OTYuNiA0NDgsMTY5OEM0NDgsMTY5OCAzNjkuMDQ3LDE3MTUuNzcyIDM2OSwxNzUyQzM2OSwxNzUyIDM4Ni41NjgsMTczMS40ODIgNDA4LDE3MjdDNDA4LDE3MjcgNDAyLjgyLDE3NTAuMTQ1IDM4OCwxNzYzQzM4OCwxNzYzIDM2My4xMSwxNzkwLjMyNCAzNDcsMTc5NkMzNDcsMTc5NiAzMjUuOTA1LDE3OTYuNTIyIDMzMCwxODYxQzMzMCwxODYxIDMxNC4zOTYsMTgzMy40NzEgMzIxLDE3OTBDMzIxLDE3OTAgMzM1LjM2LDE3MzQuNTg4IDM0OCwxNzMzQzM0OCwxNzMzIDMzMS40OCwxNjgyLjk5IDM3OSwxNjI5QzM3OSwxNjI5IDQzMS43MjYsMTU3NC45OSA0NzgsMTYxOUM0NzgsMTYxOSA1MzMuOCwxNjI1LjUzMSA1MTIsMTY3NkM1MTIsMTY3NiA1MjUuNDE0LDE2ODkuNzIgNTE4LDE2OThDNTE4LDE2OTggNTA1LjQyNywxNzE3LjE1NiA1MjAsMTcyNUM1MjAsMTcyNSA1MDcuMDg4LDE3MTkuNTU2IDUwOSwxNzA1QzUwOSwxNzA1IDUxMS4xNTcsMTY5MS45MzQgNTA4LDE2ODdMNTAzLDE2ODJDNTAzLDE2ODIgNDc3LjU1NSwxNzEwLjQ1MyA0MjIsMTcyMkw0MDgsMTcyNyIgc3R5bGU9ImZpbGw6cmdiKDI1MywyMzEsMjM4KTsiLz4KICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8cGF0aCBkPSJNMjAxNyw3MTNDMjAxNyw3MTMgMjA2Ni4zNzksNzE0LjQwNCAyMTA1LjAwNiw2NzkuODAxQzIxMzAuMDk0LDY1Ny4zMjcgMjE1MC4wNjksNjE3LjkyOSAyMTUxLDU1OSIgc3R5bGU9ImZpbGw6bm9uZTsiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTIwMTgsNjg4QzIwMTgsNjg4IDIwNjYuODYsNjgxLjM5OCAyMDcyLDY0N0MyMDcyLDY0NyAyMDc0Ljk3OSw2MjkuOTg2IDIwNTEsNjA1QzIwNTEsNjA1IDIwODEuMTA2LDU2MS45ODUgMjE1MSw1NTlDMjE1MSw1NTkgMjE1NC43NTMsNzA5Ljk4NiAyMDE2LDcxM0MyMDE2LDcxMyAyMDE1LjYsNjkxLjIzOCAyMDE4LDY4OFoiIHN0eWxlPSJmaWxsOnJnYigyNDQsMTE0LDE4Mik7Ii8+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0xOTYwLDU5NUMxOTU2LjM2Niw1OTAuOTA0IDE5MjkuODA0LDY2OS43NjUgMjAwMyw2ODdDMjAwMyw2ODcgMjAwNC4xNTksNzExLjk5NCAyMDA0LDcxNEMyMDA0LDcxNCAxODczLjM1OCw3MjEuNjI3IDE4NzAsNTYwQzE4NzAsNTYwIDE5MjEuNDY1LDU2Mi40OTkgMTk2MCw1OTVaIiBzdHlsZT0iZmlsbDpyZ2IoMjQ0LDExNCwxODIpOyIvPgogICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgwLjU1NDMyMiwtMC4wMTA1OTYsMC4wMTA1OTYsMC41NTQzMjIsMTc0MC4yMDQxMDgsLTQ0OS4yMTk1MTEpIj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik00ODUsMTk3MkM0ODUsMTk3MiA1MDIuMTY0LDE5NDEuODc1IDUxNCwxOTcwQzUxNCwxOTcwIDUxOC40MDQsMTk4OC45NjkgNDk2LDIwMTFDNDk2LDIwMTEgNDYyLjUxLDIwMDMuODM2IDQ1NiwxOTgwQzQ1NiwxOTgwIDQ1NS40NTQsMTk1MC44MTIgNDg1LDE5NzJaIiBzdHlsZT0iZmlsbDp3aGl0ZTsiLz4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+Cg==" type="image/svg+xml">
+  <style>
+:root{color-scheme:light;--page:#fff8f1;--ink:#2b2125;--muted:#74636b;--rose:#9d3e61;--line:#d8bdc7;--panel:#fffdfb;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
 *{box-sizing:border-box}
-body{margin:0;background:var(--page);color:var(--ink);font-family:var(--sans);font-size:1rem;line-height:1.55;-webkit-font-smoothing:antialiased}
+body{margin:0;min-height:100dvh;background:var(--page);color:var(--ink);font:1rem/1.5 var(--sans)}
 button,input{font:inherit}
-button,a{-webkit-tap-highlight-color:transparent}
-button{cursor:pointer}
-button:disabled{cursor:not-allowed;opacity:.55}
-button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--focus);outline-offset:5px}
-button{touch-action:manipulation}
-button,a{min-height:44px}
-button{transition:background-color 150ms ease-out,border-color 150ms ease-out,color 150ms ease-out,transform 150ms ease-out}
-button:active:not(:disabled){transform:translateY(1px)}
-button svg{flex-shrink:0}
-button:disabled:active{transform:none}
+button,a{touch-action:manipulation}
+button{cursor:pointer;transition:background-color 150ms ease-out,color 150ms ease-out}
+button:disabled{opacity:.5;cursor:not-allowed}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #702947;outline-offset:4px}
 [hidden]{display:none!important}
-.page-shell{width:min(100% - 2.5rem,1232px);margin-inline:auto}
-.site-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding:1.25rem 0;border-bottom:1px solid var(--line)}
-.brand{display:flex;align-items:center;gap:var(--space-2);color:var(--ink);text-decoration:none;flex-shrink:0}
-.brand img{width:45px;height:auto}
-.wordmark{font-family:var(--serif);font-size:2.3rem;line-height:1;letter-spacing:-.09em;padding-right:.13em}
-.wordmark-dot{color:var(--rose)}
-nav{display:flex;align-items:center;flex-wrap:wrap;gap:.5rem}
-.text-button{border:0;background:transparent;color:var(--muted);padding:var(--space-2) var(--space-3);font-size:.875rem}
-.text-button:hover{color:var(--rose);background:#f8e7ec;border-radius:.4rem}
-.staff-button{display:flex;align-items:center;gap:var(--space-2);padding:var(--space-2) .625rem;border:1px solid #9c7a88;border-radius:.5rem;background:transparent;color:var(--ink);font-size:.875rem}
-.staff-button:hover{background:#f8e7ec}
-.main-layout{display:grid;grid-template-areas:'intro' 'wheel' 'prizes';gap:var(--space-8);padding-block:var(--space-8) var(--space-10)}
-.intro{grid-area:intro;text-align:center}
-h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.35rem,7.5vw,3.6rem);line-height:1.08;letter-spacing:-.055em;margin:0;overflow-wrap:anywhere}
-em{color:var(--rose);font-weight:400}
-.intro-description{font-size:.9375rem;max-width:22rem;color:var(--muted);margin:var(--space-4) auto 0;line-height:1.7}
-.wheel-section{grid-area:wheel;min-width:0;text-align:center}
-.wheel-stage{position:relative;max-width:35rem;margin:0 auto;padding:var(--space-4) var(--space-2) var(--space-2)}
-.wheel-frame{position:relative;padding:.625rem;border:1px solid #c99aa8;border-radius:50%;background:#f8e6dc;box-shadow:0 1px 2px rgb(0 0 0 / .05)}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.header{min-height:64px;padding:8px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink);min-height:44px}
+.brand img{height:auto;width:48px}.brand span{font:2.5rem/1 Georgia,serif;letter-spacing:-.08em}
+.primary-button{min-height:56px;padding:12px 40px;border:1px solid var(--rose);border-radius:10px;background:var(--rose);color:white;font-weight:600}
+.primary-button:hover:not(:disabled){background:#822f4f}
+.secondary-button{min-height:44px;padding:10px 16px;border:1px solid #9c7a88;border-radius:7px;background:transparent;color:var(--ink)}
+.secondary-button:hover:not(:disabled){background:#fbe9ef}
+.text-button{min-height:44px;padding:8px 0;border:0;background:transparent;color:var(--rose);text-align:left}
+.icon-button{width:44px;height:44px;border:0;border-radius:7px;background:transparent;color:var(--muted);font-size:1.6rem}
+.icon-button:hover{background:#fbe9ef}
+.layout{min-height:calc(100dvh - 64px);padding-bottom:72px}
+.game{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:16px;min-width:0;padding:16px;position:relative}
+.wheel-stage{position:relative;width:min(100%,calc(100dvh - 252px),48rem);padding-top:12px;flex-shrink:0}
+.wheel-frame{position:relative;padding:10px;border:1px solid #c99aa8;border-radius:50%;background:#f8e6dc}
 #wheel{display:block;width:100%;height:auto;border-radius:50%;will-change:transform}
-.wheel-hub{position:absolute;inset:50% auto auto 50%;transform:translate(-50%,-50%);width:23%;aspect-ratio:1;border-radius:50%;background:var(--page);border:6px solid #fff3e9;box-shadow:0 1px 2px rgb(0 0 0 / .05);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:0;pointer-events:none}
-.wheel-hub img{width:50%;height:auto}
-.wheel-hub span{font-family:var(--serif);font-size:clamp(1.1rem,4vw,1.8rem);line-height:1.25;letter-spacing:-.07em}
-.pointer{position:absolute;width:2.25rem;height:3.4rem;top:0;left:50%;transform:translateX(-50%);z-index:1;color:var(--rose);filter:drop-shadow(0 1px 2px rgb(0 0 0 / .05))}
-.pointer svg{width:100%;height:100%}
-.spin-controls{margin-top:.75rem}
-.spin-status{font-size:.875rem;color:var(--muted);min-height:1.5em;margin:0 0 var(--space-3)}
-.primary-button{border:1px solid var(--rose);background:var(--rose);color:white;min-height:52px;border-radius:.7rem;padding:var(--space-3) var(--space-8);font-weight:600;font-size:1rem;letter-spacing:.005em}
-.primary-button:hover:not(:disabled){background:#822f4f;border-color:#822f4f}
-.spin-button{min-width:min(15.5rem,100%);max-width:100%;font-size:1.0625rem;padding:.875rem var(--space-10)}
-.control-note{font-size:.8125rem;color:var(--muted);margin:.75rem 0 0}
-.control-note:empty{display:none}
-.error-message{margin:var(--space-4) 0 0;border:1px solid var(--rose);background:#fbe9ef;padding:var(--space-4);border-radius:.6rem;color:#702947;text-align:left;font-size:.875rem;overflow-wrap:anywhere}
-.prize-section{grid-area:prizes;align-self:start;border-top:1px solid var(--line);padding-top:var(--space-5)}
-.prize-heading{display:flex;justify-content:space-between;align-items:center;gap:var(--space-3);flex-wrap:wrap}
-.prize-heading h2{font-size:.9375rem;font-weight:600;margin:0}
-.example-label{font-size:.8125rem;color:var(--rose)}
-.prize-list{list-style:none;padding:0;margin:var(--space-3) 0 0;display:grid;grid-template-columns:1fr 1fr;gap:var(--space-2) var(--space-4)}
-.prize-list li{display:flex;align-items:center;gap:var(--space-2);font-size:.875rem;padding:var(--space-2) 0;min-width:0;overflow-wrap:anywhere}
-.prize-dot{width:8px;height:8px;border-radius:50%;border:1px solid #9d3e61;flex:0 0 8px;background:#f2d6e0}
-.prize-list li.sold-out{color:var(--muted)}
-.sold-out .prize-dot{background:transparent;border-style:dashed}
-.prize-label{min-width:0}
-.stock-label{font-size:.75rem;color:var(--muted);margin-left:auto;white-space:nowrap}
-.site-footer{display:flex;justify-content:space-between;gap:var(--space-3) var(--space-4);flex-wrap:wrap;padding-block:var(--space-5) var(--space-6);border-top:1px solid var(--line);color:var(--muted);font-size:.8125rem}
-.site-footer p{margin:0}
-dialog{color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:1.4rem;padding:2rem 1.5rem;width:min(100% - 2rem,480px);max-height:calc(100dvh - 2rem);overflow:auto;overscroll-behavior:contain}
-dialog::backdrop{background:#37232d70;backdrop-filter:blur(5px)}
-body:has(dialog[open]){overflow:hidden}
-.close-button{position:absolute;right:.625rem;top:.625rem;width:44px;height:44px;border:0;background:transparent;color:var(--muted);font-size:1.8rem;border-radius:50%;line-height:1}
-.close-button:hover{background:#f8e7ec;color:var(--rose)}
-dialog h2{font-family:var(--serif);font-size:clamp(2rem,7vw,2.6rem);line-height:1.16;font-weight:400;letter-spacing:-.04em;margin:var(--space-2) 0 var(--space-4);overflow-wrap:anywhere}
-.result-dialog{text-align:center;padding-top:2.5rem}
-.result-dialog h2{margin-bottom:1rem;line-height:1.3}
-.result-dialog h2 em{display:inline-block;margin-top:var(--space-1)}
-#result-instructions{font-size:.9375rem;color:var(--muted);max-width:21rem;margin-inline:auto;line-height:1.7}
-.ticket-number{margin:var(--space-6) 0;color:var(--rose);font-weight:600;font-variant-numeric:tabular-nums;font-size:.875rem}
-.result-dialog .primary-button{width:100%}
-.dialog-footnote{font-size:.8125rem;line-height:1.6;color:var(--muted);margin:1rem 0 0}
-.guide-dialog{padding-top:var(--space-12)}
-.guide-steps{padding-left:var(--space-6);margin:var(--space-8) 0}.guide-steps li{padding-left:var(--space-2);margin-bottom:var(--space-5)}.guide-steps li::marker{color:var(--rose)}
-.guide-steps strong{font-size:1rem;font-weight:600}.guide-steps p{color:var(--muted);font-size:.9375rem;margin:var(--space-1) 0 0}
-.guide-fairness{border-top:1px solid var(--line);padding-top:1rem;color:var(--muted);font-size:.875rem;margin-bottom:1.5rem}
-.guide-dialog>.primary-button{width:100%}
-.staff-dialog{width:min(100% - 2rem,640px);padding-top:var(--space-12)}
-.storage-note{font-size:.875rem;background:#fbf0f3;border-radius:.5rem;padding:var(--space-4);color:var(--muted);line-height:1.65;margin:var(--space-4) 0 var(--space-6)}
-.form-heading,.prize-field{display:grid;grid-template-columns:minmax(0,1fr) 5.2rem;gap:var(--space-3);align-items:center}
-.form-heading{font-size:.875rem;color:var(--muted);padding-bottom:var(--space-3)}
-.prize-field{margin-bottom:var(--space-2)}
-.prize-field input{width:100%;min-width:0;border:1px solid #9c7a88;border-radius:.4rem;background:white;padding:.625rem var(--space-3);min-height:46px;color:var(--ink);font-size:1rem}
-.prize-field input[type=number]{text-align:center}
-.prize-field input:disabled{background:#f5efef;color:var(--muted)}
-.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.form-message{font-size:.875rem;color:var(--rose);min-height:1.4em;margin:var(--space-3) 0}
-#save-button{width:100%}
-.history-section{border-top:1px solid var(--line);margin-top:var(--space-8);padding-top:var(--space-4)}
-.history-heading{display:flex;align-items:center;justify-content:space-between;gap:.5rem}
-.history-heading h3{font-size:1rem;margin:0;font-weight:600}.history-heading h3 span{font-weight:400;color:var(--muted);margin-left:var(--space-1)}
-.history-list{max-height:13rem;overflow:auto;margin:.5rem 0 0;padding:0;list-style:none}
-.history-list li{display:flex;gap:var(--space-3);padding:var(--space-3) 0;border-bottom:1px solid var(--line);font-size:.875rem;align-items:baseline}.history-list strong{font-weight:500;overflow-wrap:anywhere;min-width:0}.history-list time{margin-left:auto;flex-shrink:0;color:var(--muted);font-size:.8125rem}.history-list .empty-history{color:var(--muted);border:0;line-height:1.7}
-.history-number{font-variant-numeric:tabular-nums;color:var(--rose)}
-.reset-section{border-top:1px solid var(--line);padding-top:var(--space-5);margin-top:var(--space-5);display:flex;align-items:center;gap:var(--space-4);flex-wrap:wrap}.reset-section p{font-size:.8125rem;color:var(--muted);flex:1 1 14rem;margin:0}
-.danger-button{border:1px solid var(--rose);background:#fbe9ef;color:#702947;padding:.625rem var(--space-4);border-radius:.5rem;font-size:.875rem;min-height:44px;font-weight:600}.danger-button:hover{background:#f2d6e0}
-.secondary-button{border:1px solid #9c7a88;background:transparent;color:var(--ink);border-radius:.5rem;padding:.625rem var(--space-4);min-height:44px}.secondary-button:hover{background:#f8e7ec}
-.reset-dialog p{color:var(--muted);font-size:.9375rem}.dialog-actions{display:flex;justify-content:flex-end;gap:var(--space-3);flex-wrap:wrap;margin-top:var(--space-6)}
-.confetti{position:fixed;inset:0;pointer-events:none;z-index:5;overflow:hidden}
-.confetti i{position:absolute;top:-20px;width:8px;height:13px;animation:confetti-fall 2.7s ease-in forwards}
-@keyframes confetti-fall{to{transform:translate(var(--drift),105vh) rotate(540deg);opacity:0}}
-.noscript-message{position:fixed;bottom:1rem;inset-inline:1rem;padding:1rem;background:white;border:2px solid var(--rose);z-index:10}
-@media(min-width:660px){.page-shell{width:min(100% - 4rem,1232px)}.site-header{padding-block:var(--space-6)}.main-layout{gap:var(--space-8);padding-block:var(--space-12)}.intro-description{max-width:29rem}.wheel-stage{max-width:31rem}.prize-section{width:min(100%,36rem);justify-self:center}.prize-list{grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-2) var(--space-5)}.stock-label{display:none}dialog{padding:var(--space-10)}.staff-dialog{padding-top:var(--space-12)}.result-dialog{padding-top:var(--space-10)}.site-footer{padding-bottom:var(--space-6)}}
-@media(min-width:1000px){.site-header{padding-block:var(--space-6)}.brand img{width:51px}.wordmark{font-size:2.65rem}.main-layout{grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);grid-template-areas:'intro wheel' 'prizes wheel';column-gap:var(--space-16);row-gap:var(--space-8);padding-block:var(--space-12);align-items:center}.intro{text-align:left;align-self:end}h1{font-size:clamp(3.8rem,5.5vw,5.05rem);line-height:1.08}.intro-description{margin:var(--space-6) 0 0;max-width:22rem;font-size:1rem}.prize-section{padding-top:var(--space-5);width:100%;align-self:start;justify-self:start}.prize-list{grid-template-columns:1fr 1fr;gap:var(--space-1) var(--space-5)}.wheel-section{align-self:center}.wheel-stage{max-width:35rem;padding-inline:var(--space-2)}.wheel-hub span{font-size:1.9rem}.spin-controls{margin-top:var(--space-4)}.site-footer{padding-block:var(--space-5) var(--space-6)}.pointer{width:2.6rem;height:3.7rem}}
-@media(min-width:1000px) and (min-height:850px){.main-layout{padding-block:var(--space-16);row-gap:var(--space-10)}.wheel-stage{max-width:36rem}}
-@media(max-width:659px){.staff-button span{display:none}.staff-button{width:44px;justify-content:center}.site-header{padding-block:var(--space-4)}.intro-description{font-size:.875rem;margin-top:var(--space-4)}.main-layout{padding-top:var(--space-6);gap:var(--space-6)}}
-@media(max-width:380px){.page-shell{width:calc(100% - 2rem)}.brand img{width:37px}.wordmark{font-size:2rem}.main-layout{padding-top:var(--space-6)}.prize-heading h2{font-size:.875rem}.example-label{font-size:.75rem}.spin-button{min-width:min(14rem,100%)}.form-heading,.prize-field{grid-template-columns:minmax(0,1fr) 4.5rem;gap:var(--space-2)}dialog{padding-inline:var(--space-5)}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation-duration:.01ms!important;animation-iteration-count:1!important}.confetti{display:none}}
+.pointer{position:absolute;top:0;left:50%;z-index:2;transform:translateX(-50%);width:0;height:0;border-left:17px solid transparent;border-right:17px solid transparent;border-top:38px solid var(--rose)}
+.wheel-hub{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:22%;aspect-ratio:1;border:6px solid #fff3e9;border-radius:50%;background:var(--page);display:grid;place-items:center;z-index:1}
+.hub-brand{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0}.hub-brand img{width:58%;height:auto}.hub-brand span{font:clamp(1.25rem,3vw,2.5rem)/1.2 Georgia,serif;letter-spacing:-.07em}
+.game-actions{display:flex;justify-content:center;min-height:56px}
+.game-actions .primary-button{min-width:240px}
+.settings-panel{background:var(--panel);padding:24px;min-width:0;align-self:stretch}
+.panel-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px}
+.panel-heading h2{font-size:1.125rem;font-weight:600;margin:0}
+.sample-note{font-size:.8125rem;line-height:1.6;color:var(--muted);margin:0 0 20px;max-width:240px}
+.prize-fields{display:flex;flex-direction:column;gap:12px}
+.prize-row{display:grid;grid-template-columns:minmax(0,1fr) 66px;gap:8px}
+.prize-row label{display:flex;flex-direction:column;gap:4px;min-width:0}
+.prize-row label span{font-size:.875rem;color:var(--muted)}
+.prize-row input{width:100%;min-width:0;min-height:44px;padding:8px;border:1px solid #9c7a88;border-radius:6px;color:var(--ink);background:white;font-size:1rem}
+.prize-row input[type=number]{text-align:center;padding-inline:4px}
+.apply-button{margin-top:20px;width:100%}
+.session-summary{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);margin-top:24px;padding-top:16px;font-size:.875rem;color:var(--muted)}
+.session-summary strong{font-size:1rem;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
+.history{margin:12px 0 0;padding:0;list-style:none;max-height:116px;overflow:auto;color:var(--muted);font-size:.8125rem}
+.history li{padding-block:4px;display:flex;justify-content:space-between;gap:8px}.history li span{color:var(--ink)}
+.settings-message{font-size:.8125rem;color:var(--rose);margin:0;min-height:1.5em}
+.variant-a{display:grid;grid-template-columns:minmax(0,1fr) 320px}
+.variant-a .game{min-height:calc(100dvh - 136px)}
+.variant-a .settings-panel{border-left:1px solid var(--line)}
+.variant-a #close-settings{display:none}
+body[data-variant=A] #settings-toggle{visibility:hidden}
+.variant-b{position:relative;display:flex;justify-content:center}
+.variant-b .game{width:100%;min-height:calc(100dvh - 136px);padding:16px}
+.variant-b .wheel-stage{width:min(100%,calc(100dvh - 252px),56rem)}
+.variant-b .settings-panel{position:fixed;right:20px;top:92px;bottom:92px;width:320px;border:1px solid var(--line);border-radius:12px;z-index:4;overflow:auto;box-shadow:0 2px 12px rgb(43 33 37 / .08)}
+.variant-c{display:grid;grid-template-columns:280px minmax(0,1fr)}
+.variant-c .settings-panel{border-right:1px solid var(--line);padding-inline:20px}
+.variant-c .game{min-height:calc(100dvh - 136px);padding:16px}
+.variant-c .wheel-stage{width:min(100%,calc(100dvh - 184px),52rem)}
+.variant-c .game-actions{display:none}
+.variant-c .wheel-hub{padding:0;border-width:5px}
+.variant-c .wheel-hub .primary-button{width:100%;height:100%;border-radius:50%;padding:8px;min-height:0;font-size:clamp(.9375rem,1.5vw,1.125rem)}
+.variant-c #close-settings{display:none}
+body[data-variant=C] #settings-toggle{visibility:hidden}
+dialog{position:fixed;max-width:calc(100% - 32px);max-height:calc(100dvh - 32px);width:420px;overflow:auto;border:1px solid var(--line);border-radius:16px;padding:40px 28px 28px;background:var(--panel);color:var(--ink);text-align:center}
+dialog::backdrop{background:rgb(43 33 37 / .4)}
+dialog h2{font:400 2.5rem/1.2 Georgia,serif;color:var(--rose);margin:16px 0;overflow-wrap:anywhere}
+dialog p{margin:0;color:var(--muted);font-size:.875rem}
+dialog .primary-button{margin-top:24px;width:100%}
+.dialog-close{position:absolute;right:8px;top:8px}
+.state-dialog{width:640px;text-align:left}.state-dialog h2{font:600 1.125rem/1.5 var(--sans);color:var(--ink)}
+.state-dialog pre{font:.8125rem/1.6 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere}
+.prototype-switcher{position:fixed;z-index:10;left:50%;bottom:16px;transform:translateX(-50%);max-width:calc(100% - 24px);min-height:56px;padding:6px;display:flex;align-items:center;gap:4px;background:var(--ink);color:white;border:1px solid #5f5158;border-radius:12px;box-shadow:0 1px 2px rgb(0 0 0 / .1);font-size:.875rem}
+.prototype-switcher button{flex-shrink:0;width:44px;height:44px;border:0;border-radius:7px;background:transparent;color:white;font-size:1.125rem}
+.prototype-switcher button:hover{background:#514048}.prototype-switcher button:focus-visible{outline-color:white}
+.prototype-label{padding-inline:12px;font-size:.75rem;color:#e6ccd5}
+.variant-label{min-width:140px;text-align:center;font-weight:500}
+.prototype-switcher .state-button{font-size:.8125rem;width:52px;border-left:1px solid #817079;border-radius:0}
+@media(min-width:1600px){.variant-a{grid-template-columns:minmax(0,1fr) 360px}.variant-c{grid-template-columns:320px minmax(0,1fr)}}
+@media(max-width:1100px) and (min-width:901px){.variant-a{grid-template-columns:minmax(0,1fr) 280px}.settings-panel{padding:20px}.variant-c{grid-template-columns:248px minmax(0,1fr)}.prize-row{grid-template-columns:minmax(0,1fr) 60px}}
+@media(max-width:900px){.header{min-height:68px;padding:12px 20px}.brand img{width:40px}.brand span{font-size:2.125rem}.layout.variant-a,.layout.variant-b,.layout.variant-c{display:block;min-height:calc(100dvh - 68px);padding-bottom:88px}.layout .game{min-height:calc(100dvh - 156px);padding:24px 16px;gap:24px}.layout .wheel-stage{width:min(100%,calc(100dvh - 300px),40rem)}.variant-c .wheel-stage{width:min(100%,calc(100dvh - 224px),44rem)}.layout .settings-panel{position:fixed;left:auto;right:12px;top:80px;bottom:88px;width:min(320px,calc(100% - 24px));padding:24px;border:1px solid var(--line);border-radius:12px;z-index:4;overflow:auto}.layout #close-settings{display:block}body[data-variant] #settings-toggle{visibility:visible}.prototype-label{display:none}.variant-label{min-width:140px}.wheel-hub{border-width:4px}.game-actions .primary-button{min-width:min(240px,100%)}}
+@media(max-width:380px){.variant-label{min-width:128px;font-size:.8125rem}.header{padding-inline:16px}.prototype-switcher{bottom:12px}.prototype-switcher .state-button{width:44px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
 
 </style>
-  </head>
-  <body>
-    <div class="page-shell">
-      <header class="site-header">
-        <a class="brand" href="./index.html" aria-label="SARAS, halaman spinwheel">
-          <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+Cjxzdmcgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDE0MTIgOTMyIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zOmFmZmluaXR5PSJodHRwczovL3d3dy5hZmZpbml0eS5zdHVkaW8vIiBzdHlsZT0iZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjI7Ij4KICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsLTQ2MSwtMjIxMS43MzM4MzkpIj4KICAgICAgICA8ZyBpZD0iU2FyYXMtTG9nbyIgYWZmaW5pdHk6aWQ9IlNhcmFzIExvZ28iIHRyYW5zZm9ybT0ibWF0cml4KDMuNjI5ODIsMCwwLDMuNjI5ODIsLTYxMjcuMTIzMzkzLDQ4NC45MDU2MTEpIj4KICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoLTEsMCwwLDEsMjc0NCwtNDM0KSI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNzA3LDExNThDNzA1LjU0MiwxMTY0LjkwNiA2NjguMzE3LDExNzEuMTg3IDYyOC42NzksMTE2MC43NjlDNTkyLjkxOSwxMTUxLjM3MSA1NTUuMTk1LDExMjguMzgyIDU0MCwxMDgwQzU0MCwxMDgwIDU3Mi4zMDcsMTA1Ny42NzMgNTkwLDEwNjJDNTkwLDEwNjIgNjExLjkxNywxMTQyLjg1IDcwNywxMTU4WiIgc3R5bGU9ImZpbGw6cmdiKDI0NCwxMTQsMTgyKTsiLz4KICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwxLDEyNzUsLTQzNCkiPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTcwNywxMTU4QzcwNS41NDIsMTE2NC45MDYgNjY4LjMxNywxMTcxLjE4NyA2MjguNjc5LDExNjAuNzY5QzU5Mi45MTksMTE1MS4zNzEgNTU1LjE5NSwxMTI4LjM4MiA1NDAsMTA4MEM1NDAsMTA4MCA1NzIuMzA3LDEwNTcuNjczIDU5MCwxMDYyQzU5MCwxMDYyIDYxMS45MTcsMTE0Mi44NSA3MDcsMTE1OFoiIHN0eWxlPSJmaWxsOnJnYigyNDQsMTE0LDE4Mik7Ii8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoMSwwLDAsMSwyNzgsLTkyKSI+CiAgICAgICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgwLjQ0MDk2OCwwLDAsMC40NDA5NjgsMTE3Ni4xNTg3MjcsMTM2Ljk2ODY0MykiPgogICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0xMjY4LDExMzlDMTI2OCwxMTM5IDEyNTMuNjIsMTE0OS4wNzYgMTI1NywxMTU4QzEyNTcsMTE1OCAxMjQ2Ljk2OCwxMTg1LjcwMyAxMjc5LDEyMDhDMTI3OSwxMjA4IDEzNTYuOTksMTIyNC44NjYgMTMxNiwxMjcyQzEzMTYsMTI3MiAxNDQwLjA1OSwxMzQ1LjI1NiAxMzMwLDE0MjJDMTMzMCwxNDIyIDEyMzAuMjI2LDE0ODUuNjk1IDExNjYsMTM3M0MxMTY2LDEzNzMgMTEzNy4yNDMsMTMxNS42NjYgMTE2OSwxMjQ3QzExNjksMTI0NyAxMTI4LjU0NywxMTc1LjMzNSAxMTg0LDExMTJDMTE4NCwxMTEyIDExNjIuODI1LDEwMjEuNDU4IDEyNDgsOTg4QzEyNDgsOTg4IDEyNzkuMzIyLDk2NS4wMTggMTMxNSw5OThDMTMxNSw5OTggMTM3OS4yNDIsMTAxMC4xNTggMTM0NSwxMDU5QzEzNDUsMTA1OSAxMzYzLjMxNSwxMDU3LjA2OCAxMzQ4LDEwOTBDMTM0OCwxMDkwIDEzNDQuMTYxLDEwOTUuNjUxIDEzNTcsMTEwM0MxMzU3LDExMDMgMTM0OS4yNzksMTEwMS4yNDYgMTM0Ny42NTUsMTA5My42MjlDMTM0Ni4wMzEsMTA4Ni4wMTMgMTM1MC4zMTQsMTA3MS45MTMgMTM0MywxMDY0TDEzMzksMTA2OEMxMzM5LDEwNjggMTM0MC41MjQsMTA4NC43MzQgMTMyNSwxMTA1QzEzMjUsMTEwNSAxMzI4Ljk0NCwxMTMzLjgzNyAxMjg4LDExNDdDMTI4OCwxMTQ3IDEyNjkuMzQ5LDExNDQuNTIyIDEyNjgsMTEzOVoiIHN0eWxlPSJmaWxsOnJnYigyNDQsMTE0LDE4Mik7Ii8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgwLjQ3NDQ1NywwLDAsMC40NjAwMTQsMTUyOC44NDI4OCwtMTY5LjA4Njc1MikiPgogICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0zNjAsMTc3OEMzNjAsMTc3OCAzNTEuODMxLDE3MTQuNDA5IDM3NSwxNjc2QzM3NSwxNjc2IDQxMy4wNzQsMTYwOC44MTEgNDY2LDE2MjhDNDY2LDE2MjggNDI5Ljc1OCwxNjQyLjM0NiA0MjAsMTY2MkM0MjAsMTY2MiA0NTUuMTQsMTYyOS45NTEgNDc5LDE2MzRDNDc5LDE2MzQgNTIyLjg4MSwxNjUzLjk2OSA0OTQsMTY4MUM0OTQsMTY4MSA0NTguNjA4LDE2OTYuNiA0NDgsMTY5OEM0NDgsMTY5OCAzNjkuMDQ3LDE3MTUuNzcyIDM2OSwxNzUyQzM2OSwxNzUyIDM4Ni41NjgsMTczMS40ODIgNDA4LDE3MjdDNDA4LDE3MjcgNDAyLjgyLDE3NTAuMTQ1IDM4OCwxNzYzQzM4OCwxNzYzIDM2My4xMSwxNzkwLjMyNCAzNDcsMTc5NkMzNDcsMTc5NiAzMjUuOTA1LDE3OTYuNTIyIDMzMCwxODYxQzMzMCwxODYxIDMxNC4zOTYsMTgzMy40NzEgMzIxLDE3OTBDMzIxLDE3OTAgMzM1LjM2LDE3MzQuNTg4IDM0OCwxNzMzQzM0OCwxNzMzIDMzMS40OCwxNjgyLjk5IDM3OSwxNjI5QzM3OSwxNjI5IDQzMS43MjYsMTU3NC45OSA0NzgsMTYxOUM0NzgsMTYxOSA1MzMuOCwxNjI1LjUzMSA1MTIsMTY3NkM1MTIsMTY3NiA1MjUuNDE0LDE2ODkuNzIgNTE4LDE2OThDNTE4LDE2OTggNTA1LjQyNywxNzE3LjE1NiA1MjAsMTcyNUM1MjAsMTcyNSA1MDcuMDg4LDE3MTkuNTU2IDUwOSwxNzA1QzUwOSwxNzA1IDUxMS4xNTcsMTY5MS45MzQgNTA4LDE2ODdMNTAzLDE2ODJDNTAzLDE2ODIgNDc3LjU1NSwxNzEwLjQ1MyA0MjIsMTcyMkw0MDgsMTcyNyIgc3R5bGU9ImZpbGw6cmdiKDI1MywyMzEsMjM4KTsiLz4KICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8cGF0aCBkPSJNMjAxNyw3MTNDMjAxNyw3MTMgMjA2Ni4zNzksNzE0LjQwNCAyMTA1LjAwNiw2NzkuODAxQzIxMzAuMDk0LDY1Ny4zMjcgMjE1MC4wNjksNjE3LjkyOSAyMTUxLDU1OSIgc3R5bGU9ImZpbGw6bm9uZTsiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTIwMTgsNjg4QzIwMTgsNjg4IDIwNjYuODYsNjgxLjM5OCAyMDcyLDY0N0MyMDcyLDY0NyAyMDc0Ljk3OSw2MjkuOTg2IDIwNTEsNjA1QzIwNTEsNjA1IDIwODEuMTA2LDU2MS45ODUgMjE1MSw1NTlDMjE1MSw1NTkgMjE1NC43NTMsNzA5Ljk4NiAyMDE2LDcxM0MyMDE2LDcxMyAyMDE1LjYsNjkxLjIzOCAyMDE4LDY4OFoiIHN0eWxlPSJmaWxsOnJnYigyNDQsMTE0LDE4Mik7Ii8+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0xOTYwLDU5NUMxOTU2LjM2Niw1OTAuOTA0IDE5MjkuODA0LDY2OS43NjUgMjAwMyw2ODdDMjAwMyw2ODcgMjAwNC4xNTksNzExLjk5NCAyMDA0LDcxNEMyMDA0LDcxNCAxODczLjM1OCw3MjEuNjI3IDE4NzAsNTYwQzE4NzAsNTYwIDE5MjEuNDY1LDU2Mi40OTkgMTk2MCw1OTVaIiBzdHlsZT0iZmlsbDpyZ2IoMjQ0LDExNCwxODIpOyIvPgogICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgwLjU1NDMyMiwtMC4wMTA1OTYsMC4wMTA1OTYsMC41NTQzMjIsMTc0MC4yMDQxMDgsLTQ0OS4yMTk1MTEpIj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik00ODUsMTk3MkM0ODUsMTk3MiA1MDIuMTY0LDE5NDEuODc1IDUxNCwxOTcwQzUxNCwxOTcwIDUxOC40MDQsMTk4OC45NjkgNDk2LDIwMTFDNDk2LDIwMTEgNDYyLjUxLDIwMDMuODM2IDQ1NiwxOTgwQzQ1NiwxOTgwIDQ1NS40NTQsMTk1MC44MTIgNDg1LDE5NzJaIiBzdHlsZT0iZmlsbDp3aGl0ZTsiLz4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+Cg==" width="51" height="37" alt="">
-          <span class="wordmark">saras<span class="wordmark-dot">.</span></span>
-        </a>
-        <nav aria-label="Menu spinwheel">
-          <button class="text-button" id="guide-button" type="button">Cara bermain</button>
-          <button class="staff-button" id="staff-button" type="button" aria-label="Panel panitia">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="3" fill="var(--page)"/><circle cx="15" cy="17" r="3" fill="var(--page)"/></svg>
-            <span>Panel panitia</span>
-          </button>
-        </nav>
-      </header>
-
-      <main id="main" class="main-layout">
-        <section class="intro" aria-labelledby="page-title">
-          <h1 id="page-title">Putar roda<br> dan dapatkan<br> <em>hadiahmu.</em></h1>
-          <p class="intro-description">Tunjukkan hasil putaran ke panitia untuk mengambil hadiah di booth SARAS.</p>
-        </section>
-
-        <section class="wheel-section" aria-label="Roda hadiah">
-          <div class="wheel-stage">
-            <div class="pointer" aria-hidden="true"><svg viewBox="0 0 38 58"><path d="M19 56C19 56 3 28 3 19a16 16 0 0 1 32 0c0 9-16 37-16 37Z" fill="currentColor"/><circle cx="19" cy="19" r="5" fill="#fff8f1"/></svg></div>
-            <div class="wheel-frame">
-              <svg id="wheel" viewBox="0 0 560 560" role="img" aria-label="Roda hadiah sedang dimuat"><circle cx="280" cy="280" r="275" fill="#f2d6e0"/></svg>
-              <div class="wheel-hub" aria-hidden="true"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+Cjxzdmcgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDE0MTIgOTMyIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zOmFmZmluaXR5PSJodHRwczovL3d3dy5hZmZpbml0eS5zdHVkaW8vIiBzdHlsZT0iZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjI7Ij4KICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsLTQ2MSwtMjIxMS43MzM4MzkpIj4KICAgICAgICA8ZyBpZD0iU2FyYXMtTG9nbyIgYWZmaW5pdHk6aWQ9IlNhcmFzIExvZ28iIHRyYW5zZm9ybT0ibWF0cml4KDMuNjI5ODIsMCwwLDMuNjI5ODIsLTYxMjcuMTIzMzkzLDQ4NC45MDU2MTEpIj4KICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoLTEsMCwwLDEsMjc0NCwtNDM0KSI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNzA3LDExNThDNzA1LjU0MiwxMTY0LjkwNiA2NjguMzE3LDExNzEuMTg3IDYyOC42NzksMTE2MC43NjlDNTkyLjkxOSwxMTUxLjM3MSA1NTUuMTk1LDExMjguMzgyIDU0MCwxMDgwQzU0MCwxMDgwIDU3Mi4zMDcsMTA1Ny42NzMgNTkwLDEwNjJDNTkwLDEwNjIgNjExLjkxNywxMTQyLjg1IDcwNywxMTU4WiIgc3R5bGU9ImZpbGw6cmdiKDI0NCwxMTQsMTgyKTsiLz4KICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwxLDEyNzUsLTQzNCkiPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTcwNywxMTU4QzcwNS41NDIsMTE2NC45MDYgNjY4LjMxNywxMTcxLjE4NyA2MjguNjc5LDExNjAuNzY5QzU5Mi45MTksMTE1MS4zNzEgNTU1LjE5NSwxMTI4LjM4MiA1NDAsMTA4MEM1NDAsMTA4MCA1NzIuMzA3LDEwNTcuNjczIDU5MCwxMDYyQzU5MCwxMDYyIDYxMS45MTcsMTE0Mi44NSA3MDcsMTE1OFoiIHN0eWxlPSJmaWxsOnJnYigyNDQsMTE0LDE4Mik7Ii8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoMSwwLDAsMSwyNzgsLTkyKSI+CiAgICAgICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgwLjQ0MDk2OCwwLDAsMC40NDA5NjgsMTE3Ni4xNTg3MjcsMTM2Ljk2ODY0MykiPgogICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0xMjY4LDExMzlDMTI2OCwxMTM5IDEyNTMuNjIsMTE0OS4wNzYgMTI1NywxMTU4QzEyNTcsMTE1OCAxMjQ2Ljk2OCwxMTg1LjcwMyAxMjc5LDEyMDhDMTI3OSwxMjA4IDEzNTYuOTksMTIyNC44NjYgMTMxNiwxMjcyQzEzMTYsMTI3MiAxNDQwLjA1OSwxMzQ1LjI1NiAxMzMwLDE0MjJDMTMzMCwxNDIyIDEyMzAuMjI2LDE0ODUuNjk1IDExNjYsMTM3M0MxMTY2LDEzNzMgMTEzNy4yNDMsMTMxNS42NjYgMTE2OSwxMjQ3QzExNjksMTI0NyAxMTI4LjU0NywxMTc1LjMzNSAxMTg0LDExMTJDMTE4NCwxMTEyIDExNjIuODI1LDEwMjEuNDU4IDEyNDgsOTg4QzEyNDgsOTg4IDEyNzkuMzIyLDk2NS4wMTggMTMxNSw5OThDMTMxNSw5OTggMTM3OS4yNDIsMTAxMC4xNTggMTM0NSwxMDU5QzEzNDUsMTA1OSAxMzYzLjMxNSwxMDU3LjA2OCAxMzQ4LDEwOTBDMTM0OCwxMDkwIDEzNDQuMTYxLDEwOTUuNjUxIDEzNTcsMTEwM0MxMzU3LDExMDMgMTM0OS4yNzksMTEwMS4yNDYgMTM0Ny42NTUsMTA5My42MjlDMTM0Ni4wMzEsMTA4Ni4wMTMgMTM1MC4zMTQsMTA3MS45MTMgMTM0MywxMDY0TDEzMzksMTA2OEMxMzM5LDEwNjggMTM0MC41MjQsMTA4NC43MzQgMTMyNSwxMTA1QzEzMjUsMTEwNSAxMzI4Ljk0NCwxMTMzLjgzNyAxMjg4LDExNDdDMTI4OCwxMTQ3IDEyNjkuMzQ5LDExNDQuNTIyIDEyNjgsMTEzOVoiIHN0eWxlPSJmaWxsOnJnYigyNDQsMTE0LDE4Mik7Ii8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgwLjQ3NDQ1NywwLDAsMC40NjAwMTQsMTUyOC44NDI4OCwtMTY5LjA4Njc1MikiPgogICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0zNjAsMTc3OEMzNjAsMTc3OCAzNTEuODMxLDE3MTQuNDA5IDM3NSwxNjc2QzM3NSwxNjc2IDQxMy4wNzQsMTYwOC44MTEgNDY2LDE2MjhDNDY2LDE2MjggNDI5Ljc1OCwxNjQyLjM0NiA0MjAsMTY2MkM0MjAsMTY2MiA0NTUuMTQsMTYyOS45NTEgNDc5LDE2MzRDNDc5LDE2MzQgNTIyLjg4MSwxNjUzLjk2OSA0OTQsMTY4MUM0OTQsMTY4MSA0NTguNjA4LDE2OTYuNiA0NDgsMTY5OEM0NDgsMTY5OCAzNjkuMDQ3LDE3MTUuNzcyIDM2OSwxNzUyQzM2OSwxNzUyIDM4Ni41NjgsMTczMS40ODIgNDA4LDE3MjdDNDA4LDE3MjcgNDAyLjgyLDE3NTAuMTQ1IDM4OCwxNzYzQzM4OCwxNzYzIDM2My4xMSwxNzkwLjMyNCAzNDcsMTc5NkMzNDcsMTc5NiAzMjUuOTA1LDE3OTYuNTIyIDMzMCwxODYxQzMzMCwxODYxIDMxNC4zOTYsMTgzMy40NzEgMzIxLDE3OTBDMzIxLDE3OTAgMzM1LjM2LDE3MzQuNTg4IDM0OCwxNzMzQzM0OCwxNzMzIDMzMS40OCwxNjgyLjk5IDM3OSwxNjI5QzM3OSwxNjI5IDQzMS43MjYsMTU3NC45OSA0NzgsMTYxOUM0NzgsMTYxOSA1MzMuOCwxNjI1LjUzMSA1MTIsMTY3NkM1MTIsMTY3NiA1MjUuNDE0LDE2ODkuNzIgNTE4LDE2OThDNTE4LDE2OTggNTA1LjQyNywxNzE3LjE1NiA1MjAsMTcyNUM1MjAsMTcyNSA1MDcuMDg4LDE3MTkuNTU2IDUwOSwxNzA1QzUwOSwxNzA1IDUxMS4xNTcsMTY5MS45MzQgNTA4LDE2ODdMNTAzLDE2ODJDNTAzLDE2ODIgNDc3LjU1NSwxNzEwLjQ1MyA0MjIsMTcyMkw0MDgsMTcyNyIgc3R5bGU9ImZpbGw6cmdiKDI1MywyMzEsMjM4KTsiLz4KICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8cGF0aCBkPSJNMjAxNyw3MTNDMjAxNyw3MTMgMjA2Ni4zNzksNzE0LjQwNCAyMTA1LjAwNiw2NzkuODAxQzIxMzAuMDk0LDY1Ny4zMjcgMjE1MC4wNjksNjE3LjkyOSAyMTUxLDU1OSIgc3R5bGU9ImZpbGw6bm9uZTsiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTIwMTgsNjg4QzIwMTgsNjg4IDIwNjYuODYsNjgxLjM5OCAyMDcyLDY0N0MyMDcyLDY0NyAyMDc0Ljk3OSw2MjkuOTg2IDIwNTEsNjA1QzIwNTEsNjA1IDIwODEuMTA2LDU2MS45ODUgMjE1MSw1NTlDMjE1MSw1NTkgMjE1NC43NTMsNzA5Ljk4NiAyMDE2LDcxM0MyMDE2LDcxMyAyMDE1LjYsNjkxLjIzOCAyMDE4LDY4OFoiIHN0eWxlPSJmaWxsOnJnYigyNDQsMTE0LDE4Mik7Ii8+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0xOTYwLDU5NUMxOTU2LjM2Niw1OTAuOTA0IDE5MjkuODA0LDY2OS43NjUgMjAwMyw2ODdDMjAwMyw2ODcgMjAwNC4xNTksNzExLjk5NCAyMDA0LDcxNEMyMDA0LDcxNCAxODczLjM1OCw3MjEuNjI3IDE4NzAsNTYwQzE4NzAsNTYwIDE5MjEuNDY1LDU2Mi40OTkgMTk2MCw1OTVaIiBzdHlsZT0iZmlsbDpyZ2IoMjQ0LDExNCwxODIpOyIvPgogICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgwLjU1NDMyMiwtMC4wMTA1OTYsMC4wMTA1OTYsMC41NTQzMjIsMTc0MC4yMDQxMDgsLTQ0OS4yMTk1MTEpIj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik00ODUsMTk3MkM0ODUsMTk3MiA1MDIuMTY0LDE5NDEuODc1IDUxNCwxOTcwQzUxNCwxOTcwIDUxOC40MDQsMTk4OC45NjkgNDk2LDIwMTFDNDk2LDIwMTEgNDYyLjUxLDIwMDMuODM2IDQ1NiwxOTgwQzQ1NiwxOTgwIDQ1NS40NTQsMTk1MC44MTIgNDg1LDE5NzJaIiBzdHlsZT0iZmlsbDp3aGl0ZTsiLz4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+Cg==" width="64" height="44" alt=""><span>saras.</span></div>
-            </div>
-          </div>
-          <div class="spin-controls">
-            <p id="spin-status" class="spin-status" role="status" aria-live="polite">Menyiapkan roda…</p>
-            <button id="spin-button" class="primary-button spin-button" type="button" disabled>Memuat hadiah…</button>
-            <p class="control-note" id="control-note"></p>
-          </div>
-          <div id="error-message" class="error-message" role="alert" hidden></div>
-        </section>
-
-        <section class="prize-section" aria-labelledby="prizes-heading">
-          <div class="prize-heading"><h2 id="prizes-heading">Pilihan hadiah</h2><span class="example-label">Hadiah contoh</span></div>
-          <ul class="prize-list" id="prize-list"><li>Memuat daftar hadiah…</li></ul>
-        </section>
-      </main>
-
-      <footer class="site-footer"><p>SARAS</p><p>Prototype</p></footer>
-    </div>
-    <noscript><p class="noscript-message">Aktifkan JavaScript di browser untuk menggunakan spinwheel.</p></noscript>
-
-    <dialog id="result-dialog" class="result-dialog" aria-labelledby="result-heading" aria-describedby="result-instructions">
-      <button class="close-button" type="button" data-close="result-dialog" aria-label="Tutup hasil hadiah">×</button>
-      <h2 id="result-heading">Hadiahmu<br><em id="result-prize"></em></h2>
-      <p id="result-instructions">Tunjukkan hasil ini ke panitia di booth SARAS untuk mengambil hadiahnya.</p>
-      <p class="ticket-number" id="ticket-number"></p>
-      <button class="primary-button" id="next-button" type="button">Hadiah sudah diterima</button>
-      <p class="dialog-footnote">Panitia: klik setelah hadiah diserahkan untuk giliran berikutnya.</p>
-    </dialog>
-
-    <dialog id="guide-dialog" class="guide-dialog" aria-labelledby="guide-heading">
-      <button class="close-button" type="button" data-close="guide-dialog" aria-label="Tutup cara bermain">×</button>
-      <h2 id="guide-heading">Cara bermain</h2>
-      <ol class="guide-steps"><li><strong>Tekan “Putar roda”</strong><p>Tunggu sampai roda berhenti dan hadiahmu muncul.</p></li><li><strong>Tunjukkan hasil ke panitia</strong><p>Ambil hadiahmu langsung di booth SARAS.</p></li></ol>
-      <p class="guide-fairness">Setiap jenis hadiah yang masih tersedia punya peluang sama. Hadiah yang stoknya habis tidak ikut diundi.</p>
-      <button class="primary-button" data-close="guide-dialog" type="button">Tutup panduan</button>
-    </dialog>
-
-    <dialog id="staff-dialog" class="staff-dialog" aria-labelledby="staff-heading">
-      <button class="close-button" type="button" data-close="staff-dialog" aria-label="Tutup panel panitia">×</button>
-      <h2 id="staff-heading">Panel panitia</h2>
-      <p class="storage-note">Data tersimpan di browser ini. Gunakan satu tab pada satu perangkat booth; stok tidak tersinkron ke perangkat lain.</p>
-      <form id="prize-form">
-        <div class="form-heading"><span>Nama hadiah</span><span>Sisa stok</span></div>
-        <div id="prize-fields"></div>
-        <p id="settings-message" class="form-message" role="status"></p>
-        <button class="primary-button" id="save-button" type="submit">Simpan perubahan</button>
-      </form>
-      <section class="history-section" aria-labelledby="history-heading">
-        <div class="history-heading"><h3 id="history-heading">Riwayat putaran <span id="history-count">0</span></h3><button class="text-button" id="export-button" type="button" disabled>Unduh CSV</button></div>
-        <ol id="history-list" class="history-list"></ol>
-      </section>
-      <div class="reset-section"><p>Mulai ulang akan menghapus riwayat dan mengembalikan hadiah contoh.</p><button id="reset-button" class="danger-button" type="button">Mulai ulang demo</button></div>
-    </dialog>
-
-    <dialog id="reset-dialog" class="reset-dialog" aria-labelledby="reset-heading">
-      <h2 id="reset-heading">Mulai ulang demo?</h2>
-      <p>Seluruh riwayat di browser ini akan dihapus. Nama hadiah dan stok akan kembali ke contoh awal.</p>
-      <div class="dialog-actions"><button class="secondary-button" type="button" data-close="reset-dialog" autofocus>Batal</button><button class="danger-button" type="button" id="confirm-reset-button">Ya, mulai ulang</button></div>
-    </dialog>
-    <div id="confetti" class="confetti" aria-hidden="true"></div>
-  <script type="module">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+  <header class="header">
+    <a class="brand" href="./index.html?prototype=1" aria-label="SARAS spinwheel">
+      <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+Cjxzdmcgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDE0MTIgOTMyIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zOmFmZmluaXR5PSJodHRwczovL3d3dy5hZmZpbml0eS5zdHVkaW8vIiBzdHlsZT0iZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjI7Ij4KICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsLTQ2MSwtMjIxMS43MzM4MzkpIj4KICAgICAgICA8ZyBpZD0iU2FyYXMtTG9nbyIgYWZmaW5pdHk6aWQ9IlNhcmFzIExvZ28iIHRyYW5zZm9ybT0ibWF0cml4KDMuNjI5ODIsMCwwLDMuNjI5ODIsLTYxMjcuMTIzMzkzLDQ4NC45MDU2MTEpIj4KICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoLTEsMCwwLDEsMjc0NCwtNDM0KSI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNzA3LDExNThDNzA1LjU0MiwxMTY0LjkwNiA2NjguMzE3LDExNzEuMTg3IDYyOC42NzksMTE2MC43NjlDNTkyLjkxOSwxMTUxLjM3MSA1NTUuMTk1LDExMjguMzgyIDU0MCwxMDgwQzU0MCwxMDgwIDU3Mi4zMDcsMTA1Ny42NzMgNTkwLDEwNjJDNTkwLDEwNjIgNjExLjkxNywxMTQyLjg1IDcwNywxMTU4WiIgc3R5bGU9ImZpbGw6cmdiKDI0NCwxMTQsMTgyKTsiLz4KICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwxLDEyNzUsLTQzNCkiPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTcwNywxMTU4QzcwNS41NDIsMTE2NC45MDYgNjY4LjMxNywxMTcxLjE4NyA2MjguNjc5LDExNjAuNzY5QzU5Mi45MTksMTE1MS4zNzEgNTU1LjE5NSwxMTI4LjM4MiA1NDAsMTA4MEM1NDAsMTA4MCA1NzIuMzA3LDEwNTcuNjczIDU5MCwxMDYyQzU5MCwxMDYyIDYxMS45MTcsMTE0Mi44NSA3MDcsMTE1OFoiIHN0eWxlPSJmaWxsOnJnYigyNDQsMTE0LDE4Mik7Ii8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoMSwwLDAsMSwyNzgsLTkyKSI+CiAgICAgICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgwLjQ0MDk2OCwwLDAsMC40NDA5NjgsMTE3Ni4xNTg3MjcsMTM2Ljk2ODY0MykiPgogICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0xMjY4LDExMzlDMTI2OCwxMTM5IDEyNTMuNjIsMTE0OS4wNzYgMTI1NywxMTU4QzEyNTcsMTE1OCAxMjQ2Ljk2OCwxMTg1LjcwMyAxMjc5LDEyMDhDMTI3OSwxMjA4IDEzNTYuOTksMTIyNC44NjYgMTMxNiwxMjcyQzEzMTYsMTI3MiAxNDQwLjA1OSwxMzQ1LjI1NiAxMzMwLDE0MjJDMTMzMCwxNDIyIDEyMzAuMjI2LDE0ODUuNjk1IDExNjYsMTM3M0MxMTY2LDEzNzMgMTEzNy4yNDMsMTMxNS42NjYgMTE2OSwxMjQ3QzExNjksMTI0NyAxMTI4LjU0NywxMTc1LjMzNSAxMTg0LDExMTJDMTE4NCwxMTEyIDExNjIuODI1LDEwMjEuNDU4IDEyNDgsOTg4QzEyNDgsOTg4IDEyNzkuMzIyLDk2NS4wMTggMTMxNSw5OThDMTMxNSw5OTggMTM3OS4yNDIsMTAxMC4xNTggMTM0NSwxMDU5QzEzNDUsMTA1OSAxMzYzLjMxNSwxMDU3LjA2OCAxMzQ4LDEwOTBDMTM0OCwxMDkwIDEzNDQuMTYxLDEwOTUuNjUxIDEzNTcsMTEwM0MxMzU3LDExMDMgMTM0OS4yNzksMTEwMS4yNDYgMTM0Ny42NTUsMTA5My42MjlDMTM0Ni4wMzEsMTA4Ni4wMTMgMTM1MC4zMTQsMTA3MS45MTMgMTM0MywxMDY0TDEzMzksMTA2OEMxMzM5LDEwNjggMTM0MC41MjQsMTA4NC43MzQgMTMyNSwxMTA1QzEzMjUsMTEwNSAxMzI4Ljk0NCwxMTMzLjgzNyAxMjg4LDExNDdDMTI4OCwxMTQ3IDEyNjkuMzQ5LDExNDQuNTIyIDEyNjgsMTEzOVoiIHN0eWxlPSJmaWxsOnJnYigyNDQsMTE0LDE4Mik7Ii8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgwLjQ3NDQ1NywwLDAsMC40NjAwMTQsMTUyOC44NDI4OCwtMTY5LjA4Njc1MikiPgogICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0zNjAsMTc3OEMzNjAsMTc3OCAzNTEuODMxLDE3MTQuNDA5IDM3NSwxNjc2QzM3NSwxNjc2IDQxMy4wNzQsMTYwOC44MTEgNDY2LDE2MjhDNDY2LDE2MjggNDI5Ljc1OCwxNjQyLjM0NiA0MjAsMTY2MkM0MjAsMTY2MiA0NTUuMTQsMTYyOS45NTEgNDc5LDE2MzRDNDc5LDE2MzQgNTIyLjg4MSwxNjUzLjk2OSA0OTQsMTY4MUM0OTQsMTY4MSA0NTguNjA4LDE2OTYuNiA0NDgsMTY5OEM0NDgsMTY5OCAzNjkuMDQ3LDE3MTUuNzcyIDM2OSwxNzUyQzM2OSwxNzUyIDM4Ni41NjgsMTczMS40ODIgNDA4LDE3MjdDNDA4LDE3MjcgNDAyLjgyLDE3NTAuMTQ1IDM4OCwxNzYzQzM4OCwxNzYzIDM2My4xMSwxNzkwLjMyNCAzNDcsMTc5NkMzNDcsMTc5NiAzMjUuOTA1LDE3OTYuNTIyIDMzMCwxODYxQzMzMCwxODYxIDMxNC4zOTYsMTgzMy40NzEgMzIxLDE3OTBDMzIxLDE3OTAgMzM1LjM2LDE3MzQuNTg4IDM0OCwxNzMzQzM0OCwxNzMzIDMzMS40OCwxNjgyLjk5IDM3OSwxNjI5QzM3OSwxNjI5IDQzMS43MjYsMTU3NC45OSA0NzgsMTYxOUM0NzgsMTYxOSA1MzMuOCwxNjI1LjUzMSA1MTIsMTY3NkM1MTIsMTY3NiA1MjUuNDE0LDE2ODkuNzIgNTE4LDE2OThDNTE4LDE2OTggNTA1LjQyNywxNzE3LjE1NiA1MjAsMTcyNUM1MjAsMTcyNSA1MDcuMDg4LDE3MTkuNTU2IDUwOSwxNzA1QzUwOSwxNzA1IDUxMS4xNTcsMTY5MS45MzQgNTA4LDE2ODdMNTAzLDE2ODJDNTAzLDE2ODIgNDc3LjU1NSwxNzEwLjQ1MyA0MjIsMTcyMkw0MDgsMTcyNyIgc3R5bGU9ImZpbGw6cmdiKDI1MywyMzEsMjM4KTsiLz4KICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8cGF0aCBkPSJNMjAxNyw3MTNDMjAxNyw3MTMgMjA2Ni4zNzksNzE0LjQwNCAyMTA1LjAwNiw2NzkuODAxQzIxMzAuMDk0LDY1Ny4zMjcgMjE1MC4wNjksNjE3LjkyOSAyMTUxLDU1OSIgc3R5bGU9ImZpbGw6bm9uZTsiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTIwMTgsNjg4QzIwMTgsNjg4IDIwNjYuODYsNjgxLjM5OCAyMDcyLDY0N0MyMDcyLDY0NyAyMDc0Ljk3OSw2MjkuOTg2IDIwNTEsNjA1QzIwNTEsNjA1IDIwODEuMTA2LDU2MS45ODUgMjE1MSw1NTlDMjE1MSw1NTkgMjE1NC43NTMsNzA5Ljk4NiAyMDE2LDcxM0MyMDE2LDcxMyAyMDE1LjYsNjkxLjIzOCAyMDE4LDY4OFoiIHN0eWxlPSJmaWxsOnJnYigyNDQsMTE0LDE4Mik7Ii8+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0xOTYwLDU5NUMxOTU2LjM2Niw1OTAuOTA0IDE5MjkuODA0LDY2OS43NjUgMjAwMyw2ODdDMjAwMyw2ODcgMjAwNC4xNTksNzExLjk5NCAyMDA0LDcxNEMyMDA0LDcxNCAxODczLjM1OCw3MjEuNjI3IDE4NzAsNTYwQzE4NzAsNTYwIDE5MjEuNDY1LDU2Mi40OTkgMTk2MCw1OTVaIiBzdHlsZT0iZmlsbDpyZ2IoMjQ0LDExNCwxODIpOyIvPgogICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgwLjU1NDMyMiwtMC4wMTA1OTYsMC4wMTA1OTYsMC41NTQzMjIsMTc0MC4yMDQxMDgsLTQ0OS4yMTk1MTEpIj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik00ODUsMTk3MkM0ODUsMTk3MiA1MDIuMTY0LDE5NDEuODc1IDUxNCwxOTcwQzUxNCwxOTcwIDUxOC40MDQsMTk4OC45NjkgNDk2LDIwMTFDNDk2LDIwMTEgNDYyLjUxLDIwMDMuODM2IDQ1NiwxOTgwQzQ1NiwxOTgwIDQ1NS40NTQsMTk1MC44MTIgNDg1LDE5NzJaIiBzdHlsZT0iZmlsbDp3aGl0ZTsiLz4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+Cg==" alt="" width="48" height="32"><span>saras.</span>
+    </a>
+    <button id="settings-toggle" class="secondary-button" type="button" aria-controls="settings-panel" aria-expanded="false">Pengaturan</button>
+  </header>
+  <h1 class="sr-only">SARAS spinwheel</h1>
+  <main id="layout" class="layout">
+    <section id="game" class="game" aria-label="Spinwheel hadiah">
+      <div class="wheel-stage">
+        <div class="pointer" aria-hidden="true"></div>
+        <div class="wheel-frame">
+          <svg id="wheel" viewBox="0 0 560 560" role="img" aria-label="Roda hadiah"></svg>
+          <div id="wheel-hub" class="wheel-hub"><div id="hub-brand" class="hub-brand"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+Cjxzdmcgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDE0MTIgOTMyIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zOmFmZmluaXR5PSJodHRwczovL3d3dy5hZmZpbml0eS5zdHVkaW8vIiBzdHlsZT0iZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjI7Ij4KICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsLTQ2MSwtMjIxMS43MzM4MzkpIj4KICAgICAgICA8ZyBpZD0iU2FyYXMtTG9nbyIgYWZmaW5pdHk6aWQ9IlNhcmFzIExvZ28iIHRyYW5zZm9ybT0ibWF0cml4KDMuNjI5ODIsMCwwLDMuNjI5ODIsLTYxMjcuMTIzMzkzLDQ4NC45MDU2MTEpIj4KICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoLTEsMCwwLDEsMjc0NCwtNDM0KSI+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNzA3LDExNThDNzA1LjU0MiwxMTY0LjkwNiA2NjguMzE3LDExNzEuMTg3IDYyOC42NzksMTE2MC43NjlDNTkyLjkxOSwxMTUxLjM3MSA1NTUuMTk1LDExMjguMzgyIDU0MCwxMDgwQzU0MCwxMDgwIDU3Mi4zMDcsMTA1Ny42NzMgNTkwLDEwNjJDNTkwLDEwNjIgNjExLjkxNywxMTQyLjg1IDcwNywxMTU4WiIgc3R5bGU9ImZpbGw6cmdiKDI0NCwxMTQsMTgyKTsiLz4KICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwxLDEyNzUsLTQzNCkiPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTcwNywxMTU4QzcwNS41NDIsMTE2NC45MDYgNjY4LjMxNywxMTcxLjE4NyA2MjguNjc5LDExNjAuNzY5QzU5Mi45MTksMTE1MS4zNzEgNTU1LjE5NSwxMTI4LjM4MiA1NDAsMTA4MEM1NDAsMTA4MCA1NzIuMzA3LDEwNTcuNjczIDU5MCwxMDYyQzU5MCwxMDYyIDYxMS45MTcsMTE0Mi44NSA3MDcsMTE1OFoiIHN0eWxlPSJmaWxsOnJnYigyNDQsMTE0LDE4Mik7Ii8+CiAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJtYXRyaXgoMSwwLDAsMSwyNzgsLTkyKSI+CiAgICAgICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgwLjQ0MDk2OCwwLDAsMC40NDA5NjgsMTE3Ni4xNTg3MjcsMTM2Ljk2ODY0MykiPgogICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0xMjY4LDExMzlDMTI2OCwxMTM5IDEyNTMuNjIsMTE0OS4wNzYgMTI1NywxMTU4QzEyNTcsMTE1OCAxMjQ2Ljk2OCwxMTg1LjcwMyAxMjc5LDEyMDhDMTI3OSwxMjA4IDEzNTYuOTksMTIyNC44NjYgMTMxNiwxMjcyQzEzMTYsMTI3MiAxNDQwLjA1OSwxMzQ1LjI1NiAxMzMwLDE0MjJDMTMzMCwxNDIyIDEyMzAuMjI2LDE0ODUuNjk1IDExNjYsMTM3M0MxMTY2LDEzNzMgMTEzNy4yNDMsMTMxNS42NjYgMTE2OSwxMjQ3QzExNjksMTI0NyAxMTI4LjU0NywxMTc1LjMzNSAxMTg0LDExMTJDMTE4NCwxMTEyIDExNjIuODI1LDEwMjEuNDU4IDEyNDgsOTg4QzEyNDgsOTg4IDEyNzkuMzIyLDk2NS4wMTggMTMxNSw5OThDMTMxNSw5OTggMTM3OS4yNDIsMTAxMC4xNTggMTM0NSwxMDU5QzEzNDUsMTA1OSAxMzYzLjMxNSwxMDU3LjA2OCAxMzQ4LDEwOTBDMTM0OCwxMDkwIDEzNDQuMTYxLDEwOTUuNjUxIDEzNTcsMTEwM0MxMzU3LDExMDMgMTM0OS4yNzksMTEwMS4yNDYgMTM0Ny42NTUsMTA5My42MjlDMTM0Ni4wMzEsMTA4Ni4wMTMgMTM1MC4zMTQsMTA3MS45MTMgMTM0MywxMDY0TDEzMzksMTA2OEMxMzM5LDEwNjggMTM0MC41MjQsMTA4NC43MzQgMTMyNSwxMTA1QzEzMjUsMTEwNSAxMzI4Ljk0NCwxMTMzLjgzNyAxMjg4LDExNDdDMTI4OCwxMTQ3IDEyNjkuMzQ5LDExNDQuNTIyIDEyNjgsMTEzOVoiIHN0eWxlPSJmaWxsOnJnYigyNDQsMTE0LDE4Mik7Ii8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgwLjQ3NDQ1NywwLDAsMC40NjAwMTQsMTUyOC44NDI4OCwtMTY5LjA4Njc1MikiPgogICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0zNjAsMTc3OEMzNjAsMTc3OCAzNTEuODMxLDE3MTQuNDA5IDM3NSwxNjc2QzM3NSwxNjc2IDQxMy4wNzQsMTYwOC44MTEgNDY2LDE2MjhDNDY2LDE2MjggNDI5Ljc1OCwxNjQyLjM0NiA0MjAsMTY2MkM0MjAsMTY2MiA0NTUuMTQsMTYyOS45NTEgNDc5LDE2MzRDNDc5LDE2MzQgNTIyLjg4MSwxNjUzLjk2OSA0OTQsMTY4MUM0OTQsMTY4MSA0NTguNjA4LDE2OTYuNiA0NDgsMTY5OEM0NDgsMTY5OCAzNjkuMDQ3LDE3MTUuNzcyIDM2OSwxNzUyQzM2OSwxNzUyIDM4Ni41NjgsMTczMS40ODIgNDA4LDE3MjdDNDA4LDE3MjcgNDAyLjgyLDE3NTAuMTQ1IDM4OCwxNzYzQzM4OCwxNzYzIDM2My4xMSwxNzkwLjMyNCAzNDcsMTc5NkMzNDcsMTc5NiAzMjUuOTA1LDE3OTYuNTIyIDMzMCwxODYxQzMzMCwxODYxIDMxNC4zOTYsMTgzMy40NzEgMzIxLDE3OTBDMzIxLDE3OTAgMzM1LjM2LDE3MzQuNTg4IDM0OCwxNzMzQzM0OCwxNzMzIDMzMS40OCwxNjgyLjk5IDM3OSwxNjI5QzM3OSwxNjI5IDQzMS43MjYsMTU3NC45OSA0NzgsMTYxOUM0NzgsMTYxOSA1MzMuOCwxNjI1LjUzMSA1MTIsMTY3NkM1MTIsMTY3NiA1MjUuNDE0LDE2ODkuNzIgNTE4LDE2OThDNTE4LDE2OTggNTA1LjQyNywxNzE3LjE1NiA1MjAsMTcyNUM1MjAsMTcyNSA1MDcuMDg4LDE3MTkuNTU2IDUwOSwxNzA1QzUwOSwxNzA1IDUxMS4xNTcsMTY5MS45MzQgNTA4LDE2ODdMNTAzLDE2ODJDNTAzLDE2ODIgNDc3LjU1NSwxNzEwLjQ1MyA0MjIsMTcyMkw0MDgsMTcyNyIgc3R5bGU9ImZpbGw6cmdiKDI1MywyMzEsMjM4KTsiLz4KICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8cGF0aCBkPSJNMjAxNyw3MTNDMjAxNyw3MTMgMjA2Ni4zNzksNzE0LjQwNCAyMTA1LjAwNiw2NzkuODAxQzIxMzAuMDk0LDY1Ny4zMjcgMjE1MC4wNjksNjE3LjkyOSAyMTUxLDU1OSIgc3R5bGU9ImZpbGw6bm9uZTsiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTIwMTgsNjg4QzIwMTgsNjg4IDIwNjYuODYsNjgxLjM5OCAyMDcyLDY0N0MyMDcyLDY0NyAyMDc0Ljk3OSw2MjkuOTg2IDIwNTEsNjA1QzIwNTEsNjA1IDIwODEuMTA2LDU2MS45ODUgMjE1MSw1NTlDMjE1MSw1NTkgMjE1NC43NTMsNzA5Ljk4NiAyMDE2LDcxM0MyMDE2LDcxMyAyMDE1LjYsNjkxLjIzOCAyMDE4LDY4OFoiIHN0eWxlPSJmaWxsOnJnYigyNDQsMTE0LDE4Mik7Ii8+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0xOTYwLDU5NUMxOTU2LjM2Niw1OTAuOTA0IDE5MjkuODA0LDY2OS43NjUgMjAwMyw2ODdDMjAwMyw2ODcgMjAwNC4xNTksNzExLjk5NCAyMDA0LDcxNEMyMDA0LDcxNCAxODczLjM1OCw3MjEuNjI3IDE4NzAsNTYwQzE4NzAsNTYwIDE5MjEuNDY1LDU2Mi40OTkgMTk2MCw1OTVaIiBzdHlsZT0iZmlsbDpyZ2IoMjQ0LDExNCwxODIpOyIvPgogICAgICAgICAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgwLjU1NDMyMiwtMC4wMTA1OTYsMC4wMTA1OTYsMC41NTQzMjIsMTc0MC4yMDQxMDgsLTQ0OS4yMTk1MTEpIj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik00ODUsMTk3MkM0ODUsMTk3MiA1MDIuMTY0LDE5NDEuODc1IDUxNCwxOTcwQzUxNCwxOTcwIDUxOC40MDQsMTk4OC45NjkgNDk2LDIwMTFDNDk2LDIwMTEgNDYyLjUxLDIwMDMuODM2IDQ1NiwxOTgwQzQ1NiwxOTgwIDQ1NS40NTQsMTk1MC44MTIgNDg1LDE5NzJaIiBzdHlsZT0iZmlsbDp3aGl0ZTsiLz4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+Cg==" width="70" height="47" alt=""><span>saras.</span></div></div>
+        </div>
+      </div>
+      <div id="game-actions" class="game-actions"><button id="spin-button" class="primary-button" type="button">Putar roda</button></div>
+      <p id="spin-status" class="sr-only" role="status" aria-live="polite"></p>
+    </section>
+    <aside id="settings-panel" class="settings-panel" aria-labelledby="settings-heading">
+      <div class="panel-heading"><h2 id="settings-heading">Pengaturan</h2><button id="close-settings" class="icon-button" type="button" aria-label="Tutup pengaturan">×</button></div>
+      <p class="sample-note">Hadiah contoh. Perubahan hanya untuk sesi ini.</p>
+      <form id="prize-form"><div id="prize-fields" class="prize-fields"></div><button id="apply-button" class="secondary-button apply-button" type="submit">Terapkan hadiah</button></form>
+      <div class="session-summary"><span>Putaran</span><strong id="draw-count">0</strong></div>
+      <ol id="history" class="history"></ol>
+      <button id="reset-button" class="text-button" type="button">Reset contoh</button>
+      <p id="settings-message" class="settings-message" role="status"></p>
+    </aside>
+  </main>
+  <dialog id="result-dialog" aria-labelledby="result-prize">
+    <button class="dialog-close icon-button" data-close="result-dialog" type="button" aria-label="Tutup hasil">×</button>
+    <p>Hadiahmu</p><h2 id="result-prize"></h2><p id="result-turn"></p>
+    <button id="next-button" class="primary-button" type="button">Hadiah sudah diterima</button>
+  </dialog>
+  <dialog id="state-dialog" class="state-dialog" aria-labelledby="state-heading">
+    <button class="dialog-close icon-button" data-close="state-dialog" type="button" aria-label="Tutup data prototype">×</button>
+    <h2 id="state-heading">State prototype</h2><pre id="state-json"></pre>
+  </dialog>
+  <nav id="prototype-switcher" class="prototype-switcher" aria-label="Pilihan layout prototype" hidden>
+    <span class="prototype-label">Prototype</span>
+    <button id="previous-variant" type="button" aria-label="Varian sebelumnya">←</button>
+    <span id="variant-label" class="variant-label" role="status"></span>
+    <button id="next-variant" type="button" aria-label="Varian berikutnya">→</button>
+    <button id="show-state" class="state-button" type="button">Data</button>
+  </nav>
+<script type="module">
 function randomInteger(limit, cryptoProvider = globalThis.crypto) {
   if (!Number.isSafeInteger(limit) || limit < 1 || limit > 2 ** 32) {
     throw new RangeError('Jumlah pilihan tidak valid.');
@@ -296,8 +227,8 @@ function restoreSession(text) {
 }
 
 
-const STORAGE_KEY = 'saras-showcase-spinwheel-v1';
-const EXAMPLE_PRIZES = [
+// Throwaway prototype: three centered-wheel layouts on this route via ?variant=A|B|C.
+const prizes = [
   { id: 'sticker', label: 'Sticker pack', quantity: 20 },
   { id: 'keychain', label: 'Gantungan kunci', quantity: 10 },
   { id: 'pin', label: 'Pin SARAS', quantity: 15 },
@@ -305,332 +236,192 @@ const EXAMPLE_PRIZES = [
   { id: 'pouch', label: 'Pouch', quantity: 8 },
   { id: 'totebag', label: 'Tote bag', quantity: 5 },
 ];
-const SEGMENT_COLORS = ['#f2d6e0', '#fff0dd', '#d987a8', '#fbe9ef', '#f0c8ae', '#e6b4c7'];
+const colors = ['#f2d6e0','#fff0dd','#d987a8','#fbe9ef','#f0c8ae','#e6b4c7'];
+const names = { A: 'Panel kanan', B: 'Laci samping', C: 'Editor kiri' };
 const $ = selector => document.querySelector(selector);
-const wheel = $('#wheel');
-const spinButton = $('#spin-button');
-const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
-let session;
-let spinning = false;
-let rotation = 0;
-let storageHealthy = false;
+const layout = $('#layout'), game = $('#game'), panel = $('#settings-panel');
+const wheel = $('#wheel'), spinButton = $('#spin-button'), hub = $('#wheel-hub');
+const hubBrand = $('#hub-brand'), actions = $('#game-actions');
+const mobile = matchMedia('(max-width:900px)');
+let session = createSession(prizes);
+let rotation = 0, spinning = false, settingsOpen = false;
+let variant = new URL(location.href).searchParams.get('variant')?.toUpperCase() || 'A';
+if (!names[variant]) variant = 'A';
+const prototypeMode = ['localhost','127.0.0.1',''].includes(location.hostname) && (new URL(location.href).searchParams.has('prototype') || location.pathname.endsWith('.prototype.html'));
+$('#prototype-switcher').hidden = !prototypeMode;
 
-function svgNode(name, attributes, content) {
-  const node = document.createElementNS('http://www.w3.org/2000/svg', name);
-  for (const [key, value] of Object.entries(attributes)) node.setAttribute(key, value);
-  if (content !== undefined) node.textContent = content;
-  return node;
+export function VariantA() {
+  layout.className = 'layout variant-a';
+  layout.replaceChildren(game, panel);
+  hubBrand.hidden = false; hub.replaceChildren(hubBrand);
+  actions.append(spinButton);
+}
+export function VariantB() {
+  layout.className = 'layout variant-b';
+  layout.replaceChildren(game);
+  layout.append(panel);
+  hubBrand.hidden = false; hub.replaceChildren(hubBrand);
+  actions.append(spinButton);
+}
+export function VariantC() {
+  layout.className = 'layout variant-c';
+  layout.replaceChildren(panel, game);
+  hubBrand.hidden = true; hub.replaceChildren(spinButton);
 }
 
-function labelLines(label) {
-  if (label.length <= 12) return [label];
-  const words = label.split(' ');
-  if (words.length === 1) return [label.slice(0, 14), label.slice(14)];
-  let split = 1;
-  for (let i = 1; i < words.length; i += 1) {
-    if (Math.abs(words.slice(0, i).join(' ').length - words.slice(i).join(' ').length) < Math.abs(words.slice(0, split).join(' ').length - words.slice(split).join(' ').length)) split = i;
-  }
-  return [words.slice(0, split).join(' '), words.slice(split).join(' ')];
+function updatePanel() {
+  const drawer = variant === 'B' || mobile.matches;
+  panel.hidden = drawer && !settingsOpen;
+  $('#settings-toggle').setAttribute('aria-expanded', String(!panel.hidden));
+}
+
+function showState() {
+  const state = { variant, layout: names[variant], spinning, rotation, settingsOpen, session };
+  $('#state-json').textContent = JSON.stringify(state, null, 2);
+  if (prototypeMode) console.info('SARAS layout prototype', state);
+}
+
+function switchVariant(key) {
+  variant = key; settingsOpen = false;
+  document.body.dataset.variant = variant;
+  ({ A: VariantA, B: VariantB, C: VariantC })[variant]();
+  const url = new URL(location.href);
+  url.searchParams.set('variant', variant);
+  history.replaceState(null, '', url);
+  $('#variant-label').textContent = variant + ' · ' + names[variant];
+  updatePanel(); renderControls(); showState();
+}
+
+function cycleVariant(direction) {
+  const keys = Object.keys(names);
+  switchVariant(keys[(keys.indexOf(variant) + direction + keys.length) % keys.length]);
+}
+
+function svgNode(tag, attrs, text) {
+  const node = document.createElementNS('http://www.w3.org/2000/svg', tag);
+  for (const [name, value] of Object.entries(attrs)) node.setAttribute(name, value);
+  if (text !== undefined) node.textContent = text;
+  return node;
 }
 
 function drawWheel() {
   wheel.replaceChildren();
-  const count = session.prizes.length;
-  const angle = 360 / count;
-  const fontSize = Math.max(17, 14 * 560 / Math.max(wheel.clientWidth, 180));
-  session.prizes.forEach((prize, index) => {
-    const start = (index * angle - 90) * Math.PI / 180;
-    const end = ((index + 1) * angle - 90) * Math.PI / 180;
+  const size = Math.max(20, 14 * 560 / Math.max(wheel.clientWidth, 200));
+  const angle = 360 / session.prizes.length;
+  session.prizes.forEach((prize, i) => {
+    const start = (i * angle - 90) * Math.PI / 180, end = ((i + 1) * angle - 90) * Math.PI / 180;
     const x1 = 280 + 266 * Math.cos(start), y1 = 280 + 266 * Math.sin(start);
     const x2 = 280 + 266 * Math.cos(end), y2 = 280 + 266 * Math.sin(end);
-    wheel.append(svgNode('path', { d: `M280 280L${x1} ${y1}A266 266 0 ${angle > 180 ? 1 : 0} 1 ${x2} ${y2}Z`, fill: prize.quantity > 0 ? SEGMENT_COLORS[index % SEGMENT_COLORS.length] : '#e8dfdd', stroke: '#fff8f1', 'stroke-width': 2 }));
-    const degrees = (index + .5) * angle - 90;
-    const radians = degrees * Math.PI / 180;
+    wheel.append(svgNode('path', { d: 'M280 280L' + x1 + ' ' + y1 + 'A266 266 0 0 1 ' + x2 + ' ' + y2 + 'Z', fill: prize.quantity ? colors[i % colors.length] : '#e8dfdd', stroke:'#fff8f1','stroke-width':2 }));
+    const degrees = (i + .5) * angle - 90, radians = degrees * Math.PI / 180;
     const orientation = degrees > 90 && degrees < 270 ? degrees + 180 : degrees;
-    const x = 280 + 165 * Math.cos(radians), y = 280 + 165 * Math.sin(radians);
-    const text = svgNode('text', { transform: `translate(${x} ${y}) rotate(${orientation})`, 'text-anchor': 'middle', 'dominant-baseline': 'middle', fill: '#2b2125', 'font-family': '-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif', 'font-size': fontSize, 'font-weight': 550 });
-    const lines = labelLines(prize.label);
-    lines.forEach((line, i) => text.append(svgNode('tspan', { x: 0, y: (i - (lines.length - 1) / 2) * fontSize * 1.2 }, line)));
-    if (!prize.quantity) text.append(svgNode('tspan', { x: 0, y: (lines.length / 2) * fontSize * 1.2 + 12, 'font-size': fontSize }, 'Habis'));
+    const text = svgNode('text', { transform:'translate(' + (280 + 169 * Math.cos(radians)) + ' ' + (280 + 169 * Math.sin(radians)) + ') rotate(' + orientation + ')', 'text-anchor':'middle','dominant-baseline':'middle',fill:'#2b2125','font-family':'-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif','font-weight':550,'font-size':size });
+    const words = prize.label.split(' ');
+    const lines = prize.label.length > 12 && words.length > 1 ? [words.slice(0, -1).join(' '), words.at(-1)] : [prize.label];
+    if (!prize.quantity) lines.push('Habis');
+    lines.forEach((line, row) => text.append(svgNode('tspan', { x:0,y:(row - (lines.length - 1) / 2) * size * 1.2 }, line)));
     wheel.append(text);
   });
-  wheel.append(svgNode('circle', { cx: 280, cy: 280, r: 270, fill: 'none', stroke: '#fff8f1', 'stroke-width': 10 }));
-  for (let i = 0; i < 36; i += 1) {
-    const radians = i * Math.PI / 18;
-    wheel.append(svgNode('circle', { cx: 280 + 271 * Math.cos(radians), cy: 280 + 271 * Math.sin(radians), r: 2.2, fill: '#b77d8f' }));
-  }
-  wheel.setAttribute('aria-label', `Roda hadiah: ${session.prizes.map(prize => prize.label + (prize.quantity ? '' : ' (habis)')).join(', ')}`);
-}
-
-function renderPrizes() {
-  const list = $('#prize-list');
-  list.replaceChildren();
-  for (const prize of session.prizes) {
-    const row = document.createElement('li');
-    if (!prize.quantity) row.className = 'sold-out';
-    const dot = document.createElement('span');
-    dot.className = 'prize-dot';
-    dot.setAttribute('aria-hidden', 'true');
-    const label = document.createElement('span');
-    label.className = 'prize-label';
-    label.textContent = prize.label;
-    row.append(dot, label);
-    if (!prize.quantity) {
-      const stock = document.createElement('span');
-      stock.className = 'stock-label';
-      stock.textContent = 'Habis';
-      row.append(stock);
-      row.setAttribute('aria-label', `${prize.label}, stok habis`);
-    }
-    list.append(row);
-  }
+  wheel.append(svgNode('circle', { cx:280,cy:280,r:270,fill:'none',stroke:'#fff8f1','stroke-width':10 }));
+  wheel.setAttribute('aria-label', 'Roda hadiah: ' + session.prizes.map(p => p.label + (p.quantity ? '' : ' habis')).join(', '));
 }
 
 function renderControls() {
-  const available = session?.prizes.some(prize => prize.quantity > 0);
-  spinButton.disabled = spinning || !storageHealthy || (!session?.pending && !available);
-  $('#staff-button').disabled = spinning;
-  $('#spin-status').textContent = !storageHealthy ? 'Penyimpanan perlu diperiksa panitia.' : spinning ? 'Rodanya berputar… tunggu kejutanmu.' : session.pending ? 'Hadiahmu sudah terpilih dan siap diambil.' : available ? 'Siap untuk giliranmu?' : 'Terima kasih! Semua hadiah sudah dibagikan.';
-  spinButton.textContent = spinning ? 'Sedang berputar…' : session?.pending ? 'Lihat hadiahmu' : !available ? 'Hadiah sudah habis' : 'Putar roda';
-  $('#control-note').textContent = session?.pending && !spinning ? 'Selesaikan pengambilan hadiah untuk giliran berikutnya.' : '';
+  const available = session.prizes.some(p => p.quantity > 0);
+  spinButton.disabled = spinning || (!available && !session.pending);
+  spinButton.textContent = spinning ? 'Berputar…' : session.pending ? 'Lihat hadiah' : available ? 'Putar roda' : 'Hadiah habis';
+  $('#spin-status').textContent = spinning ? 'Roda sedang berputar.' : session.pending ? 'Hadiah terpilih: ' + session.pending.label : available ? 'Roda siap diputar.' : 'Semua hadiah habis.';
+  $('#apply-button').disabled = $('#reset-button').disabled = spinning || Boolean(session.pending);
+  $('#draw-count').textContent = session.history.length;
 }
 
-function showError(message) {
-  const error = $('#error-message');
-  error.textContent = message;
-  error.hidden = false;
-}
-
-function clearError() {
-  $('#error-message').hidden = true;
-}
-
-function persist(next) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
-  session = next;
-  storageHealthy = true;
-}
-
-function loadSession() {
-  const raw = localStorage.getItem(STORAGE_KEY);
-  return raw === null ? createSession(EXAMPLE_PRIZES) : restoreSession(raw);
-}
-
-async function changeSession(update) {
-  const commit = () => {
-    const current = loadSession();
-    persist(update(current));
-  };
-  if (navigator.locks) await navigator.locks.request(STORAGE_KEY, commit);
-  else commit();
-}
-
-function openDialog(id) {
-  const dialog = document.getElementById(id);
-  if (!dialog.open) dialog.showModal();
-}
-
-function presentResult(celebrate = false) {
-  if (!session.pending) return;
-  $('#result-prize').textContent = session.pending.label;
-  $('#ticket-number').textContent = `Giliran ${String(session.pending.number).padStart(3, '0')}`;
-  openDialog('result-dialog');
-  if (celebrate && !reducedMotion.matches) {
-    const container = $('#confetti');
-    container.replaceChildren();
-    for (let i = 0; i < 34; i += 1) {
-      const piece = document.createElement('i');
-      piece.style.left = `${(i * 37) % 100}%`;
-      piece.style.background = SEGMENT_COLORS[i % SEGMENT_COLORS.length];
-      piece.style.animationDelay = `${i % 8 * .07}s`;
-      piece.style.setProperty('--drift', `${(i % 5 - 2) * 60}px`);
-      container.append(piece);
-    }
-    setTimeout(() => container.replaceChildren(), 3600);
-  }
-}
-
-async function spin() {
-  if (spinning || !storageHealthy) return;
-  if (session.pending) { presentResult(); return; }
-  spinning = true;
-  clearError();
-  renderControls();
-  try {
-    await changeSession(current => reserveSpin(current));
-  } catch (error) {
-    spinning = false;
-    showError(`Putaran belum dimulai. ${error.message}`);
-    renderControls();
-    return;
-  }
-  const winnerIndex = session.prizes.findIndex(prize => prize.id === session.pending.prizeId);
-  const target = targetRotation(winnerIndex, session.prizes.length, rotation);
-  const animation = wheel.animate([{ transform: `rotate(${rotation}deg)` }, { transform: `rotate(${target}deg)` }], { duration: reducedMotion.matches ? 120 : 4800, easing: 'cubic-bezier(.12,.69,.13,1)', fill: 'forwards' });
-  try { await animation.finished; } catch { /* Hasil sudah disimpan sebelum animasi, termasuk saat animasi dibatalkan. */ }
-  rotation = target;
-  wheel.style.transform = `rotate(${rotation}deg)`;
-  animation.cancel();
-  spinning = false;
-  renderControls();
-  renderPrizes();
-  presentResult(true);
-}
-
-function renderStaff() {
+function renderSettings() {
   const fields = $('#prize-fields');
   fields.replaceChildren();
-  session.prizes.forEach((prize, index) => {
-    const row = document.createElement('div');
-    row.className = 'prize-field';
-    const nameLabel = document.createElement('label');
-    nameLabel.className = 'visually-hidden';
-    nameLabel.htmlFor = `prize-name-${index}`;
-    nameLabel.textContent = `Nama hadiah ${index + 1}`;
-    const name = document.createElement('input');
-    name.id = nameLabel.htmlFor;
-    name.name = `prize-name-${index}`;
-    name.type = 'text';
-    name.value = prize.label;
-    name.required = true;
-    name.maxLength = 28;
-    const quantityLabel = document.createElement('label');
-    quantityLabel.className = 'visually-hidden';
-    quantityLabel.htmlFor = `prize-stock-${index}`;
-    quantityLabel.textContent = `Sisa stok hadiah ${index + 1}`;
-    const quantity = document.createElement('input');
-    quantity.id = quantityLabel.htmlFor;
-    quantity.name = `prize-stock-${index}`;
-    quantity.type = 'number';
-    quantity.inputMode = 'numeric';
-    quantity.min = '0'; quantity.max = '9999'; quantity.step = '1'; quantity.required = true;
-    quantity.value = prize.quantity;
-    name.disabled = quantity.disabled = Boolean(session.pending);
-    row.append(nameLabel, name, quantityLabel, quantity);
+  session.prizes.forEach((prize, i) => {
+    const row = document.createElement('div'); row.className = 'prize-row';
+    for (const kind of ['name','stock']) {
+      const label = document.createElement('label'), caption = document.createElement('span'), input = document.createElement('input');
+      caption.textContent = kind === 'name' ? 'Hadiah ' + (i + 1) : 'Sisa stok';
+      input.name = kind + '-' + i;
+      input.type = kind === 'name' ? 'text' : 'number';
+      input.value = kind === 'name' ? prize.label : prize.quantity;
+      input.required = true;
+      if (kind === 'name') input.maxLength = 28;
+      else { input.min = 0; input.max = 9999; input.step = 1; input.inputMode = 'numeric'; }
+      input.disabled = spinning || Boolean(session.pending);
+      label.append(caption, input); row.append(label);
+    }
     fields.append(row);
   });
-  $('#save-button').disabled = Boolean(session.pending) || !storageHealthy;
-  $('#settings-message').textContent = session.pending ? 'Selesaikan pengambilan hadiah sebelum mengubah stok.' : '';
-  $('#history-count').textContent = `(${session.history.length})`;
-  $('#export-button').disabled = session.history.length === 0;
-  const history = $('#history-list');
-  history.replaceChildren();
+  const historyList = $('#history'); historyList.replaceChildren();
   if (!session.history.length) {
-    const empty = document.createElement('li');
-    empty.className = 'empty-history';
-    empty.textContent = 'Belum ada putaran. Hasil akan tercatat di sini setelah roda diputar.';
-    history.append(empty);
+    const empty = document.createElement('li'); empty.textContent = 'Belum ada putaran.'; historyList.append(empty);
   }
-  for (const result of session.history.slice().reverse()) {
-    const row = document.createElement('li');
-    const number = document.createElement('span');
-    number.className = 'history-number'; number.textContent = String(result.number).padStart(3, '0');
-    const label = document.createElement('strong'); label.textContent = result.label;
-    const time = document.createElement('time'); time.dateTime = result.timestamp;
-    time.textContent = new Date(result.timestamp).toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
-    row.append(number, label, time); history.append(row);
-  }
+  session.history.slice().reverse().forEach(result => {
+    const row = document.createElement('li'), label = document.createElement('span');
+    row.textContent = String(result.number).padStart(3, '0'); label.textContent = result.label;
+    row.append(label); historyList.append(row);
+  });
+  renderControls(); showState();
 }
 
-spinButton.addEventListener('click', spin);
-$('#guide-button').addEventListener('click', () => openDialog('guide-dialog'));
-$('#staff-button').addEventListener('click', () => { renderStaff(); openDialog('staff-dialog'); });
+function presentResult() {
+  $('#result-prize').textContent = session.pending.label;
+  $('#result-turn').textContent = 'Giliran ' + String(session.pending.number).padStart(3, '0');
+  if (!$('#result-dialog').open) $('#result-dialog').showModal();
+}
+
+spinButton.addEventListener('click', async () => {
+  if (spinning) return;
+  if (session.pending) { presentResult(); return; }
+  session = reserveSpin(session);
+  spinning = true; renderControls(); renderSettings();
+  const index = session.prizes.findIndex(p => p.id === session.pending.prizeId);
+  const target = targetRotation(index, session.prizes.length, rotation);
+  const animation = wheel.animate([{ transform:'rotate(' + rotation + 'deg)' }, { transform:'rotate(' + target + 'deg)' }], { duration:matchMedia('(prefers-reduced-motion:reduce)').matches ? 120 : 4200,easing:'cubic-bezier(.12,.69,.13,1)',fill:'forwards' });
+  await animation.finished;
+  rotation = target; wheel.style.transform = 'rotate(' + rotation + 'deg)'; animation.cancel();
+  spinning = false; renderControls(); renderSettings(); presentResult();
+});
+
+$('#next-button').addEventListener('click', () => {
+  session = nextVisitor(session); $('#result-dialog').close();
+  drawWheel(); renderSettings(); spinButton.focus();
+});
+$('#prize-form').addEventListener('submit', event => {
+  event.preventDefault();
+  const values = new FormData(event.currentTarget);
+  const updated = createSession(session.prizes.map((prize, i) => ({ id:prize.id,label:String(values.get('name-' + i)).trim() || prize.label,quantity:Number(values.get('stock-' + i)) })));
+  session = { ...updated,history:session.history };
+  $('#settings-message').textContent = 'Hadiah diperbarui untuk sesi ini.';
+  drawWheel(); renderSettings();
+});
+$('#reset-button').addEventListener('click', () => {
+  session = createSession(prizes); rotation = 0; wheel.style.transform = 'rotate(0deg)';
+  $('#settings-message').textContent = 'Contoh direset.';
+  drawWheel(); renderSettings();
+});
+$('#settings-toggle').addEventListener('click', () => { settingsOpen = !settingsOpen; updatePanel(); showState(); });
+$('#close-settings').addEventListener('click', () => { settingsOpen = false; updatePanel(); showState(); $('#settings-toggle').focus(); });
+$('#previous-variant').addEventListener('click', () => cycleVariant(-1));
+$('#next-variant').addEventListener('click', () => cycleVariant(1));
+$('#show-state').addEventListener('click', () => { showState(); $('#state-dialog').showModal(); });
 document.querySelectorAll('[data-close]').forEach(button => button.addEventListener('click', () => document.getElementById(button.dataset.close).close()));
+document.addEventListener('keydown', event => {
+  if (!prototypeMode || event.target.closest('input,textarea,select,[contenteditable]') || document.querySelector('dialog[open]')) return;
+  if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') { event.preventDefault(); cycleVariant(event.key === 'ArrowLeft' ? -1 : 1); }
+});
 document.querySelectorAll('dialog').forEach(dialog => dialog.addEventListener('keydown', event => {
   if (event.key !== 'Tab') return;
-  const controls = [...dialog.querySelectorAll('button:not(:disabled), input:not(:disabled), a[href]')].filter(node => node.getClientRects().length);
-  const first = controls[0], last = controls.at(-1);
-  if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
-  else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+  const controls = [...dialog.querySelectorAll('button:not(:disabled)')];
+  if (event.shiftKey && document.activeElement === controls[0]) { event.preventDefault(); controls.at(-1).focus(); }
+  else if (!event.shiftKey && document.activeElement === controls.at(-1)) { event.preventDefault(); controls[0].focus(); }
 }));
-
-$('#next-button').addEventListener('click', async () => {
-  $('#next-button').disabled = true;
-  try {
-    await changeSession(current => nextVisitor(current));
-    $('#result-dialog').close();
-    drawWheel();
-    renderPrizes();
-    clearError();
-  } catch (error) {
-    $('#result-dialog').close();
-    showError(`Giliran belum bisa diselesaikan. ${error.message}`);
-  } finally { $('#next-button').disabled = false; renderControls(); spinButton.focus(); }
-});
-
-$('#prize-form').addEventListener('submit', async event => {
-  event.preventDefault();
-  const form = new FormData(event.currentTarget);
-  $('#save-button').disabled = true;
-  try {
-    await changeSession(current => {
-      if (current.pending) throw new Error('Selesaikan giliran sebelumnya dulu.');
-      const next = createSession(current.prizes.map((prize, index) => ({ id: prize.id, label: form.get(`prize-name-${index}`), quantity: Number(form.get(`prize-stock-${index}`)) })));
-      return { ...next, history: current.history };
-    });
-    drawWheel(); renderPrizes(); renderControls();
-    $('#settings-message').textContent = 'Tersimpan. Nama hadiah dan sisa stok sudah diperbarui.';
-    clearError();
-  } catch (error) { $('#settings-message').textContent = `Belum tersimpan. ${error.message}`; }
-  finally { $('#save-button').disabled = Boolean(session.pending) || !storageHealthy; }
-});
-
-$('#export-button').addEventListener('click', () => {
-  const escapeCell = value => `"${String(value).replaceAll('"', '""').replace(/^[=+@-]/, "'</body>")}"`;
-  const rows = [['Giliran', 'Hadiah', 'Waktu'], ...session.history.map(result => [result.number, result.label, result.timestamp])];
-  const blob = new Blob(['\uFEFF' + rows.map(row => row.map(escapeCell).join(',')).join('\r\n')], { type: 'text/csv;charset=utf-8' });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement('a');
-  link.href = url; link.download = `saras-hadiah-${new Date().toISOString().slice(0, 10)}.csv`;
-  link.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
-});
-
-$('#reset-button').addEventListener('click', () => openDialog('reset-dialog'));
-$('#confirm-reset-button').addEventListener('click', async () => {
-  $('#confirm-reset-button').disabled = true;
-  try {
-    const reset = () => persist(createSession(EXAMPLE_PRIZES));
-    if (navigator.locks) await navigator.locks.request(STORAGE_KEY, reset); else reset();
-    rotation = 0; wheel.style.transform = 'rotate(0deg)';
-    drawWheel(); renderPrizes(); renderControls(); renderStaff(); clearError();
-    $('#reset-dialog').close();
-    $('#settings-message').textContent = 'Demo dimulai ulang. Hadiah contoh sudah dikembalikan.';
-  } catch (error) { showError(`Data belum bisa direset. Periksa izin penyimpanan browser. ${error.message}`); }
-  finally { $('#confirm-reset-button').disabled = false; }
-});
-
-window.addEventListener('storage', event => {
-  if (event.key !== STORAGE_KEY && event.key !== null) return;
-  if (spinning) return;
-  try {
-    session = loadSession(); storageHealthy = true;
-    drawWheel(); renderPrizes(); renderControls();
-    if ($('#staff-dialog').open) renderStaff();
-    if ($('#result-dialog').open) {
-      if (session.pending) presentResult(); else $('#result-dialog').close();
-    }
-  } catch (error) { storageHealthy = false; showError(`Data di browser perlu diperiksa panitia. ${error.message}`); renderControls(); }
-});
-
-try {
-  session = loadSession();
-  persist(session);
-} catch (error) {
-  session = createSession(EXAMPLE_PRIZES);
-  showError(`Data undian tidak dapat dibaca atau disimpan. Buka Panel panitia dan pilih Mulai ulang demo untuk memulihkan data. ${error.message}`);
-}
-drawWheel(); renderPrizes(); renderControls();
-let lastWheelWidth = wheel.clientWidth;
-new ResizeObserver(() => {
-  const width = wheel.clientWidth;
-  if (width !== lastWheelWidth) { lastWheelWidth = width; drawWheel(); }
-}).observe(wheel);
-if (session.pending) {
-  const index = session.prizes.findIndex(prize => prize.id === session.pending.prizeId);
-  rotation = targetRotation(index, session.prizes.length, 0, 0);
-  wheel.style.transform = `rotate(${rotation}deg)`;
-  presentResult();
-}
+mobile.addEventListener('change', updatePanel);
+let width = 0;
+new ResizeObserver(() => { if (width !== wheel.clientWidth) { width = wheel.clientWidth; drawWheel(); } }).observe(wheel);
+switchVariant(variant); renderSettings(); drawWheel();
 
 </script>
   </body>
